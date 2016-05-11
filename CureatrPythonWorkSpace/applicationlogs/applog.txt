@@ -1,0 +1,1315 @@
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/IE-Results-192224/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-192315/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-194049/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-194452/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-194649/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-194806/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-195326/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-195326/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-200618/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-200618/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-201036/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-201036/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-202836/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-202836/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-204155/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-204155/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-205752/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-205752/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-210030/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-210030/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/Chrome-Results-210618/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-28/FF-Results-210618/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-091733/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-091733/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-092307/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-092307/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-092637/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-093017/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-130251/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-150116/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-150453/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-150811/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-152014/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-154143/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-154718/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-155124/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-155124/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-155124/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-155529/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-155529/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-155529/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-160531/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-160531/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-162006/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-162402/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-162402/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-162822/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-162822/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-162822/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-163643/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-163643/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-163643/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-164659/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-164659/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-164659/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-165750/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-170044/
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-170044/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-173547/
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-173547/
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-173547/
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-175946/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-175946/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-175946/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-180523/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-180523/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-180523/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.6.1p1)
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.6.1p1)
+INFO:paramiko.transport:Authentication (publickey) failed.
+INFO:paramiko.transport:Authentication (publickey) failed.
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-195913/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-195913/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-200335/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-200335/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-202045/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-202045/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-202045/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/IE-Results-202438/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-202438/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-202438/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=IEDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/Chrome-Results-203118/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-04-29/FF-Results-203118/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-155134/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-155553/
+INFO:__main__:Gathering file and creating mail
+INFO:__main__:Connecting to SMTP  server
+INFO:__main__:mail sent with attachments
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-174403/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-174826/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-175942/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-175942/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-185829/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-185829/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-193344/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-193627/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-193806/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-193806/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-195556/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-195556/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-195734/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-195734/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-200201/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-200201/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-203739/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-203739/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/Chrome-Results-204043/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/OutPutFiles/2016-05-02/FF-Results-204043/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-204655/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-213958/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-213958/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-214322/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-214322/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-214839/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-214839/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-215420/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-215420/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-215805/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-220041/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-220457/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-220941/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/Chrome-Results-221558/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-222101/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-222527/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-223045/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-224431/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-225009/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-230419/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-02/FF-Results-230556/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-080039/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-082454/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-094826/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-095335/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-095956/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/Chrome-Results-100238/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-100238/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-102640/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/Chrome-Results-102640/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/Chrome-Results-121827/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/Chrome-Results-125605/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-130553/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-131531/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-152947/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-154949/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-155738/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-170234/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-172431/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-172720/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-172829/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-173007/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-173222/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-173418/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-173618/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-173751/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-174017/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-174618/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-175803/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-175945/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-180112/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-180225/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-180403/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-180554/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-182024/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-182420/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-184056/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-184221/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-184451/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-191958/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-192201/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-192543/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-193106/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-193336/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-205424/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-205932/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-210200/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-223533/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-225240/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-03/FF-Results-230857/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-095915/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-102314/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-103511/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-104028/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-104634/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-105528/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-110112/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-110258/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-114912/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-115832/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-163506/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-170201/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-173351/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-174212/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-175922/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-181034/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-182910/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-204641/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-211512/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-212810/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-213947/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-213947/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-220015/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-220015/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-222138/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-223100/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-223100/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-225622/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-225622/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-231807/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-231807/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/Chrome-Results-233644/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-04/FF-Results-233644/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-103953/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-111304/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-111304/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-121617/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-124538/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-125614/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-132409/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-135520/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-151751/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-160748/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-170345/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=D:/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-170345/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-123530/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-123614/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-123751/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-125150/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-130200/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-131509/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-132103/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-133217/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/Chrome-Results-133217/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-154422/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-05/FF-Results-190712/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-054738/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-054933/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-055100/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-060521/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-060838/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-061438/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-062156/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-115622/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=ChromeDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/Chrome-Results-125829/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/FF-Results-131134/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/FF-Results-133536/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-06/FF-Results-142912/
+INFO:__main__:Send Email Compleated
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Execute Driver Script::browser Name=FFDriver Name=
+INFO:__main__:Test Case Executiong Compleated::Sending Email To Stake Holder After Test Case Execution::AttachmentsDirPath=/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/2016-05-10/FF-Results-151814/
+INFO:__main__:Send Email Compleated
