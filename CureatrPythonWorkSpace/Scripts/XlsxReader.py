@@ -63,7 +63,7 @@ def getCellValueBySheet(sh1, row, column):
 		#for cell in srow:
 		if sh1.cell(row=1,column=srow).value == column:
 			val=sh1.cell(row=1, column=srow).col_idx
-			
+
 	return sh1.cell(row=row, column=val).value
 
 def addColumn(wbpath, sh, column):
@@ -83,10 +83,10 @@ def addColumn(wbpath, sh, column):
 		sh.cell(row=1,column=cl+1).value=column
 		wb.save(wbpath)
 
-def addCellValue(wbpath, sheet, row, column, columnvalue):
+def addCellValue(wbpath, sh, row, column, columnvalue):
 	val=[]
-	wb=load_workbook(wbpath)
-	sh=wb.get_sheet_by_name(sheet)
+	#wb=load_workbook(wbpath)
+	#sh=wb.get_sheet_by_name(sheet)
 	for srow in range(1, sh.max_column+1):
 		#for cell in srow:
 		if sh.cell(row=1,column=srow).value == column:
@@ -94,7 +94,20 @@ def addCellValue(wbpath, sheet, row, column, columnvalue):
 			sh.cell(row=row,column=val).value=columnvalue
 		
 	wb.save(wbpath)
-               
+
+def addCellValue1(sh, row, column, columnvalue):
+	val=[]
+	#wb=load_workbook(wbpath)
+	#sh=wb.get_sheet_by_name(sheet)
+	for srow in range(1, sh.max_column+1):
+		#for cell in srow:
+		if sh.cell(row=1,column=srow).value == column:
+			val=sh.cell(row=1, column=srow).col_idx
+			sh.cell(row=row,column=val).value=columnvalue
+		
+	#wb.save(wbpath)
+
+             
 def addCellValueSet(wbpath, sheet, row, column, resultSet, currentTestSuiteSteps, currentTestCase):
 	val=[]
 	wb=load_workbook(wbpath)

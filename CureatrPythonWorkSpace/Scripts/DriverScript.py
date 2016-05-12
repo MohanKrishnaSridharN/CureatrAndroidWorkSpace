@@ -22,8 +22,7 @@ import logging
 import logging.handlers
 import Config
 from Config import *
-sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..', '..', 'dev', 'cureatr', 'server', 'qa')))
-import db_recipes
+from BackEndDrivers import *
 	
 #logdir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs"
 LOG_FILE=getattr(Config, str("LOG_FILE"))
@@ -40,7 +39,7 @@ def executefunctions(browser, driver):
 	AttachmentsDirPath=DriverScript(browser, driver)
 	logger.info("Test Case Executiong Compleated::"+"Sending Email To Stake Holder After Test Case Execution::"+"AttachmentsDirPath="+AttachmentsDirPath)
 	#designgraphs(AttachmentsDirPath)
-	#send_mail(AttachmentsDirPath)
+	#send_mail(AttachmentsDirPath,subject="Cureatr "+ browser +" Browser || Automaton Test Report")
 	logger.info("Send Email Compleated")
 
 def DriverScript(browser, driver):
@@ -153,6 +152,8 @@ def DriverScript(browser, driver):
 							driver1=driverval[0]
 							driver2=driverval[1]
     						
+	CloseBrowser(driver1)
+	CloseBrowser(driver2)
 	return subdirectory
     
 def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, dataset, count, Priority, subdirectory, currentTestDataSheet, DSID, driver1, driver2):
@@ -207,35 +208,17 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				else:
 					resultSet.append(Keyword_execution_result_main)
 
-			elif Keywords=="CreateUserPY":
-				data=getCellValueBySheet(currentTestSuiteSteps, TestStepsCount, "Data")
-				if data is not None:
-					if str(data).startswith("PY"):
-						INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
-						TYPE=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][1])
-						TITILE=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
-						SPECIALTY=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][3])
-						FIRSTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][4])
-						LASTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][5])
-						USERNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][6])
-						PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
-						EMAILID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][8])
-						db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-							title=TITILE, password=PASSWORD, last_name=LASTNAME, email=EMAILID)
-						Keyword_execution_result_main="PASS"
-						resultSet.append(Keyword_execution_result_main)
+			elif Keywords=="CreateUserPY" or Keywords=="CreateInstitution":
+				method = possibles.get(Keywords)
+				retun=method(browser, target, data, currentTestDataSheet, dataset,currentTestSuiteXLSPATH,currentTestCase)
+				Keyword_execution_result_main=retun[0]
+				resultSet.append(Keyword_execution_result_main)
+				if retun[0] == "FAIL":
+					#send_mail(subdirectory,subject=Keywords+" Failed and stopped test exceution")					
+					sys.exit(1)
 
-	            	elif Keywords=="CreateInstitution":
-				data=getCellValueBySheet(currentTestSuiteSteps, TestStepsCount, "Data")
-				if data is not None:
-					if str(data).startswith("PY"):
-						INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
-						INSTITUTIONSHORTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][1])
-						INSTITUTIONNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
-						db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME)
-						Keyword_execution_result_main="PASS"
-						resultSet.append(Keyword_execution_result_main)
-            		else:
+				
+           		else:
 				if user=="user1":
 					driver=driver1
 				elif user=="user2":
@@ -278,7 +261,8 @@ def createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_r
 
 def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet):
 	ResultsXLSPATH=subdirectory+'Results.xlsx'
-	ResultsSheetXLS=load_workbook(ResultsXLSPATH).get_sheet_by_name('Status')
+	wb=load_workbook(ResultsXLSPATH)
+	ResultsSheetXLS=wb.get_sheet_by_name('Status')
 	columnname="Result"+str(dataset-1)
 	if "FAIL" in str(resultSet):
 		addCellValue(currentTestSuiteXLSPATH, "TestCases", count, columnname, "FAIL")
@@ -317,24 +301,24 @@ def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resul
 	elapsed=EndTime-StartTime
 	addCellValue(ResultsXLSPATH, "Status", 31, "Report", elapsed)
 	
-def send_mail(AttachmentsDirPath):
+def send_mail(AttachmentsDirPath,subject):
     global logger
     logger.info('Gathering file and creating mail')
     msg=MIMEMultipart()
-    msg['Subject']='Tesf file attached'
+    msg['Subject']=subject
     msg['From']='techops@mtuity.com'
     recipients=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com']
     msg['To']=", ".join(recipients)
-    msg.attach(MIMEText( "Test mail"))
+    msg.attach(MIMEText( 'PFA..Test Reports.This mail generated by Automation scripts'))
     for file in os.listdir(AttachmentsDirPath):
         filepath=os.path.join(AttachmentsDirPath,file)
         if not os.path.isfile(filepath):
-           continue
-        msgpart=MIMEBase('application',"vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-        msgpart.set_payload(open(filepath,'rb').read())
-        Encoders.encode_base64(msgpart)
-        msgpart.add_header('Content-Disposition','attachment',filename=file)
-        msg.attach(msgpart)
+        	continue
+       	msgpart=MIMEBase('application',"vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+       	msgpart.set_payload(open(filepath,'rb').read())
+       	Encoders.encode_base64(msgpart)
+       	msgpart.add_header('Content-Disposition','attachment',filename=file)
+       	msg.attach(msgpart)
     logger.info('Connecting to SMTP  server')
     server=smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
@@ -344,13 +328,14 @@ def send_mail(AttachmentsDirPath):
     server.quit()
 		   		
 # open a public URL, in this case, the webbrowser docs
+
 if __name__ == '__main__':
 	try:
 		t1=Thread(target=executefunctions,args=('FF', ''))
-		#t2=Thread(target=executefunctions,args=('Chrome', ''))
+		t2=Thread(target=executefunctions,args=('Chrome', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
 		t1.start()
-		#t2.start()
+		t2.start()
 		#t3.start()
 	except:
 		print "Error: unable to start thread"

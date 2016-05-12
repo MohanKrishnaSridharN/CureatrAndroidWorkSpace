@@ -19,10 +19,12 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 		if browser=="FF":
 			#driver = webdriver.Firefox()
 			cap=webdriver.DesiredCapabilities.FIREFOX
-                        driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			driver = webdriver.Chrome()
+			cap=webdriver.DesiredCapabilities.CHROME
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#driver = webdriver.Chrome()
 			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
@@ -90,6 +92,15 @@ def CloseWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 		a.click()
 		#driver.close()
 		#driver.quit()
+		return "PASS", ""
+	except Exception as err:
+		print (Exception, err)
+		return "FAIL", ""
+
+def CloseBrowser(driver):
+	try:
+		driver.close()
+		driver.quit()
 		return "PASS", ""
 	except Exception as err:
 		print (Exception, err)
