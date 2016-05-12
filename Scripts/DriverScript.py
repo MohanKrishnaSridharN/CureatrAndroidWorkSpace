@@ -47,7 +47,6 @@ def DriverScript(browser, driver):
 	currenttime1=datetime.datetime.now().time()
 	currentdate=datetime.date.today()
 	currenttime=str(currenttime1).replace(":","")
-	#startTime=time.time()
 	
 	#CREATE SUBFOLDER IN OUTPUTFILES FOLDER WITH TODAYS DATE
 	directory=getattr(Config, str("OutPutFileDir"))+unicode(currentdate)+"/"
@@ -236,7 +235,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					break
 
 	PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSet, currentTestCase, dataset, TestStepsCount)
-	printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet)
+	printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet,browser)
 	return driver1, driver2
 
 def PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSet, currentTestCase, dataset, TestStepsCount):
@@ -259,7 +258,7 @@ def createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_r
 	addCellValue(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, Keyword_execution_result_main)
 """
 
-def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet):
+def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet,browser):
 	ResultsXLSPATH=subdirectory+'Results.xlsx'
 	ResultsSheetXLS=load_workbook(ResultsXLSPATH).get_sheet_by_name('Status')
 	columnname="Result"+str(dataset-1)
@@ -299,6 +298,7 @@ def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resul
 	addCellValue(ResultsXLSPATH, "Status", 30, "Report", EndTime.strftime('%X'))
 	elapsed=EndTime-StartTime
 	addCellValue(ResultsXLSPATH, "Status", 31, "Report", elapsed)
+	addCellValue(ResultsXLSPATH, "Status", 32, "Report", browser)
 	
 def send_mail(AttachmentsDirPath,subject):
     global logger
