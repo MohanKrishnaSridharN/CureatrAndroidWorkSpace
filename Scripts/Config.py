@@ -1,6 +1,6 @@
 CureatrPlayURL="https://cureatr-vm.dev:5101/"
 #CureatrPlayURL="https://messenger.play.cureatr.com"
-EmailAccountsForReports="nmksridhar@gmail.com"
+EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com']
 #EmailAccountsForReports=esheddoni@cureatr.com|levimcdonough@cureatr.com|kiran.gopisetty@mtuity.com
 
 """
