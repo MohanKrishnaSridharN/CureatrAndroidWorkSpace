@@ -1,5 +1,5 @@
-CureatrPlayURL="https://cureatr-vm.dev:5101/"
-#CureatrPlayURL="https://messenger.play.cureatr.com"
+#CureatrPlayURL="https://cureatr-vm.dev:5101/"
+CureatrPlayURL="https://messenger.play.cureatr.com"
 EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com']
 #EmailAccountsForReports=esheddoni@cureatr.com|levimcdonough@cureatr.com|kiran.gopisetty@mtuity.com
 
@@ -11,13 +11,14 @@ Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_We
 Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 
-
+"""
 #Windows URLS
 LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/applog.txt"
 OutPutFileDir="D:/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="D:/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="D:/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="D:/CureatrPythonWorkSpace/InputFiles/Web/"
+TOSFileDir="D:/CureatrPythonWorkSpace/Others/TOS/"
 """
 #UBUNTU
 LOG_FILE="/home/cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
@@ -25,7 +26,7 @@ OutPutFileDir="/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-
+"""
 verifyTitle="Cureatr Messenger"
 
 #Home Screen Objects xpath
