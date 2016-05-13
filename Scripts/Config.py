@@ -11,7 +11,7 @@ Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_We
 Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 
-"""
+
 #Windows URLS
 LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/applog.txt"
 OutPutFileDir="D:/CureatrPythonWorkSpace/OutPutFiles/"
@@ -26,7 +26,8 @@ OutPutFileDir="/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-"""
+TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
+
 verifyTitle="Cureatr Messenger"
 
 #Home Screen Objects xpath

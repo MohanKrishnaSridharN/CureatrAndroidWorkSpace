@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 import selenium.webdriver.support.expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC
 import selenium.webdriver.support.ui as ui
 import Config
 from Config import *
@@ -17,13 +18,13 @@ from PIL import Image
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if browser=="FF":
-			driver = webdriver.Firefox()
-			#cap=webdriver.DesiredCapabilities.FIREFOX
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#driver = webdriver.Firefox()
+			cap=webdriver.DesiredCapabilities.FIREFOX
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
 			cap=webdriver.DesiredCapabilities.CHROME
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			#driver = webdriver.Chrome()
 			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
@@ -55,7 +56,9 @@ def OpenWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		element.clear()
+		Text=element.get_attribute("value")
+		if Text!="":	
+			element.clear()
 		element.send_keys(str(data))
 		return "PASS", ""
 	except Exception as err:
@@ -130,7 +133,7 @@ def ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 
 def isElementVisible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
+		ui.WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 		return "PASS", ""
 	except TimeoutException:
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -184,13 +187,14 @@ def LinkState(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
+		element = element.encode('ascii', 'ignore').decode('ascii')
 		if element==data:
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 			return "FAIL", ""
 	except Exception as err:
-		print (Exception, err)
+		print (Exception, "Exception @ verifyText", err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 		
@@ -207,9 +211,10 @@ def verifyTextcss(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 
 def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		if data!=None:
+		if data!="":
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-			if data in element:
+			print data, str(element)
+			if data in str(element):
 				return "PASS", ""
 			else:
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -217,7 +222,7 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		else:
 			return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
+		print (Exception, "Exception@verifyErrorMsg: ", err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 		
@@ -416,7 +421,6 @@ def verifySignOut(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 def verifyFirstTimeSignIn(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if Correct_Data=="Y":
-			print "Correct Data Y"
 			element1 = driver.find_element_by_xpath(getattr(Config, "NewPasswordLabel")).is_displayed()
 			element2 = driver.find_element_by_xpath(getattr(Config, "ReTypePasswordLabel")).is_displayed()
 			if element1==True and element2==True:
@@ -471,7 +475,16 @@ def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		print (Exception, err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
-		
+
+def DriverWait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		WebDriverWait(driver, 10).until(wait_for_text_to_start_with(By.find_element_by_xpath, getattr(Config, str(target)), data))
+		return "PASS", ""
+	except Exception as err:
+		print (Exception, "Exception@DriverWait",err)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
 def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, target))
