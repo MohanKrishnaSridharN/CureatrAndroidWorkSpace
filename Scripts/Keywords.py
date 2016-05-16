@@ -38,10 +38,10 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 
 def OpenWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		if driver.current_url!="https://messenger.play.cureatr.com/":
+		if driver.current_url != CureatrPlayURL:
 			driver.get(getattr(Config, str(target)))
-			driver.implicitly_wait(20)
-			Status=PageRefresh(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+			driver.implicitly_wait(10)
+			Status=PageRefresh1(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 			if Status=="PASS":
 				return "PASS", ""
 			else:
@@ -60,6 +60,21 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		if Text!="":	
 			element.clear()
 		element.send_keys(str(data))
+		return "PASS", ""
+	except Exception as err:
+		print (Exception, err)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
+def TypeEMAILID(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		if data =="":
+			browser=""
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		Text=element.get_attribute("value")
+		if Text!="":	
+			element.clear()
+		element.send_keys(str(browser)+str(data))
 		return "PASS", ""
 	except Exception as err:
 		print (Exception, err)
@@ -93,12 +108,17 @@ def CloseWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 		driver.get(getattr(Config, str("CureatrPlayURL")))
 		a=driver.find_element_by_xpath(getattr(Config, str("ChangeOrg")))
 		a.click()
-		#driver.close()
-		#driver.quit()
 		return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
-		return "FAIL", ""
+		print ("exception at CloseBrowser",Exception, err)
+		Status=PageRefresh1(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		a=driver.find_element_by_xpath(getattr(Config, str("ChangeOrg")))
+		a.click()
+		if Status=="PASS":
+			return "PASS", ""
+		else:
+			print (Exception, err)
+			return "FAIL", ""
 
 def CloseBrowser(driver):
 	try:
@@ -138,29 +158,19 @@ def isElementVisible(browser, driver, target, data, subdirectory, TCID, TSID, DS
 	except TimeoutException:
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "Fail", ""
-		
-def PageRefresh(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
-	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str("WelcomeMsg")))))
-		return "PASS"
-	except TimeoutException:
-		driver.refresh()
+
+def PageRefresh1(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	for i in range(3): 
 		try:
 			ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str("WelcomeMsg")))))
 			return "PASS"
 		except TimeoutException:
 			driver.refresh()
-			try:
-				ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str("WelcomeMsg")))))
-				return "PASS"
-			except TimeoutException:
-				driver.refresh()
-				try:
-					ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str("WelcomeMsg")))))
-					return "PASS"
-				except TimeoutException:
-					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-					return "FAIL"
+			if i>3:
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+				return "FAIL"
+			else:
+				continue
 
 def LinkState(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
@@ -212,8 +222,8 @@ def verifyTextcss(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if data!="":
+			ui.WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-			print data, str(element)
 			if data in str(element):
 				return "PASS", ""
 			else:
@@ -310,7 +320,7 @@ def verifyTextBoxValue(browser, driver, target, data, subdirectory, TCID, TSID, 
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		TextBoxValue=element.get_attribute("value")
-		if data==TextBoxValue:
+		if data in TextBoxValue:
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)

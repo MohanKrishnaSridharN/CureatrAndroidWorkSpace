@@ -25,7 +25,7 @@ from Config import *
 from BackEndDrivers import *
 	
 #logdir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs"
-LOG_FILE=getattr(Config, str("LOG_FILE"))
+LOG_FILE=LOG_FILE
 logging.basicConfig(level=logging.INFO,filename=LOG_FILE)
 logger=logging.getLogger(__name__)
 #handler=logging.handlers.RotatingFileHandler(LOG_File,maxBytes=20,backupCount=5)
@@ -38,8 +38,8 @@ def executefunctions(browser, driver):
 	logger.info("Execute Driver Script::"+"browser Name="+browser+"Driver Name="+driver)
 	AttachmentsDirPath=DriverScript(browser, driver)
 	logger.info("Test Case Executiong Compleated::"+"Sending Email To Stake Holder After Test Case Execution::"+"AttachmentsDirPath="+AttachmentsDirPath)
-	#designgraphs(AttachmentsDirPath)
-	send_mail(AttachmentsDirPath,subject="Cureatr "+ browser +" Browser || Automaton Test Report")
+	designgraphs(AttachmentsDirPath)
+	#send_mail(AttachmentsDirPath,subject="Cureatr "+ browser +" Browser || Automaton Test Report")
 	logger.info("Send Email Compleated")
 
 def DriverScript(browser, driver):
@@ -151,8 +151,10 @@ def DriverScript(browser, driver):
 							driver1=driverval[0]
 							driver2=driverval[1]
     						
-	CloseBrowser(driver1)
-	CloseBrowser(driver2)
+	if driver1!="Test":
+		CloseBrowser(driver1)
+	if driver2!="Test":
+		CloseBrowser(driver2)
 	return subdirectory
     
 def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, dataset, count, Priority, subdirectory, currentTestDataSheet, DSID, driver1, driver2):

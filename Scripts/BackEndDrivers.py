@@ -27,14 +27,18 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
 				EMAILID=browser.lower()+"-test"+str(rn)+"@mtuity.com"
+				#EMAILID=browser.lower()+"-test"+"005"+"@mtuity.com"#Testsn25
+				print EMAILID
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
-				addCellValue1(currentTestDataSheet, dataset, "EMAILID", EMAILID)
+				addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
 				db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
 					title=TITILE, password=PASSWORD, last_name=LASTNAME, email=EMAILID)
 				return "PASS", ""
 				
 	except Exception as err:
+		print err
 		if EMAILID in str(err):
+			print "UserId already existed"
 			return "UserId already existed", ""
 		else:
 			print "User Ceration Failed & Stopped Automation Test Execution"
@@ -50,8 +54,10 @@ def CreateInstitution(browser, target, data, currentTestDataSheet,  dataset,curr
 				db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME)
 				return "PASS", ""
 	except Exception as err:
-		if "id ["+INSTITUTIONID+"] exists" in str(err):
+		if "id ["+str(INSTITUTIONID)+"] exists" in str(err):
+			print "INSTITUTIONID Exists"
 			return "INSTITUTIONID Exists", ""
 		else:
 			print "INSTITUTION Ceration Failed & Stopped Automation Test Execution"
 			return "FAIL", ""
+		
