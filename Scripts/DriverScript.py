@@ -22,118 +22,114 @@ import logging
 import logging.handlers
 import Config
 from Config import *
+import Constants
+from Constants import *
 from BackEndDrivers import *
 	
-#logdir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs"
-LOG_FILE=LOG_FILE
 logging.basicConfig(level=logging.INFO,filename=LOG_FILE)
 logger=logging.getLogger(__name__)
-#handler=logging.handlers.RotatingFileHandler(LOG_File,maxBytes=20,backupCount=5)
-#logger.addHandler(handler)
+handler=logging.handlers.RotatingFileHandler(LOG_FILE,maxBytes=2000,backupCount=5)
+logger.addHandler(handler)
 
-mylist = []
 StartTime=datetime.datetime.now()
 
 def executefunctions(browser, driver):
-	logger.info("Execute Driver Script::"+"browser Name="+browser+"Driver Name="+driver)
+	logger.info("Executing Driver Script: browser Name= "+browser)
 	AttachmentsDirPath=DriverScript(browser, driver)
-	logger.info("Test Case Executiong Compleated::"+"Sending Email To Stake Holder After Test Case Execution::"+"AttachmentsDirPath="+AttachmentsDirPath)
+	logger.info("Test Case Execution Completed. Sending Email To Stake Holder After Test Case Execution: AttachmentsDirPath= "+AttachmentsDirPath)
 	designgraphs(AttachmentsDirPath)
 	#send_mail(AttachmentsDirPath,subject="Cureatr "+ browser +" Browser || Automaton Test Report")
-	logger.info("Send Email Compleated")
+	logger.info("Send Email Completed")
 
 def DriverScript(browser, driver):
 	#GET CURRENT DATE AND TIME
-	currenttime1=datetime.datetime.now().time()
-	currentdate=datetime.date.today()
-	currenttime=str(currenttime1).replace(":","")
-	
-	#CREATE SUBFOLDER IN OUTPUTFILES FOLDER WITH TODAYS DATE
-	directory=getattr(Config, str("OutPutFileDir"))+unicode(currentdate)+"/"
+	currentdate=StartTime.strftime('%d-%m-%Y')
+	currenttime=str(StartTime.time()).replace(":","")
+
+	logger.info("CREATING FOLDER IN:" +OutPutFileDir+ " WITH TODAYS DATE")
+	directory=OutPutFileDir+unicode(currentdate)+"/"
+	#CREATE OUTPUT FOLDER WITH CURRENT TIME STAMP
 	try:
 		if browser=="FF":
 			if not os.path.exists(directory):
 				os.makedirs(directory)
+				logger.info("Created Directory With Current Date: "+directory)
+			subdirectory=directory+"FF-Results-"+unicode(currenttime)[:6]+"/"
+			os.makedirs(subdirectory)
+			logger.info("Created Sub Directory With Current Time For Fire Fox Browser: "+subdirectory)
+			copyWorkBook(Suite_Web, subdirectory)
+			copyWorkBook(Results, subdirectory)
+			logger.info("Copied Suite Xlsx and Results From Input Folder to FF Output Folder")
 		elif browser=="Chrome":
 			time.sleep(0.2)
 			if not os.path.exists(directory):
 				os.makedirs(directory)
-		elif browser== "IE":
+				logger.info("Created Directory With Current Date: "+directory)
+			subdirectory=directory+"Chrome-Results-"+unicode(currenttime)[:6]+"/"
+			os.makedirs(subdirectory)
+			logger.info("Created Sub Directory With Current Time For Chrome Browser: "+subdirectory)
+			copyWorkBook(Suite_Web, subdirectory)
+			copyWorkBook(Results, subdirectory)
+			logger.info("Copied Suite Xlsx and Results From Input Folder to Chrome Output Folder")
+		elif browser=="IE":
 			time.sleep(0.1)
 			if not os.path.exists(directory):
 				os.makedirs(directory)
-	except:
-		print "Error: unable to create folder"
-		
-	#CREATE OUTPUT FOLDER WITH CURRENT TIME STAMP
-	Suite_Web=getattr(Config, str("Suite_Web"))
-	Results=getattr(Config, str("Results"))
-	try:
-		if browser=="FF":
-			subdirectory=directory+"FF-Results-"+unicode(currenttime)[:6]+"/"
-			os.makedirs(subdirectory)
-			dst=subdirectory
-			#COPYING SUITE XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Suite_Web, dst)
-			#COPYING RESULTS XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Results, dst)
-		elif browser=="Chrome":
-			subdirectory=directory+"Chrome-Results-"+unicode(currenttime)[:6]+"/"
-			os.makedirs(subdirectory)
-			dst=subdirectory
-			#COPYING SUITE XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Suite_Web, dst)
-			#COPYING RESULTS XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Results, dst)
-		elif browser=="IE":
+				logger.info("Created Directory With Current Date:"+directory)
 			subdirectory=directory+"IE-Results-"+unicode(currenttime)[:6]+"/"
 			os.makedirs(subdirectory)
-			dst=subdirectory
-			#COPYING SUITE XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Suite_Web, dst)
-			#COPYING RESULTS XLSX FILE FROM INPUT FOLDER TO OUTPUT FOLDER
-			copyWorkBook(Results, dst)
+			logger.info("Created Sub Directory With Current Time For IE Browser: "+subdirectory)
+			copyWorkBook(Suite_Web, subdirectory)
+			copyWorkBook(Results, subdirectory)
+			logger.info("Copied Suite Xlsx and Results From Input Folder to IE Output Folder")
 	except:
-		print "Error: unable to create sub folder"
+		logger.info("Error: unable to create test results folder for:"+browser)
 		
 	#READ SUITE XLS FILE FROM OUTPUT DIRECTORY
 	SuiteXLSPath = subdirectory+'Suite_Web.xlsx'
-	#sh=load_workbook(FilePath).get_sheet_by_name('Suite')
+	logger.info("Reading Suite sheet from Suite.xlsx workbook")
 	SuiteXLS = load_workbook(SuiteXLSPath).get_sheet_by_name('Suite')
 	#FOR LOOP TO GET/READ TEST SCRIPT NAME/ID FROM SUITE.XLS SHEET
 	driver1="Test"
 	driver2="Test"
+	logger.info("Looping Suite Sheet to Get Test Script ID's Which Has Run Mode Yes")
 	for num in range(2, SuiteXLS.max_row+1):
 			currentTestSuite=getCellValue(SuiteXLSPath, "Suite", num, "TSID")
 			if getCellValue(SuiteXLSPath, "Suite", num, "Runmode")=="Y":
-				#COPY CURRENTTESTSUITE XLS FILE FROM OUTPUT DIRECTORY
-				src=getattr(Config, str("InPutFileDir"))+currentTestSuite+".xlsx"
-				dst=subdirectory
-				copyWorkBook(src, dst)
-				#READ CURRENTTESTSUITE XLS FILE FROM OUTPUT DIRECTORY\
+				logger.info("Copying "+currentTestSuite+".xlsx sheet to "+browser+" output Folder")
+				src=InPutFileDir+currentTestSuite+".xlsx"
+				copyWorkBook(src, subdirectory)
+				logger.info("Reading "+currentTestSuite+".xlsx sheet from "+browser+" output Folder")
 				currentTestSuiteXLSPATH=subdirectory+currentTestSuite+".xlsx"
 				currentTestSuiteXLS=load_workbook(currentTestSuiteXLSPATH).get_sheet_by_name('TestCases')
+				logger.info("Reading TestCases sheet from " +currentTestSuite+ ".xlsx workbook")
 				for count in range(2, currentTestSuiteXLS.max_row+1):
-					#currentTestCase=currentTestSuiteXLS.cell(row=count, column=1)
 					currentTestCase=getCellValueBySheet(currentTestSuiteXLS, count, "TCID")
 					Priority=getCellValueBySheet(currentTestSuiteXLS, count, "Priority")
+					logger.info("Checking TestCase Runmode from " +currentTestSuite+ ".xlsx workbook")
 					if getCellValueBySheet(currentTestSuiteXLS, count, "Runmode")=="Y":
+						logger.info("Checking Test Data Sheet Exists For Current TestCase from " +currentTestSuite+ ".xlsx workbook")
 						if issheetExist(currentTestSuiteXLSPATH, currentTestCase)==True:
 							currentTestDataSheet=load_workbook(currentTestSuiteXLSPATH).get_sheet_by_name(currentTestCase)
+							logger.info("Looping " +str(currentTestDataSheet) + " Based on Row Count")
 							for dataset in range(2, currentTestDataSheet.max_row+1):
+								logger.info("Checking Test Data Runmode from " + str(currentTestDataSheet) + " sheet")
 								if getCellValueBySheet(currentTestDataSheet, dataset, "Runmode")=="Y":
 									Correct_Data=getCellValueBySheet(currentTestDataSheet, dataset, "Correct_Data")
-									#Createuser=getCellValueBySheet(currentTestDataSheet, dataset, "Createuser")
 									DSID=getCellValueBySheet(currentTestDataSheet, dataset, "DSID")
+									logger.info("Calling executeKeywords function")
 									driverval=executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, dataset, count, Priority, subdirectory, currentTestDataSheet, DSID, driver1, driver2)
 									driver1=driverval[0]
 									driver2=driverval[1]
 								else:
+									logger.info("Printing NO RUN Status For "+ DSID +" Data Set Runmode No")
 									currentTestSuiteSteps=load_workbook(currentTestSuiteXLSPATH).get_sheet_by_name('TestSteps')
 									for TestStepsCount in range(2, currentTestSuiteSteps.max_row+1):
 										if getCellValueBySheet(currentTestSuiteSteps, TestStepsCount, "TCID")==currentTestCase:
-											Result="NO RUN"
-											PrintTestStepResultNoRun(currentTestSuiteXLSPATH, currentTestSuiteSteps, Result, currentTestCase, dataset, TestStepsCount)
+											resultSet=["NO RUN"]
+											logger.info("Calling PrintTestStepResultNoRun Function To Print NORUN Status in Test Steps Sheet")
+											#PrintTestStepResultNoRun(currentTestSuiteXLSPATH, currentTestSuiteSteps, Result, currentTestCase, dataset, TestStepsCount)
+											PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSet, currentTestCase, dataset, TestStepsCount)
 											break
 									
 									columnname="Result"+str(dataset-1)
@@ -144,6 +140,7 @@ def DriverScript(browser, driver):
 									NORUN=getCellValueBySheet(ResultsSheetXLS, 4, "NORUN")
 									addCellValue(ResultsXLSPATH, "Status", 4, "NORUN", int(NORUN)+1)
 						else:
+							logger.info("Calling executeKeywords function when Data sheet not Exists")
 							dataset=2
 							currentTestDataSheet="Not Exists"
 							DSID=""
@@ -152,14 +149,17 @@ def DriverScript(browser, driver):
 							driver2=driverval[1]
     						
 	if driver1!="Test":
+		logger.info("Closing dirver after test cases execution: "+browser)
 		CloseBrowser(driver1)
 	if driver2!="Test":
+		logger.info("Closing dirver after test cases execution: "+browser)
 		CloseBrowser(driver2)
 	return subdirectory
     
 def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, dataset, count, Priority, subdirectory, currentTestDataSheet, DSID, driver1, driver2):
 	currentTestSuiteSteps=load_workbook(currentTestSuiteXLSPATH).get_sheet_by_name('TestSteps')
 	resultSet=[]
+	logger.info("Looping "+currentTestCase+" Steps")
 	for TestStepsCount in range(2, currentTestSuiteSteps.max_row+1):
 		if getCellValueBySheet(currentTestSuiteSteps, TestStepsCount, "TCID")==currentTestCase:
 			Keywords=getCellValueBySheet(currentTestSuiteSteps, TestStepsCount, "Keyword")
@@ -176,50 +176,38 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					data=getCellValueBySheet(currentTestDataSheet, dataset, datacolname)
 			if data is None:
 				data=""
-			
+			logger.info("Current Test Step Values:: TCID: "+str(TCID)+" ,Keyword: "+str(Keywords)+" ,Target:"+str(target)+" ,Data :"+str(data)+" ,browser: "+str(browser)+" ,TSID: "+str(TSID)+" ,Proceed_ON_FAIL: "+str(Proceed_ON_FAIL)+" ,Correct_Data: "+str(Correct_Data))
 			possibles = globals().copy()
 			possibles.update(locals())
 			if Keywords=="LaunchWebBrowser":
 				method = possibles.get(Keywords)
 				if driver1=="Test" and user=="user1":
+					logger.info("Launching "+browser+ " Browser")
 					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-				else:
-					Keyword_execution_result_main="NO RUN"
-				
-				if driver2=="Test" and user=='user2':
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-				else:
-					Keyword_execution_result_main="NO RUN"
-				
-				if user=="user1" and driver1=="Test":
 					driver1=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
-					#createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_result_main, dataset)
-				elif user=="user2" and driver2=="Test":
+				elif driver2=="Test" and user=='user2':
+					logger.info("Launching 2nd "+browser+ " Browser")
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 					driver2=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
-					#createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_result_main, dataset)
-					if Proceed_ON_FAIL=="NO" and Keyword_execution_result_main=="FAIL":
-						TestStepsCount=currentTestSuiteSteps.max_row+2
-						method = possibles.get("CloseWebApp")
-						retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-						break
 				else:
+					logger.info(browser+ " Browser Already Running")
+					Keyword_execution_result_main="NO RUN"
 					resultSet.append(Keyword_execution_result_main)
-
+			
 			elif Keywords=="CreateUserPY" or Keywords=="CreateInstitution":
 				method = possibles.get(Keywords)
 				retun=method(browser, target, data, currentTestDataSheet, dataset,currentTestSuiteXLSPATH,currentTestCase)
 				Keyword_execution_result_main=retun[0]
 				resultSet.append(Keyword_execution_result_main)
 				if retun[0] == "FAIL":
-					#send_mail(subdirectory,subject=Keywords+" Failed and stopped test exceution")					
+					send_mail(subdirectory,subject=Keywords+" Failed and stopped test exceution")					
 					sys.exit(1)
 
-				
-           		else:
+			else:
 				if user=="user1":
 					driver=driver1
 				elif user=="user2":
@@ -229,14 +217,16 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				Keyword_execution_result_main=retun[0]
 				Proceed_Next_Step=retun[1]
 				resultSet.append(Keyword_execution_result_main)
-				#createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_result_main, dataset)
 				if (Proceed_ON_FAIL=="NO" and Keyword_execution_result_main=="FAIL") or Proceed_Next_Step=="NO":
+					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
 					method = possibles.get("CloseWebApp")
 					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 					break
 
+	logger.info("Calling PrintTestStepResult Function To Print PASS/FAIL Status in Test Steps Sheet")
 	PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSet, currentTestCase, dataset, TestStepsCount)
+	logger.info("Calling printresults Function To Print PASS/FAIL Status In Results Sheet")
 	printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet,browser)
 	return driver1, driver2
 
@@ -246,19 +236,11 @@ def PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSe
 	addColumn(currentTestSuiteXLSPATH, "TestCases", columnname)
 	addCellValueSet(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, resultSet, currentTestSuiteSteps, currentTestCase)
 	
-def PrintTestStepResultNoRun(currentTestSuiteXLSPATH, currentTestSuiteSteps, Result, currentTestCase, dataset, TestStepsCount):
+"""def PrintTestStepResultNoRun(currentTestSuiteXLSPATH, currentTestSuiteSteps, Result, currentTestCase, dataset, TestStepsCount):
 	columnname="Result"+str(dataset-1)
 	addColumn(currentTestSuiteXLSPATH, "TestSteps", columnname)
 	addColumn(currentTestSuiteXLSPATH, "TestCases", columnname)
-	addCellValueNoRun(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, Result, currentTestSuiteSteps, currentTestCase)
-
-"""
-def createXLSReport(currentTestSuiteXLSPATH, TestStepsCount, Keyword_execution_result_main, dataset):
-	columnname="Result"+str(dataset-1)
-	addColumn(currentTestSuiteXLSPATH, "TestSteps", columnname)
-	addColumn(currentTestSuiteXLSPATH, "TestCases", columnname)
-	addCellValue(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, Keyword_execution_result_main)
-"""
+	addCellValueNoRun(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, Result, currentTestSuiteSteps, currentTestCase)"""
 
 def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet,browser):
 	ResultsXLSPATH=subdirectory+'Results.xlsx'
@@ -308,7 +290,7 @@ def send_mail(AttachmentsDirPath,subject):
     msg=MIMEMultipart()
     msg['Subject']=subject
     msg['From']='techops@mtuity.com'
-    recipients=Config.EmailAccountsForReports
+    recipients=Constants.EmailAccountsForReports
     msg['To']=", ".join(recipients)
     msg.attach(MIMEText( 'PFA..Test Reports.This mail generated by Automation scripts'))
     for file in os.listdir(AttachmentsDirPath):
@@ -332,10 +314,10 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		t1=Thread(target=executefunctions,args=('FF', ''))
+		#t1=Thread(target=executefunctions,args=('FF', ''))
 		t2=Thread(target=executefunctions,args=('Chrome', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		t1.start()
+		#t1.start()
 		t2.start()
 		#t3.start()
 	except:

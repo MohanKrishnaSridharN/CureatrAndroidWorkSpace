@@ -1,33 +1,6 @@
 CureatrPlayURL="https://cureatr-vm.dev:5101/"
-#ureatrPlayURL="https://messenger.play.cureatr.com/"
-#EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com']
-#EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com', 'esheddoni@cureatr.com','levimcdonough@cureatr.com','kiran.gopisetty@mtuity.com']
-#EmailAccountsForReports=esheddoni@cureatr.com|levimcdonough@cureatr.com|kiran.gopisetty@mtuity.com
+#CureatrPlayURL="https://messenger.play.cureatr.com/"
 
-"""
-#MAC URLS
-LOG_FILE="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
-OutPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/"
-Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
-Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
-InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-
-
-#Windows URLS
-LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/applog.txt"
-OutPutFileDir="D:/CureatrPythonWorkSpace/OutPutFiles/"
-Suite_Web="D:/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
-Results="D:/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
-InPutFileDir="D:/CureatrPythonWorkSpace/InputFiles/Web/"
-TOSFileDir="D:/CureatrPythonWorkSpace/Others/TOS/"
-"""
-#UBUNTU
-LOG_FILE="/home/cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
-OutPutFileDir="/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/"
-Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
-Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
-InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
 
 verifyTitle="Cureatr Messenger"
 

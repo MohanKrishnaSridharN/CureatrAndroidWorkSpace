@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import selenium.webdriver.support.ui as ui
 import Config
 from Config import *
+import Constants
+from Constants import *
 import time
 import os
 import PIL
@@ -501,9 +503,9 @@ def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 		BasePath=element.value_of_css_property("background-image")
 		ImageUrl=BasePath.split("\"")[1:][0]
 		driver.get(ImageUrl)
-		driver.get_screenshot_as_file("/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png")
-		im1 = Image.open("/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png")
-		im2 = Image.open("/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png")
+		driver.get_screenshot_as_file(ActlogoFile)
+		im1 = Image.open(ActlogoFile)
+		im2 = Image.open(ExplogoFile)
 		if ImageChops.difference(im1, im2).getbbox is None:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 			return "FAIL", ""

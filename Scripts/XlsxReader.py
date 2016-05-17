@@ -108,6 +108,7 @@ def addCellValueSet(wbpath, sheet, row, column, resultSet, currentTestSuiteSteps
 	val=[]
 	wb=load_workbook(wbpath)
 	sh=wb.get_sheet_by_name(sheet)
+
 	resultid=0
 	for row in range(2, currentTestSuiteSteps.max_row+1):
 		if getCellValueBySheet(currentTestSuiteSteps, row, "TCID")==currentTestCase:
@@ -115,7 +116,11 @@ def addCellValueSet(wbpath, sheet, row, column, resultSet, currentTestSuiteSteps
 				#for cell in srow:
 				if sh.cell(row=1,column=srow).value == column:
 					val=sh.cell(row=1, column=srow).col_idx
-					sh.cell(row=row,column=val).value=resultSet[resultid]
+					if len(resultSet)>1:
+						sh.cell(row=row,column=val).value=resultSet[resultid]
+					else:
+						sh.cell(row=row,column=val).value=resultSet[0]
+						break
 					
 			resultid=resultid+1
 			if len(resultSet)==resultid:
@@ -124,7 +129,7 @@ def addCellValueSet(wbpath, sheet, row, column, resultSet, currentTestSuiteSteps
 				
 	wb.save(wbpath)
 	
-def addCellValueNoRun(wbpath, sheet, row, column, Result, currentTestSuiteSteps, currentTestCase):
+"""def addCellValueNoRun(wbpath, sheet, row, column, Result, currentTestSuiteSteps, currentTestCase):
 	val=[]
 	wb=load_workbook(wbpath)
 	sh=wb.get_sheet_by_name(sheet)
@@ -136,7 +141,7 @@ def addCellValueNoRun(wbpath, sheet, row, column, Result, currentTestSuiteSteps,
 					val=sh.cell(row=1, column=srow).col_idx
 					sh.cell(row=row,column=val).value=Result
 					
-	wb.save(wbpath)
+	wb.save(wbpath)"""
 	
 def designgraphs(wbpath):
 	wbpath=wbpath+'Results.xlsx'

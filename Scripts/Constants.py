@@ -1,54 +1,30 @@
-import os,sys
-import platform
-import webbrowser
-import xlwt
-from threading import Thread
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
-import time
+EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'cureatrtest+ff001@gmail.com', 'cureatrtest+chrome001@gmail.com']
+#EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com', 'esheddoni@cureatr.com','levimcdonough@cureatr.com','kiran.gopisetty@mtuity.com']
+#EmailAccountsForReports=esheddoni@cureatr.com|levimcdonough@cureatr.com|kiran.gopisetty@mtuity.com
+
+"""
+#MAC URLS
+LOG_FILE="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+OutPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/"
+Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
+Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
+InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 
 
-def executefunctions(browser, driver):
-    driver=openbrowser(browser, driver)
-    openapp(driver)
-    close(driver)
-
-
-def openbrowser(browser, driver):
-    if browser=="FF":
-        driver = webdriver.Firefox()
-        print "Firefox opened"
-    elif browser=="Chrome":
-        driver = webdriver.Chrome()
-        print "Chrome opened"
-    elif browser=="IE":
-        driver = webdriver.Chrome()
-        print "Chrome opened"
-    return driver
-
-
-def openapp(driver):
-    driver.get("https://messenger.play.cureatr.com")
-
-def close(driver):
-    driver.close()
-    driver.quit()
-
-# open a public URL, in this case, the webbrowser docs
-threads=[]
-
-def mainp():
-    try:
-       t1=Thread(target=executefunctions,args=('FF', ''))
-       t2=Thread(target=executefunctions,args=('Chrome', ''))
-       threads.append(t1)
-       threads.append(t2)
-       t1.start()
-       t2.start()
-    except:
-       print "Error: unable to start thread"
-
-
-mainp()
+#Windows URLS
+LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+OutPutFileDir="D:/CureatrPythonWorkSpace/OutPutFiles/"
+Suite_Web="D:/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
+Results="D:/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
+InPutFileDir="D:/CureatrPythonWorkSpace/InputFiles/Web/"
+TOSFileDir="D:/CureatrPythonWorkSpace/Others/TOS/"
+"""
+#UBUNTU
+LOG_FILE="/home/cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+OutPutFileDir="/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/"
+Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
+Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
+InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
+TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
+ActlogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png"
+ExplogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Explogo.png"
