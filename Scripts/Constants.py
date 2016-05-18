@@ -4,7 +4,7 @@ EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'cureatrtest+ff001@gmail.co
 
 """
 #MAC URLS
-LOG_FILE="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+LOG_FILE="/Users/macmini/Cureatr/CureatrPythonWorkSpace/applicationlogs/app.log"
 OutPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
@@ -12,7 +12,7 @@ InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 
 
 #Windows URLS
-LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/app.log"
 OutPutFileDir="D:/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="D:/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="D:/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
@@ -20,7 +20,7 @@ InPutFileDir="D:/CureatrPythonWorkSpace/InputFiles/Web/"
 TOSFileDir="D:/CureatrPythonWorkSpace/Others/TOS/"
 """
 #UBUNTU
-LOG_FILE="/home/cureatr/CureatrPythonWorkSpace/applicationlogs/applog.txt"
+LOG_FILE="/home/cureatr/CureatrPythonWorkSpace/applicationlogs/app.log"
 OutPutFileDir="/home/cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
