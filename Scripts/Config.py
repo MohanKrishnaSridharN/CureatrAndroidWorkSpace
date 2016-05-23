@@ -1,7 +1,6 @@
 CureatrPlayURL="https://cureatr-vm.dev:5101/"
 #CureatrPlayURL="https://messenger.play.cureatr.com/"
 
-
 verifyTitle="Cureatr Messenger"
 
 #Home Screen Objects xpath
@@ -33,9 +32,8 @@ NavigationColumn1="//*[@id='navigation-column']/div[2]/div/div[4]/h2"
 NavigationColumn2="//*[@id='navigation-column']/div[2]/div/div[4]/p"
 ExistingAccount="//*[@id='existingAccount']"
 
-ContactsLink="//*[@id='contacts-link']"
 
-    
+
 #Dashboard
 UserName="//div[@id='header-user']/div/div/div/span"
 InboxLink="//*[@id='inbox-link']"
@@ -53,12 +51,22 @@ MainContent2="//*[@id='main-content']/div/div[3]"
 MainContentImg="//*[@id='main-content']/div/div[1]/img"
 SignOutLink="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
 
-
+#ContactsLink
+ContactsSearch="//*[@id='directory_lookup']"
+Contact="//*[@id='directory-lookup-results']/div[1]/div[2]/div[1]"
+UserStatus="//*[@id='57395be051c3560f101f1f05']/div[1]/div[1]/div/div[3]/span"
+UserStatusMsg="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[1]"
+UserSpecialty="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[2]"
+UserTitle="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[3]"
+SendMsgLink="//*[@id='57395be051c3560f101f1f05']/div[2]/div/a"
+ShowMoreLink="//*[@id='57395be051c3560f101f1f05']/div[1]/div[5]/div/div/a"
+NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
+NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
+#UserService=""
 
 #Settings
 settingsDropdown="//ul/div/div/div[2]"
 ShowArchived="//*[@id='settingsDropdown']/div/div[1]/div[1]/label"
-
 
 #Quick Message Screen
 QuickMsgIcon="//div[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div/div[2]/div[2]/div[2]/div"
@@ -92,9 +100,12 @@ SubjectPart="//*[@id='main-content']/div/div[1]/div/div[2]/div"
 FileInputButton="//div[@id='fileinput-button']/input"
 UrgentMessage="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[1]/div[2]/div/label"
 FileUpload="//*[@id='fileinput-button']/label"
+QuikckMsgBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[2]"
 QuickMsgHelpText="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[2]"
 QuickMsgCancelBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[3]/a"
 EditListBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[1]/a"
+AttachmentLink="//*[@id='fileinput-button']/label[2]"
+
 
 PatientName="//*[@id='main-content']/div/div[1]/div/div[2]/div"
 ConversationWith="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[1]/div/div/div"
@@ -104,7 +115,6 @@ MsgBodyPartTextArea="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/di
 QuickMsgIcon2="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div[2]"
 
 NotificationIcon="//*[@id='eventsDropdown']/div/div[1]"
-
 
 #CHAT THREAD
 ChatThread="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[1]/div[1]"

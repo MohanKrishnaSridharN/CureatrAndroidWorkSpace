@@ -26,13 +26,14 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				USERNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][6])
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
-				EMAILID=browser.lower()+"-test"+str(rn)+"@mtuity.com"
-				#EMAILID=browser.lower()+"-test"+"005"+"@mtuity.com"#Testsn25
-				print EMAILID
+				#EMAILID=browser.lower()+"-test"+str(rn)+"@mtuity.com"
+				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
 				addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
-				db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-					title=TITILE, password=PASSWORD, last_name=LASTNAME, email=EMAILID)
+				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
+					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID)
+				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
+				addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
 				return "PASS", ""
 				
 	except Exception as err:
