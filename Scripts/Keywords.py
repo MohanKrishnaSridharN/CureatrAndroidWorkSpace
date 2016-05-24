@@ -250,7 +250,8 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 def verifyTextContains(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-		if data in element:
+		print data, element
+		if str(data) in str(element):
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -555,11 +556,11 @@ def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID
 
 def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		List = driver.find_elements_by_xpath("//*[@id='directory-lookup-results']/div")
-		for ListCount in range(1, len(List)+1):
-			name=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[1]").text
-			title=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[4]").text
-			if data.lower() in name.lower() or data.lower() in title.lower():
+		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+			if str(data).lower() in name.lower() or str(data).lower() in title.lower():
 				Status="PASS"
 			else:
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -572,6 +573,26 @@ def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		logger.info("Exception @ Search Contacts Method:: "+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""  
+
+def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+			Status=""
+			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+			if data.lower() in name.lower() or data.lower() in title.lower():
+				driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).click()
+				Status="PASS"
+				return "PASS", ""
+		
+		if Status=="":
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ selectInstitution"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
 
 def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
@@ -593,6 +614,33 @@ def delLastchar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 			for ListCount in range(1, len(List)):
 				name=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[1]").text
 				title=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[4]").text
+				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+			element.send_keys(Keys.BACKSPACE)
+			GetFieldValue=element.get_attribute("value")
+
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		print (Exception, err)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
+def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, target)[4])
+		GetFieldValue=element.get_attribute("value")
+		print GetFieldValue
+		while len(GetFieldValue) !=0:
+			time.sleep(1)
+			List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+			for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+				name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+				title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+				print name, title
 				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
 					Status="PASS"
 				else:

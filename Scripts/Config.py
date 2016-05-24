@@ -54,12 +54,12 @@ SignOutLink="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
 #ContactsLink
 ContactsSearch="//*[@id='directory_lookup']"
 Contact="//*[@id='directory-lookup-results']/div[1]/div[2]/div[1]"
-UserStatus="//*[@id='57395be051c3560f101f1f05']/div[1]/div[1]/div/div[3]/span"
-UserStatusMsg="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[1]"
-UserSpecialty="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[2]"
-UserTitle="//*[@id='57395be051c3560f101f1f05']/div[1]/div[2]/div[3]/div[3]"
-SendMsgLink="//*[@id='57395be051c3560f101f1f05']/div[2]/div/a"
-ShowMoreLink="//*[@id='57395be051c3560f101f1f05']/div[1]/div[5]/div/div/a"
+UserStatus="//div[1]/div[1]/div/div[3]/span"
+UserStatusMsg="//div[1]/div[2]/div[3]/div[1]"
+UserSpecialty="//div[1]/div[2]/div[3]/div[2]"
+UserTitle="//div[1]/div[2]/div[3]/div[3]"
+SendMsgLink="//div/div[2]/div/div[2]/div/a"
+ShowMoreLink="//div[1]/div[5]/div/div/a"
 NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
 NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
 #UserService=""
@@ -88,6 +88,7 @@ SubjectLabel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[5]/
 PressEnterToSend="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[2]/label/span"
 To="//*[@id='new-thread-to']"
 SelectRecipient="//span/div[1]/div/div[2]/div"
+SelectedRecipient="//fieldset/div[1]/div/div[1]/div/div/ul/li[1]/div[1]"
 Patient="//*[@id='new-thread-patient']"
 Workflow="//*[@id='new-thread-workflow']"
 ClickRecipientInTo="//fieldset/div/div/div/div/div/ul/li/div"
@@ -172,3 +173,20 @@ TSHeader="div.modal-title.truncate-text"
 TSXMark="//*[@id='tos_update']/div/div[1]/div[1]/div[2]/div"
 TSInstructions="//*[@id='tos_instructions']"
 TSContent="//*[@id='content']"
+
+#contacts search xpath parts
+cpath0="//*[@id='directory-lookup-results']/div"
+cpath1="//*[@id='directory-lookup-results']/div["
+cpath2="]/div[2]/div[1]"
+cpath3="]/div[2]/div[4]"
+DefaultLength=0
+Contacts=[cpath0, cpath1, cpath2, cpath3, ContactsSearch, DefaultLength]
+
+#To Field contacts search xpath parts
+Topath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div"
+Topath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div["
+Topath2="]/div/div[2]/div[1]"
+Topath3="]/div/div[2]/div[4]"
+DefaultLength=1
+ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength]
+

@@ -22,10 +22,11 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				TITILE=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
 				SPECIALTY=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][3])
 				FIRSTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][4])
-				LASTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][5])
+				#LASTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][5])
 				USERNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][6])
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
+				LASTNAME=str(rn)
 				#EMAILID=browser.lower()+"-test"+str(rn)+"@mtuity.com"
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
@@ -34,6 +35,8 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID)
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
 				addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
+				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
+				addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
 				return "PASS", ""
 				
 	except Exception as err:
