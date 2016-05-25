@@ -9,7 +9,7 @@ OutPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-
+"""
 
 #Windows URLS
 LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/app.log"
@@ -28,3 +28,4 @@ InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
 ActlogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png"
 ExplogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Explogo.png"
+"""

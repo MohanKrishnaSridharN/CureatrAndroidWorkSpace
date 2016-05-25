@@ -1,5 +1,5 @@
-CureatrPlayURL="https://cureatr-vm.dev:5101/"
-#CureatrPlayURL="https://messenger.play.cureatr.com/"
+#CureatrPlayURL="https://cureatr-vm.dev:5101/"
+CureatrPlayURL="https://messenger.play.cureatr.com/"
 
 verifyTitle="Cureatr Messenger"
 
@@ -63,6 +63,10 @@ ShowMoreLink="//div[1]/div[5]/div/div/a"
 NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
 NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
 #UserService=""
+
+#Patients Link
+ComposeLinkAtPatients="//*[@id='directory-lookup-results']/div[1]/div/div[1]"
+SelectPatient="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[1]/ul/li/div"
 
 #Settings
 settingsDropdown="//ul/div/div/div[2]"
@@ -134,6 +138,7 @@ ConfirmLeaveConversation="//a[contains(text(),'Leave conversation')]"
 ArchivCheckBox="//*[@id='bottomCheckboxActions']/div/div[1]/label"
 CloseConversationSettings="//*[@id='threadSettingsModal']/div[1]/div[2]/div"
 Mute="//*[@id='bottomCheckboxActions']/div/div[2]/label"
+CSClearSearch="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[3]"
 
 #Profile
 ProfileImg="//img[@id='current-user-profile-image']"
@@ -151,6 +156,13 @@ Available="//label[1]/div"
 Busy="//label[2]/div"
 OffDuty="//label[3]/div"
 ProfileDailog="//button[@type='button']"
+CurrentCoverage="//*[starts-with(@id, 'coverage-lookup-')]"
+ViewYourProfile="//*[@id='header-user']/div/div[2]/div[2]/div[2]/span/a"
+EditYourProfile="//div/div[2]/div/div[2]/a[2]"
+
+CurrentService="//*[@id='current-service-view']/div/div[2]/div[2]"
+ServiceSearchBar="//*[@id='service-search-bar']"
+
 
 #CHANGE PASSWORD
 Close="//div/div/div/div[1]/div[1]/div[2]/div"
@@ -179,14 +191,43 @@ cpath0="//*[@id='directory-lookup-results']/div"
 cpath1="//*[@id='directory-lookup-results']/div["
 cpath2="]/div[2]/div[1]"
 cpath3="]/div[2]/div[4]"
-DefaultLength=0
-Contacts=[cpath0, cpath1, cpath2, cpath3, ContactsSearch, DefaultLength]
+DefaultLength1=0
+Contacts=[cpath0, cpath1, cpath2, cpath3, ContactsSearch, DefaultLength1, NoContactMsg1]
 
 #To Field contacts search xpath parts
 Topath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div"
 Topath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div["
 Topath2="]/div/div[2]/div[1]"
 Topath3="]/div/div[2]/div[4]"
-DefaultLength=1
-ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength]
+Topath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[2]/div/h2"
+DefaultLength2=1
+ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength2, Topath4]
+
+#Patient Field contacts search xpath parts
+PFpath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div"
+PFpath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div["
+PFpath2="]/div/div/div[1]"
+PFpath3="]/div/div/div[4]"
+PFpath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[2]"
+DefaultLength2=0
+PFContacts=[PFpath0, PFpath1, PFpath2, PFpath3, Patient, DefaultLength2, PFpath4]
+
+#CONVERSATION SETTINGS SEARCH XPATH PARTS
+cspath0="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div"
+cspath1="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div["
+cspath2="]/div/div[2]/div[1]"
+cspath3="]/div/div[2]/div[4]"
+cspath4="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/div"
+DefaultLength3=1
+CSContacts=[cspath0, cspath1, cspath2, cspath3, AddTextBox, DefaultLength3, cspath4]
+
+#CoverageSearch Search Parths
+Coveragepath0="//*[starts-with(@id, 'coverage-results-')]/div"
+Coveragepath1="//*[starts-with(@id, 'coverage-results-')]/div["
+Coveragepath2="]/div[2]/div[1]"
+Coveragepath3="]/div[2]/div[4]"
+Coveragepath4=Coveragepath0
+DefaultLength4=1
+CoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, CurrentCoverage, DefaultLength4, Coveragepath4]
+
 

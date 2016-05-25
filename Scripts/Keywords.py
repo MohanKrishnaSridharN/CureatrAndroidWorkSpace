@@ -24,15 +24,15 @@ from selenium.webdriver.common.keys import Keys
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if browser=="FF":
-			#driver = webdriver.Firefox()
-			cap=webdriver.DesiredCapabilities.FIREFOX
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			driver = webdriver.Firefox()
+			#cap=webdriver.DesiredCapabilities.FIREFOX
+			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			cap=webdriver.DesiredCapabilities.CHROME
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#cap=webdriver.DesiredCapabilities.CHROME
+			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			#driver = webdriver.Chrome()
-			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
+			driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
 			cap=webdriver.DesiredCapabilities.INTERNETEXPLORER
@@ -63,7 +63,7 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		Text=element.get_attribute("value")
-		if Text!="":	
+		if Text!="":
 			element.clear()
 		element.send_keys(str(data))
 		return "PASS", ""
@@ -326,7 +326,7 @@ def verifyTextBoxValue(browser, driver, target, data, subdirectory, TCID, TSID, 
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		TextBoxValue=element.get_attribute("value")
-		if data in TextBoxValue:
+		if str(data) in str(TextBoxValue):
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -485,6 +485,7 @@ def verifyChangePassword(browser, driver, target, data, subdirectory, TCID, TSID
 
 def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
+		print "wait executed", str(data)
 		time.sleep(data)
 		return "PASS", ""
 	except Exception as err:
@@ -556,10 +557,14 @@ def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID
 
 def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
+		time.sleep(1)
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+		print getattr(Config, target)[5]
+		print len(List)+getattr(Config, target)[5]
 		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+			print name, title
 			if str(data).lower() in name.lower() or str(data).lower() in title.lower():
 				Status="PASS"
 			else:
@@ -632,15 +637,26 @@ def delLastchar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, target)[4])
+		element.clear()
+		element.send_keys(data)
 		GetFieldValue=element.get_attribute("value")
-		print GetFieldValue
 		while len(GetFieldValue) !=0:
 			time.sleep(1)
 			List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+			print "list=", len(List)
+			#print "listlength=", len(List)+getattr(Config, target)[5]
+			if len(List)==0:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				if element1=="No results are available. Please check your search." or element1=="No results found" or element1=="Patient not yet in database":
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+			print "before for"
 			for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 				name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 				title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-				print name, title
+				print "name=", name, "title=", title
 				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
 					Status="PASS"
 				else:
@@ -648,10 +664,111 @@ def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 					return "FAIL", ""
 			element.send_keys(Keys.BACKSPACE)
 			GetFieldValue=element.get_attribute("value")
-
+					
 		if Status=="PASS":
 			return "PASS", ""
 	except Exception as err:
 		print (Exception, err)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+		
+def AddCharByChar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		for Count, Char in enumerate(data):
+			try:
+				element=driver.find_element_by_xpath(getattr(Config, target)[4])
+				element.send_keys(str(Char))
+				time.sleep(1)
+				List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+				for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+					name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+					title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+					if str(Char).lower()  in name.lower()  or str(Char).lower()  in title.lower():
+						Status="PASS"
+					else:
+						ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+						return "FAIL", ""
+			except Exception as err:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				if element1=="No results are available. Please check your search." or element1=="No results found" or element1=="Patient not yet in database":
+					continue
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL",""
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+		
+def delLastcharsCoverageSearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, target)[4])
+		element.clear()
+		element.send_keys(data)
+		GetFieldValue=element.get_attribute("value")
+		while len(GetFieldValue) !=0:
+			try:
+				while len(GetFieldValue) !=0:
+					time.sleep(5)
+					List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+					for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+						name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+						title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+						if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
+							Status="PASS"
+						else:
+							ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+							return "FAIL", ""
+					element.send_keys(Keys.BACKSPACE)
+					GetFieldValue=element.get_attribute("value")
+			except Exception as err:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				if element1=="No results are available. Please check your search.":
+					element.send_keys(Keys.BACKSPACE)
+					GetFieldValue=element.get_attribute("value")
+					continue
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+					
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		print (Exception, err)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+		
+def AddCharByCharCoverageSearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		for Count, Char in enumerate(data):
+			try:
+				element=driver.find_element_by_xpath(getattr(Config, target)[4])
+				element.send_keys(str(Char))
+				time.sleep(2)
+				List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+				print len(List)
+				for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+					name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+					title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+					print name, title
+					if str(Char).lower()  in name.lower()  or str(Char).lower()  in title.lower():
+						Status="PASS"
+					else:
+						ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+						print str(Char).lower(), name.lower(),  str(Char).lower(), title.lower()
+						return "FAIL", ""
+			except Exception as err:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				time.sleep(5)
+				if element1=="No results are available. Please check your search.":
+					continue
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					print "excpet else"
+					return "FAIL",""
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
