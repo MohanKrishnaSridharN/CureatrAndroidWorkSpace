@@ -27,7 +27,7 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
 				LASTNAME=str(rn)
-				#EMAILID=browser.lower()+"-test"+str(rn)+"@mtuity.com"
+				#EMAILID=browser.lower()+"-test002@mtuity.com"
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
 				addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)

@@ -24,15 +24,15 @@ from selenium.webdriver.common.keys import Keys
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if browser=="FF":
-			driver = webdriver.Firefox()
-			#cap=webdriver.DesiredCapabilities.FIREFOX
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#driver = webdriver.Firefox()
+			cap=webdriver.DesiredCapabilities.FIREFOX
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			#cap=webdriver.DesiredCapabilities.CHROME
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			cap=webdriver.DesiredCapabilities.CHROME
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			#driver = webdriver.Chrome()
-			driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
+			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
 			cap=webdriver.DesiredCapabilities.INTERNETEXPLORER
@@ -106,6 +106,16 @@ def Click(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 
+def ClickCss(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		a=driver.find_element_by_css_selector(getattr(Config, str(target)))
+		a.click()
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ Click"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
 def CloseWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		time.sleep(3)#Need to comment this line
@@ -117,14 +127,12 @@ def CloseWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 		return "PASS", ""
 	except Exception as err:
 		try:
-			print ("exception at CloseBrowser",Exception, err)
 			Status=PageRefresh(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 			a=driver.find_element_by_xpath(getattr(Config, str("ChangeOrg")))
 			a.click()
 			if Status=="PASS":
 				return "PASS", ""
 			else:
-				print (Exception, err)
 				return "FAIL", ""
 		except:
 			logger.info("Exception @ CloseWebApp"+str(err))
@@ -155,7 +163,8 @@ def verifyAppTitle(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 def ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		ScreenShotDirPath=subdirectory+"ScreenShots/"
-		os.makedirs(ScreenShotDirPath)
+		if not os.path.exists(ScreenShotDirPath):
+			os.makedirs(ScreenShotDirPath)
 		driver.get_screenshot_as_file(ScreenShotDirPath+TCID+"-"+TSID+"-"+DSID+'.jpg')
 		return "PASS", ""
 	except Exception as err:
@@ -250,8 +259,7 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 def verifyTextContains(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-		print data, element
-		if str(data) in str(element):
+		if str(data).lower() in str(element).lower():
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -461,7 +469,6 @@ def verifyFirstTimeSignIn(browser, driver, target, data, subdirectory, TCID, TSI
 def verifyChangePassword(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if data=="Y":
-			print "Correct Data Y"
 			element1 = driver.find_element_by_xpath(getattr(Config, "TSSignOut")).is_displayed()
 			element2 = driver.find_element_by_xpath(getattr(Config, "TSAccept")).is_displayed()
 			if element1==True and element2==True:
@@ -485,7 +492,6 @@ def verifyChangePassword(browser, driver, target, data, subdirectory, TCID, TSID
 
 def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		print "wait executed", str(data)
 		time.sleep(data)
 		return "PASS", ""
 	except Exception as err:
@@ -557,14 +563,32 @@ def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID
 
 def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
-		time.sleep(1)
+		time.sleep(5)
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
-		print getattr(Config, target)[5]
-		print len(List)+getattr(Config, target)[5]
+		Status=""
 		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-			print name, title
+			if str(data).lower() in str(name).lower() or str(data).lower() in str(title).lower():
+				Status="PASS"
+			else:
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+				return "FAIL", ""
+		
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ Search Contacts Method:: "+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", "" 
+
+def SearchcontactsTwo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		time.sleep(5)
+		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
 			if str(data).lower() in name.lower() or str(data).lower() in title.lower():
 				Status="PASS"
 			else:
@@ -574,19 +598,19 @@ def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		if Status=="PASS":
 			return "PASS", ""
 	except Exception as err:
-		print ("Exception @ Search Contacts Method",Exception, err)
 		logger.info("Exception @ Search Contacts Method:: "+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""  
 
 def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
+		time.sleep(1)
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
 		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 			Status=""
 			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-			if data.lower() in name.lower() or data.lower() in title.lower():
+			if str(data).lower() in name.lower() or str(data).lower() in title.lower():
 				driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).click()
 				Status="PASS"
 				return "PASS", ""
@@ -605,7 +629,6 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		if element.is_displayed():
 			return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""  
   
@@ -630,7 +653,6 @@ def delLastchar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 		if Status=="PASS":
 			return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 
@@ -641,34 +663,32 @@ def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 		element.send_keys(data)
 		GetFieldValue=element.get_attribute("value")
 		while len(GetFieldValue) !=0:
-			time.sleep(1)
-			List = driver.find_elements_by_xpath(getattr(Config, target)[0])
-			print "list=", len(List)
-			#print "listlength=", len(List)+getattr(Config, target)[5]
-			if len(List)==0:
+			try:
+				time.sleep(2)
+				List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+				for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+					name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+					title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+					if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
+						Status="PASS"
+					else:
+						ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+						return "FAIL", ""
+				element.send_keys(Keys.BACKSPACE)
+				GetFieldValue=element.get_attribute("value")
+			except Exception as err:
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-				if element1=="No results are available. Please check your search." or element1=="No results found" or element1=="Patient not yet in database":
+				if element1=="No contacts found" or element1=="No patients found" or element1=="No results found":
+					element.send_keys(Keys.BACKSPACE)
+					GetFieldValue=element.get_attribute("value")
 					Status="PASS"
 				else:
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 					return "FAIL", ""
-			print "before for"
-			for ListCount in range(1, len(List)+getattr(Config, target)[5]):
-				name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
-				title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-				print "name=", name, "title=", title
-				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
-					Status="PASS"
-				else:
-					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-					return "FAIL", ""
-			element.send_keys(Keys.BACKSPACE)
-			GetFieldValue=element.get_attribute("value")
 					
 		if Status=="PASS":
 			return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 		
@@ -690,7 +710,7 @@ def AddCharByChar(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 						return "FAIL", ""
 			except Exception as err:
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-				if element1=="No results are available. Please check your search." or element1=="No results found" or element1=="Patient not yet in database":
+				if element1=="No contacts found" or element1=="No patients found" or element1=="No results found":
 					continue
 				else:
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -700,7 +720,69 @@ def AddCharByChar(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 	except Exception as err:
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
+
+def delLastcharsManageGroup(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, target)[4])
+		element.clear()
+		element.send_keys(data)
+		GetFieldValue=element.get_attribute("value")
+		time.sleep(2)
+		while len(GetFieldValue) !=0:
+			List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+			if len(List)==0:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				if element1=="No results are available. Please check your search.":
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+			time.sleep(1)
+			for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+				name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+				title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+			element.send_keys(Keys.BACKSPACE)
+			GetFieldValue=element.get_attribute("value")
+					
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
 		
+def AddCharByCharManageGroup(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		for Count, Char in enumerate(data):
+			element=driver.find_element_by_xpath(getattr(Config, target)[4])
+			element.send_keys(str(Char))
+			time.sleep(1)
+			List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+			if len(List)==0:
+				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
+				if element1=="No results are available. Please check your search.":
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+			for ListCount in range(1, len(List)+getattr(Config, target)[5]):
+				name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
+				title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+				if str(Char).lower()  in name.lower()  or str(Char).lower()  in title.lower():
+					Status="PASS"
+				else:
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					return "FAIL", ""
+		if Status=="PASS":
+			return "PASS", ""
+	except Exception as err:
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
 def delLastcharsCoverageSearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, target)[4])
@@ -735,7 +817,6 @@ def delLastcharsCoverageSearch(browser, driver, target, data, subdirectory, TCID
 		if Status=="PASS":
 			return "PASS", ""
 	except Exception as err:
-		print (Exception, err)
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
 		
@@ -747,16 +828,13 @@ def AddCharByCharCoverageSearch(browser, driver, target, data, subdirectory, TCI
 				element.send_keys(str(Char))
 				time.sleep(2)
 				List = driver.find_elements_by_xpath(getattr(Config, target)[0])
-				print len(List)
 				for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 					name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 					title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-					print name, title
 					if str(Char).lower()  in name.lower()  or str(Char).lower()  in title.lower():
 						Status="PASS"
 					else:
 						ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-						print str(Char).lower(), name.lower(),  str(Char).lower(), title.lower()
 						return "FAIL", ""
 			except Exception as err:
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
@@ -765,7 +843,6 @@ def AddCharByCharCoverageSearch(browser, driver, target, data, subdirectory, TCI
 					continue
 				else:
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-					print "excpet else"
 					return "FAIL",""
 		if Status=="PASS":
 			return "PASS", ""

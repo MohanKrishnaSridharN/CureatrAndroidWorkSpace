@@ -50,40 +50,19 @@ def DriverScript(browser, driver):
 	directory=OutPutFileDir+unicode(currentdate)+"/"
 	#CREATE OUTPUT FOLDER WITH CURRENT TIME STAMP
 	try:
-		if browser=="FF":
-			if not os.path.exists(directory):
-				os.makedirs(directory)
-				logger.info("Created Directory With Current Date: "+directory)
-			subdirectory=directory+"FF-Results-"+unicode(currenttime)[:6]+"/"
+		if not os.path.exists(directory):
+			os.makedirs(directory)
+			logger.info("Created Directory With Current Date: "+directory)
+		subdirectory=directory+browser+"-Results-"+unicode(currenttime)[:6]+"/"
+		if not os.path.exists(subdirectory):
 			os.makedirs(subdirectory)
-			logger.info("Created Sub Directory With Current Time For Fire Fox Browser: "+subdirectory)
-			copyWorkBook(Suite_Web, subdirectory)
-			copyWorkBook(Results, subdirectory)
-			logger.info("Copied Suite Xlsx and Results From Input Folder to FF Output Folder")
-		elif browser=="Chrome":
-			time.sleep(0.2)
-			if not os.path.exists(directory):
-				os.makedirs(directory)
-				logger.info("Created Directory With Current Date: "+directory)
-			subdirectory=directory+"Chrome-Results-"+unicode(currenttime)[:6]+"/"
-			os.makedirs(subdirectory)
-			logger.info("Created Sub Directory With Current Time For Chrome Browser: "+subdirectory)
-			copyWorkBook(Suite_Web, subdirectory)
-			copyWorkBook(Results, subdirectory)
-			logger.info("Copied Suite Xlsx and Results From Input Folder to Chrome Output Folder")
-		elif browser=="IE":
-			time.sleep(0.1)
-			if not os.path.exists(directory):
-				os.makedirs(directory)
-				logger.info("Created Directory With Current Date:"+directory)
-			subdirectory=directory+"IE-Results-"+unicode(currenttime)[:6]+"/"
-			os.makedirs(subdirectory)
-			logger.info("Created Sub Directory With Current Time For IE Browser: "+subdirectory)
-			copyWorkBook(Suite_Web, subdirectory)
-			copyWorkBook(Results, subdirectory)
-			logger.info("Copied Suite Xlsx and Results From Input Folder to IE Output Folder")
+		logger.info("Created Sub Directory With Current Time For "+browser+ " Browser: "+subdirectory)
+		logger.info("Copied Suite Xlsx and Results From Input Folder to " +browser+ " Output Folder")
 	except:
 		logger.info("Error: unable to create test results folder for:"+browser)
+	
+	copyWorkBook(Suite_Web, subdirectory)
+	copyWorkBook(Results, subdirectory)
 		
 	#READ SUITE XLS FILE FROM OUTPUT DIRECTORY
 	SuiteXLSPath = subdirectory+'Suite_Web.xlsx'
@@ -324,10 +303,10 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		#t1=Thread(target=executefunctions,args=('FF', ''))
+		t1=Thread(target=executefunctions,args=('FF', ''))
 		t2=Thread(target=executefunctions,args=('Chrome', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		#t1.start()
+		t1.start()
 		t2.start()
 		#t3.start()
 	except:

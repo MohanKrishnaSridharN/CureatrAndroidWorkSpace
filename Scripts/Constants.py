@@ -1,4 +1,4 @@
-EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'cureatrtest+ff001@gmail.com', 'cureatrtest+chrome001@gmail.com']
+EmailAccountsForReports=['mohan.nimmala@mtuity.com']
 #EmailAccountsForReports=['mohan.nimmala@mtuity.com', 'rithesh.karra@mtuity.com', 'esheddoni@cureatr.com','levimcdonough@cureatr.com','kiran.gopisetty@mtuity.com']
 #EmailAccountsForReports=esheddoni@cureatr.com|levimcdonough@cureatr.com|kiran.gopisetty@mtuity.com
 
@@ -9,7 +9,7 @@ OutPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/OutPutFiles/"
 Suite_Web="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
-"""
+
 
 #Windows URLS
 LOG_FILE="D:/CureatrPythonWorkSpace/applicationlogs/app.log"
@@ -28,4 +28,3 @@ InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
 ActlogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Actlogo.png"
 ExplogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Explogo.png"
-"""

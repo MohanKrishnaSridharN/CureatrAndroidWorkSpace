@@ -1,5 +1,5 @@
-#CureatrPlayURL="https://cureatr-vm.dev:5101/"
-CureatrPlayURL="https://messenger.play.cureatr.com/"
+CureatrPlayURL="https://cureatr-vm.dev:5101/"
+#CureatrPlayURL="https://messenger.play.cureatr.com/"
 
 verifyTitle="Cureatr Messenger"
 
@@ -50,6 +50,13 @@ MainContent1="//*[@id='main-content']/div/h2"
 MainContent2="//*[@id='main-content']/div/div[3]"
 MainContentImg="//*[@id='main-content']/div/div[1]/img"
 SignOutLink="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
+ManageGroups="//*[@id='settingsDropdown']/div/div[1]/div[6]/div"
+CreateGroupLink="//*[@id='createGroupLink']"
+GroupNameInput="//*[@id='groupNameInput']"
+CreateGroup="//*[@id='createGroup']"
+AddRecipientInGroup="//div/div[1]/div[1]/div[1]"
+AddRecipientInGroupCss="div.add-recipient"
+#="//*[@id='addRecipientInput']"
 
 #ContactsLink
 ContactsSearch="//*[@id='directory_lookup']"
@@ -139,6 +146,7 @@ ArchivCheckBox="//*[@id='bottomCheckboxActions']/div/div[1]/label"
 CloseConversationSettings="//*[@id='threadSettingsModal']/div[1]/div[2]/div"
 Mute="//*[@id='bottomCheckboxActions']/div/div[2]/label"
 CSClearSearch="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[3]"
+MGClearSearchCss="div.thread-action-cancel"
 
 #Profile
 ProfileImg="//img[@id='current-user-profile-image']"
@@ -162,6 +170,7 @@ EditYourProfile="//div/div[2]/div/div[2]/a[2]"
 
 CurrentService="//*[@id='current-service-view']/div/div[2]/div[2]"
 ServiceSearchBar="//*[@id='service-search-bar']"
+
 
 
 #CHANGE PASSWORD
@@ -203,6 +212,7 @@ Topath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/d
 DefaultLength2=1
 ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength2, Topath4]
 
+"""
 #Patient Field contacts search xpath parts
 PFpath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div"
 PFpath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div["
@@ -211,6 +221,15 @@ PFpath3="]/div/div/div[4]"
 PFpath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[2]"
 DefaultLength2=0
 PFContacts=[PFpath0, PFpath1, PFpath2, PFpath3, Patient, DefaultLength2, PFpath4]
+"""
+#Patient Field contacts search xpath parts
+PFpath0="//*[@id='directory-lookup-results']/div"
+PFpath1="//*[@id='directory-lookup-results']/div["
+PFpath2="]/div/div[2]"
+PFpath3="]/div/div[4]"
+PFpath4="//*[@id='directory-lookup-results']/div[1]/h2"
+DefaultLength2=0
+PFContacts=[PFpath0, PFpath1, PFpath2, PFpath3, ContactsSearch, DefaultLength2, NoContactMsg1]
 
 #CONVERSATION SETTINGS SEARCH XPATH PARTS
 cspath0="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div"
@@ -221,6 +240,15 @@ cspath4="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span
 DefaultLength3=1
 CSContacts=[cspath0, cspath1, cspath2, cspath3, AddTextBox, DefaultLength3, cspath4]
 
+#Manage Group SEARCH XPATH PARTS
+MGpath0="//div[2]/span/div/span/div"
+MGpath1="//div[2]/span/div/span/div["
+MGpath2="]/div/div[2]/div[1]"
+MGpath3="]/div/div[2]/div[4]"
+MGpath4="//div[4]/div/div/div[1]/div[2]/span/div/div"
+DefaultLength3=1
+MGsearch=[MGpath0, MGpath1, MGpath2, MGpath3, AddTextBox, DefaultLength3, MGpath4]
+
 #CoverageSearch Search Parths
 Coveragepath0="//*[starts-with(@id, 'coverage-results-')]/div"
 Coveragepath1="//*[starts-with(@id, 'coverage-results-')]/div["
@@ -230,4 +258,11 @@ Coveragepath4=Coveragepath0
 DefaultLength4=1
 CoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, CurrentCoverage, DefaultLength4, Coveragepath4]
 
-
+#CoverageSearch Search Parths
+Servicepath0="//div/div[1]/div[2]/div/div[2]/ul/li"
+Servicepath1="//div/div[1]/div[2]/div/div[2]/ul/li["
+Servicepath2="]/div/div[2]/div"
+Servicepath3="]/div/div[2]/div"
+Servicepath4="//div/div[1]/div[2]/div/div[2]/ul/div/div[1]"
+DefaultLength4=1
+ServiceSearch=[Servicepath0, Servicepath1, Servicepath2, Servicepath3, ServiceSearchBar, DefaultLength4, Servicepath4]
