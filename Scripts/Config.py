@@ -1,5 +1,5 @@
-CureatrPlayURL="https://cureatr-vm.dev:5101/"
-#CureatrPlayURL="https://messenger.play.cureatr.com/"
+#CureatrPlayURL="https://cureatr-vm.dev:5101/"
+CureatrPlayURL="https://messenger.play.cureatr.com/"
 
 verifyTitle="Cureatr Messenger"
 
@@ -165,12 +165,13 @@ Busy="//label[2]/div"
 OffDuty="//label[3]/div"
 ProfileDailog="//button[@type='button']"
 CurrentCoverage="//*[starts-with(@id, 'coverage-lookup-')]"
+EditProfileCurrentCoverage="//div/div[1]/div/div[3]/form/div[2]/div[3]/div/div/div[2]/div/ul/li/input"
 ViewYourProfile="//*[@id='header-user']/div/div[2]/div[2]/div[2]/span/a"
 EditYourProfile="//div/div[2]/div/div[2]/a[2]"
 
 CurrentService="//*[@id='current-service-view']/div/div[2]/div[2]"
 ServiceSearchBar="//*[@id='service-search-bar']"
-
+CurrentServiceView="//div/div[1]/div/div[3]/form/div[2]/div[5]/div[2]/div/div/div[2]/div[2]"
 
 
 #CHANGE PASSWORD
@@ -212,16 +213,16 @@ Topath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/d
 DefaultLength2=1
 ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength2, Topath4]
 
-"""
+
 #Patient Field contacts search xpath parts
-PFpath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div"
-PFpath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div["
-PFpath2="]/div/div/div[1]"
-PFpath3="]/div/div/div[4]"
-PFpath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[2]"
-DefaultLength2=0
-PFContacts=[PFpath0, PFpath1, PFpath2, PFpath3, Patient, DefaultLength2, PFpath4]
-"""
+CPFpath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div"
+CPFpath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div["
+CPFpath2="]/div/div/div[1]"
+CPFpath3="]/div/div/div[3]"
+CPFpath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[2]"
+CDefaultLength2=1
+ComposePFContacts=[CPFpath0, CPFpath1, CPFpath2, CPFpath3, Patient, DefaultLength2, CPFpath4]
+
 #Patient Field contacts search xpath parts
 PFpath0="//*[@id='directory-lookup-results']/div"
 PFpath1="//*[@id='directory-lookup-results']/div["
@@ -257,6 +258,9 @@ Coveragepath3="]/div[2]/div[4]"
 Coveragepath4=Coveragepath0
 DefaultLength4=1
 CoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, CurrentCoverage, DefaultLength4, Coveragepath4]
+
+#Edit Profile CoverageSearch Search Parths
+EditProfileCoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, EditProfileCurrentCoverage, DefaultLength4, Coveragepath4]
 
 #CoverageSearch Search Parths
 Servicepath0="//div/div[1]/div[2]/div/div[2]/ul/li"

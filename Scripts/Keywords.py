@@ -24,15 +24,15 @@ from selenium.webdriver.common.keys import Keys
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if browser=="FF":
-			#driver = webdriver.Firefox()
-			cap=webdriver.DesiredCapabilities.FIREFOX
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			driver = webdriver.Firefox()
+			#cap=webdriver.DesiredCapabilities.FIREFOX
+			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			cap=webdriver.DesiredCapabilities.CHROME
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#cap=webdriver.DesiredCapabilities.CHROME
+			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			#driver = webdriver.Chrome()
-			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
+			driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
 			cap=webdriver.DesiredCapabilities.INTERNETEXPLORER
@@ -566,10 +566,12 @@ def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		time.sleep(5)
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
 		Status=""
+		print "len(List)=", len(List)
 		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-			if str(data).lower() in str(name).lower() or str(data).lower() in str(title).lower():
+			print ListCount
+			if str(data).lower() in str(name.encode('ascii', 'ignore').decode('ascii')).lower() or str(data).lower() in str(title.encode('ascii', 'ignore').decode('ascii')).lower():
 				Status="PASS"
 			else:
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
@@ -580,27 +582,7 @@ def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 	except Exception as err:
 		logger.info("Exception @ Search Contacts Method:: "+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-		return "FAIL", "" 
-
-def SearchcontactsTwo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
-	try:
-		time.sleep(5)
-		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
-		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
-			name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
-			title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
-			if str(data).lower() in name.lower() or str(data).lower() in title.lower():
-				Status="PASS"
-			else:
-				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-				return "FAIL", ""
-		
-		if Status=="PASS":
-			return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ Search Contacts Method:: "+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-		return "FAIL", ""  
+		return "FAIL", ""
 
 def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
@@ -632,30 +614,6 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""  
   
-def delLastchar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
-	try:
-		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		GetFieldValue=element.get_attribute("value")
-		while len(GetFieldValue) !=0:
-			time.sleep(1)
-			List = driver.find_elements_by_xpath("//*[@id='directory-lookup-results']/div")
-			for ListCount in range(1, len(List)):
-				name=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[1]").text
-				title=driver.find_element_by_xpath("//*[@id='directory-lookup-results']/div["+str(ListCount)+"]/div[2]/div[4]").text
-				if GetFieldValue.lower()  in name.lower()  or GetFieldValue.lower()  in title.lower():
-					Status="PASS"
-				else:
-					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-					return "FAIL", ""
-			element.send_keys(Keys.BACKSPACE)
-			GetFieldValue=element.get_attribute("value")
-
-		if Status=="PASS":
-			return "PASS", ""
-	except Exception as err:
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
-		return "FAIL", ""
-
 def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, target)[4])
@@ -828,9 +786,11 @@ def AddCharByCharCoverageSearch(browser, driver, target, data, subdirectory, TCI
 				element.send_keys(str(Char))
 				time.sleep(2)
 				List = driver.find_elements_by_xpath(getattr(Config, target)[0])
+				print "len(List)=", len(List)
 				for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 					name=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 					title=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
+					print ListCount
 					if str(Char).lower()  in name.lower()  or str(Char).lower()  in title.lower():
 						Status="PASS"
 					else:
