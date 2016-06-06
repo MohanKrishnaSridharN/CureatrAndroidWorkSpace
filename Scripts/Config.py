@@ -1,5 +1,5 @@
-#CureatrPlayURL="https://cureatr-vm.dev:5101/"
-CureatrPlayURL="https://messenger.play.cureatr.com/"
+CureatrPlayURL="https://cureatr-vm.dev:5101/"
+#CureatrPlayURL="https://messenger.play.cureatr.com/"
 
 verifyTitle="Cureatr Messenger"
 
@@ -51,6 +51,7 @@ MainContent2="//*[@id='main-content']/div/div[3]"
 MainContentImg="//*[@id='main-content']/div/div[1]/img"
 SignOutLink="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
 ManageGroups="//*[@id='settingsDropdown']/div/div[1]/div[6]/div"
+SelectMGContact="//div[2]/span/div/span/div[1]/div/div[2]/div[1]"
 CreateGroupLink="//*[@id='createGroupLink']"
 GroupNameInput="//*[@id='groupNameInput']"
 CreateGroup="//*[@id='createGroup']"
@@ -69,6 +70,7 @@ SendMsgLink="//div/div[2]/div/div[2]/div/a"
 ShowMoreLink="//div[1]/div[5]/div/div/a"
 NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
 NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
+
 #UserService=""
 
 #Patients Link
@@ -197,6 +199,7 @@ TSInstructions="//*[@id='tos_instructions']"
 TSContent="//*[@id='content']"
 
 #contacts search xpath parts
+#cpath0="//*[@id='main-search']/div[2]"
 cpath0="//*[@id='directory-lookup-results']/div"
 cpath1="//*[@id='directory-lookup-results']/div["
 cpath2="]/div[2]/div[1]"

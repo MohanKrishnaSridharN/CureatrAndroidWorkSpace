@@ -11,8 +11,10 @@ import Config
 from Config import *
 import Constants
 from Constants import *
+import XlsxReader
+from XlsxReader import *
 import time
-import os
+import os,sys
 from DriverScript import logger,handler
 import logging
 import logging.handlers
@@ -20,19 +22,21 @@ import PIL
 from PIL import ImageChops
 from PIL import Image
 from selenium.webdriver.common.keys import Keys
+import BackEndDrivers
+
 
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if browser=="FF":
-			driver = webdriver.Firefox()
-			#cap=webdriver.DesiredCapabilities.FIREFOX
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			#driver = webdriver.Firefox()
+			cap=webdriver.DesiredCapabilities.FIREFOX
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			#cap=webdriver.DesiredCapabilities.CHROME
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
+			cap=webdriver.DesiredCapabilities.CHROME
+			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
 			#driver = webdriver.Chrome()
-			driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
+			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
 			cap=webdriver.DesiredCapabilities.INTERNETEXPLORER
@@ -41,7 +45,6 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 	except Exception as err:
 		logger.info("Exception @ LaunchWebBrowser"+str(err))
 		return driver, "FAIL"
-
 def OpenWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
 		if driver.current_url != CureatrPlayURL:
@@ -71,6 +74,67 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		logger.info("Exception @ Type"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
 		return "FAIL", ""
+
+def verifysearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
+	try:
+		"""
+		currentTestSuiteXLSPATH=subdirectory+"Web_SEARCH"+".xlsx"
+		currentTestDataSheet=load_workbook(currentTestSuiteXLSPATH).get_sheet_by_name("ContactsSearch")
+		print currentTestSuiteXLSPATH
+		print currentTestDataSheet
+		EMAILID=getCellValueBySheet(currentTestDataSheet, 2, "EMAILID")
+		print "email id @ verify search",EMAILID
+		"""
+
+		TotalList=BackEndDrivers.qa_search3(str(data))
+		UsersList=TotalList[0]
+		for UsersLength in range(0, len(UsersList)):
+			SingleUser=UsersList[UsersLength]
+			if str(data).lower() in str(SingleUser.first_name).lower() or str(data).lower() in str(SingleUser.last_name).lower():
+				Status="PASS"
+			else:
+				print "FAIL", str(data), str(SingleUser.first_name)
+				Status="FAIL"
+
+		GroupsList=TotalList[1]
+		for GroupLength in range(0, len(GroupsList)):
+			SingleGroup=GroupsList[GroupLength]
+			if str(data).lower() in str(SingleGroup['name']).lower():
+				Status="PASS"
+			else:
+				Status="FAIL"
+
+		print "len(GroupsList)=",len(GroupsList)
+		BESearchLength=len(UsersList)+len(GroupsList)
+		element=driver.find_element_by_xpath(getattr(Config, target)[4])
+		Text=element.get_attribute("value")
+		if Text!="":
+			element.clear()
+		element.send_keys(str(data))
+		time.sleep(5)
+		List=driver.find_elements_by_xpath(getattr(Config, target)[0])
+		print "before list length=",len(List)
+		
+
+		#BESearchLength=len(BackEndDrivers.qa_search3(str(data)))
+		print "BESearchLength=",BESearchLength
+		
+		if BESearchLength==0 and len(List)==2:
+			ListLength=len(List)-2
+		else:
+			ListLength=len(List)-1
+		print "BESearchLength=", BESearchLength, "ListLength=",ListLength
+		time.sleep(10)
+		if BESearchLength==ListLength and Status=="PASS":
+			return "PASS", ""
+		else:
+			return "FAIL", ""
+	except Exception as err:
+		print err
+		logger.info("Exception @ Verify Search"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+		return "FAIL", ""
+
 
 def TypeEMAILID(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data):
 	try:
