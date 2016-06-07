@@ -67,9 +67,10 @@ UserStatusMsg="//div[1]/div[2]/div[3]/div[1]"
 UserSpecialty="//div[1]/div[2]/div[3]/div[2]"
 UserTitle="//div[1]/div[2]/div[3]/div[3]"
 SendMsgLink="//div/div[2]/div/div[2]/div/a"
-ShowMoreLink="//div[1]/div[5]/div/div/a"
+#ShowMoreLinks="//div[1]/div[5]/div/div/a"
 NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
 NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
+showmoremessages="//div[1]/div[5]/div/div/a"
 
 #UserService=""
 
@@ -170,6 +171,9 @@ CurrentCoverage="//*[starts-with(@id, 'coverage-lookup-')]"
 EditProfileCurrentCoverage="//div/div[1]/div/div[3]/form/div[2]/div[3]/div/div/div[2]/div/ul/li/input"
 ViewYourProfile="//*[@id='header-user']/div/div[2]/div[2]/div[2]/span/a"
 EditYourProfile="//div/div[2]/div/div[2]/a[2]"
+EditProfileStatus="//div[3]/form/div[1]/div/div[2]/div[2]"
+EditProfileStatusBusy="//*[starts-with(@id, 'toggle-status-menu-')]/div[3]/label[2]"
+
 
 CurrentService="//*[@id='current-service-view']/div/div[2]/div[2]"
 ServiceSearchBar="//*[@id='service-search-bar']"
@@ -253,7 +257,7 @@ MGpath4="//div[4]/div/div/div[1]/div[2]/span/div/div"
 DefaultLength3=1
 MGsearch=[MGpath0, MGpath1, MGpath2, MGpath3, AddTextBox, DefaultLength3, MGpath4]
 
-#CoverageSearch Search Parths
+#CoverageSearch Search Parts
 Coveragepath0="//*[starts-with(@id, 'coverage-results-')]/div"
 Coveragepath1="//*[starts-with(@id, 'coverage-results-')]/div["
 Coveragepath2="]/div[2]/div[1]"
@@ -262,10 +266,10 @@ Coveragepath4=Coveragepath0
 DefaultLength4=1
 CoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, CurrentCoverage, DefaultLength4, Coveragepath4]
 
-#Edit Profile CoverageSearch Search Parths
+#Edit Profile CoverageSearch Search Parts
 EditProfileCoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, EditProfileCurrentCoverage, DefaultLength4, Coveragepath4]
 
-#CoverageSearch Search Parths
+#CoverageSearch Search Parts
 Servicepath0="//div/div[1]/div[2]/div/div[2]/ul/li"
 Servicepath1="//div/div[1]/div[2]/div/div[2]/ul/li["
 Servicepath2="]/div/div[2]/div"

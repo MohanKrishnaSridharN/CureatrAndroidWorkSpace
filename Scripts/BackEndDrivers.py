@@ -13,11 +13,11 @@ from cureatr.lib.search import (
     coverage_search, combined_search, group_search, role_search
 )
 from random import randint
-OTP=[]
 SEARCH_TYPE_RECENT = "recent"
 SEARCH_TYPE_CUREATR_ONLY = "cureatr"
 SEARCH_TYPE_EMAIL = "email"
 SEARCH_TYPE_COVERAGE = "coverage"
+OTP=()
 
 def random_digits(n):
     range_start = 10**(n-1)
@@ -27,7 +27,6 @@ def random_digits(n):
 def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTestSuiteXLSPATH,currentTestCase):
     
 	try:
-		print dataset
 		if data is not None:
 			if str(data).startswith("PY"):
 				INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
@@ -44,14 +43,12 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
 				addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
-				global OTP
 				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID)
+					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True)
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
 				addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
 				addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
-				print EMAILID
 				return "PASS", ""
 				
 	except Exception as err:
@@ -70,7 +67,7 @@ def CreateInstitution(browser, target, data, currentTestDataSheet,  dataset,curr
 				INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
 				INSTITUTIONSHORTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][1])
 				INSTITUTIONNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
-				db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME)
+				db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME,allowed_domains=['mtuity.com'])
 				return "PASS", ""
 	except Exception as err:
 		if "id ["+str(INSTITUTIONID)+"] exists" in str(err):
@@ -80,8 +77,10 @@ def CreateInstitution(browser, target, data, currentTestDataSheet,  dataset,curr
 			print "INSTITUTION Ceration Failed & Stopped Automation Test Execution"
 			return "FAIL", ""
 
-def qa_search3(data):
-	user=OTP[0]
+def qa_search3(data, currentTestDataSheet, dataset):
+	#user=OTP[0]
+	EMAILID=getCellValueBySheet(currentTestDataSheet, dataset, "EMAILID")
+	user=Users.find_by_email(EMAILID)[0]
 	search_type=""
 	query=data
 	include_groups = True

@@ -165,13 +165,13 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				method = possibles.get(Keywords)
 				if driver1=="Test" and user=="user1":
 					logger.info("Launching "+browser+ " Browser")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 					driver1=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
 				elif driver2=="Test" and user=='user2':
 					logger.info("Launching 2nd "+browser+ " Browser")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 					driver2=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
@@ -184,7 +184,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
 					method = possibles.get("CloseWebApp")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 					break
 			
 			elif Keywords=="CreateUserPY" or Keywords=="CreateInstitution":
@@ -202,7 +202,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				elif user=="user2":
 					driver=driver2
 				method = possibles.get(Keywords)
-				retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+				retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 				Keyword_execution_result_main=retun[0]
 				Proceed_Next_Step=retun[1]
 				resultSet.append(Keyword_execution_result_main)
@@ -210,7 +210,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
 					method = possibles.get("CloseWebApp")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 					break
 
 	logger.info("Calling PrintTestStepResult Function To Print PASS/FAIL Status in Test Steps Sheet")
@@ -225,12 +225,6 @@ def PrintTestStepResult(currentTestSuiteXLSPATH, currentTestSuiteSteps, resultSe
 	addColumn(currentTestSuiteXLSPATH, "TestCases", columnname)
 	addCellValueSet(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, resultSet, currentTestSuiteSteps, currentTestCase)
 	
-"""def PrintTestStepResultNoRun(currentTestSuiteXLSPATH, currentTestSuiteSteps, Result, currentTestCase, dataset, TestStepsCount):
-	columnname="Result"+str(dataset-1)
-	addColumn(currentTestSuiteXLSPATH, "TestSteps", columnname)
-	addColumn(currentTestSuiteXLSPATH, "TestCases", columnname)
-	addCellValueNoRun(currentTestSuiteXLSPATH, "TestSteps", TestStepsCount, columnname, Result, currentTestSuiteSteps, currentTestCase)"""
-
 def printresults(currentTestSuiteXLSPATH, dataset, count, currentTestCase, resultSet, Priority, subdirectory, currentTestDataSheet,browser):
 	ResultsXLSPATH=subdirectory+'Results.xlsx'
 	ResultsSheetXLS=load_workbook(ResultsXLSPATH).get_sheet_by_name('Status')
@@ -303,10 +297,10 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		t1=Thread(target=executefunctions,args=('FF', ''))
+		#t1=Thread(target=executefunctions,args=('FF', ''))
 		t2=Thread(target=executefunctions,args=('Chrome', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		t1.start()
+		#t1.start()
 		t2.start()
 		#t3.start()
 	except:
