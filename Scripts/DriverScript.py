@@ -63,6 +63,10 @@ def DriverScript(browser, driver):
 	
 	copyWorkBook(Suite_Web, subdirectory)
 	copyWorkBook(Results, subdirectory)
+	if browser=="FF":
+		time.sleep(0.3)
+	elif browser=="IE":
+		time.sleep(0.1)
 		
 	#READ SUITE XLS FILE FROM OUTPUT DIRECTORY
 	SuiteXLSPath = subdirectory+'Suite_Web.xlsx'
@@ -297,11 +301,11 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		#t1=Thread(target=executefunctions,args=('FF', ''))
-		t2=Thread(target=executefunctions,args=('Chrome', ''))
+		t1=Thread(target=executefunctions,args=('Chrome', ''))
+		#t2=Thread(target=executefunctions,args=('FF', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		#t1.start()
-		t2.start()
+		t1.start()
+		#t2.start()
 		#t3.start()
 	except:
 		print "Error: unable to start thread"

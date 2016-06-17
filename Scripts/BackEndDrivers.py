@@ -6,8 +6,6 @@ sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..', '..', 'dev', 
 import db_recipes
 from cureatr.model.users import Users, UID, User
 
-
-#sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..', '..', 'dev', 'cureatr', 'server')))
 from cureatr.lib.search import (
     user_search, email_search, recent_search,
     coverage_search, combined_search, group_search, role_search
@@ -41,12 +39,24 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				LASTNAME=str(rn)
 				#EMAILID=browser.lower()+"-test002@mtuity.com"
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
-				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
-				addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
+				print EMAILID
+				if str(target)=="USER-B":
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "USERB", EMAILID)
+					addCellValueToBuff(currentTestDataSheet, dataset, "USERB", EMAILID)
+				else:
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "EMAILID", EMAILID)
+					addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
+				
 				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True)
-				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
-				addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
+					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True,admin_iids=[INSTITUTIONID])
+				
+				if str(target)=="USER-B":
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORDB", OTP[1])
+					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORDB", OTP[1])
+				else:
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
+					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
+
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
 				addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
 				return "PASS", ""
