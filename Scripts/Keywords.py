@@ -68,7 +68,6 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		Text=element.get_attribute("value")
-		print "Type Data=",data
 		if Text!="":
 			element.clear()
 		element.send_keys(str(data))
@@ -80,12 +79,12 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 
 def AttachFile(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
 	try:
-		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		Text=element.get_attribute("value")
-		print "Type Data=",data
-		element.send_keys(str(data))
+		driver.execute_script("document.getElementById('fileinput-button').parentNode.className=''")
+		driver.find_element_by_name('files[]').send_keys("//Users//macmini//Downloads//pdfurl-guide.pdf")
+		driver.execute_script("document.getElementById('fileinput-button').parentNode.className='upload-manager'")
 		return "PASS", ""
 	except Exception as err:
+		print err
 		logger.info("Exception @ Type"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 		return "FAIL", ""
@@ -479,7 +478,7 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 def verifyTextcss(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
 	try:
 		element = driver.find_element_by_css_selector(getattr(Config, str(target))).text
-		if data in element:
+		if str(data) in element.encode('ascii', 'ignore').decode('ascii'):
 			return "PASS", ""
 		else:
 			return "FAIL", ""
@@ -507,7 +506,6 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 def verifyTextContains(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-		print element
 		if str(data).lower() in str(element).lower():
 			return "PASS", ""
 		else:
@@ -792,6 +790,21 @@ def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 		logger.info("Exception @ ImageComparision"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 		return "FAIL", ""
+
+def VerifyProfileImage(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
+	try:
+		element = driver.find_element_by_xpath(getattr(Config, target))
+		BasePath=element.value_of_css_property("background-image")
+		ImageUrl=BasePath.split("\"")[1:][0]
+		if ImageUrl=="/static/images/user.png" or "https://play-profileimages-cureatr.s3.amazonaws.com/" in ImageUrl:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			return "FAIL", ""
+		else:
+			return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ ImageComparision"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+		return "FAIL", ""
 		
 def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
 	try:
@@ -884,6 +897,22 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		logger.info("Exception @ isVissible"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
 		return "FAIL", ""  
+
+def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		if element.is_displayed():
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			return "FAIL", "" 
+		else:
+			return "PASS", ""
+	except Exception as err:
+		if "no such element: Unable to locate element:" in str(err):
+			return "PASS", ""
+		else:
+			logger.info("Exception @ isVissible"+str(err))
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			return "FAIL", ""  
   
 def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset):
 	try:

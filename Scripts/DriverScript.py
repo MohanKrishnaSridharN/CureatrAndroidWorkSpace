@@ -293,7 +293,7 @@ def send_mail(AttachmentsDirPath,subject):
     server=smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login('cureatrtest@gmail.com','Cureatr@1234')
-    server.sendmail(msg['From'],recipients,msg.as_string())
+    server.sendmail(msg['From'],recipients,msg.as_string())	
     logger.info('mail sent with attachments')
     server.quit()
 		   		
@@ -301,11 +301,11 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		t1=Thread(target=executefunctions,args=('Chrome', ''))
-		#t2=Thread(target=executefunctions,args=('FF', ''))
+		#t1=Thread(target=executefunctions,args=('Chrome', ''))
+		t2=Thread(target=executefunctions,args=('FF', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		t1.start()
-		#t2.start()
+		#t1.start()
+		t2.start()
 		#t3.start()
 	except:
 		print "Error: unable to start thread"
