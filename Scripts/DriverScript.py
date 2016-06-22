@@ -301,11 +301,11 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		#t1=Thread(target=executefunctions,args=('Chrome', ''))
-		t2=Thread(target=executefunctions,args=('FF', ''))
+		t1=Thread(target=executefunctions,args=('Chrome', ''))
+		#t2=Thread(target=executefunctions,args=('FF', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
-		#t1.start()
-		t2.start()
+		t1.start()
+		#t2.start()
 		#t3.start()
 	except:
 		print "Error: unable to start thread"
