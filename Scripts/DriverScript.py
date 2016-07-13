@@ -25,6 +25,7 @@ from Config import *
 import Constants
 from Constants import *
 from BackEndDrivers import *
+#import Sikuli
 
 logging.basicConfig(filename=LOG_FILE,level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s',filemode='w')
 logger=logging.getLogger(__name__)
@@ -169,13 +170,13 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				method = possibles.get(Keywords)
 				if driver1=="Test" and user=="user1":
 					logger.info("Launching "+browser+ " Browser")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					driver1=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
 				elif driver2=="Test" and user=='user2':
 					logger.info("Launching 2nd "+browser+ " Browser")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					driver2=retun[0]
 					Keyword_execution_result_main=retun[1]
 					resultSet.append(Keyword_execution_result_main)
@@ -188,7 +189,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
 					method = possibles.get("CloseWebApp")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					break
 			
 			elif Keywords=="CreateUserPY" or Keywords=="CreateInstitution":
@@ -206,7 +207,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				elif user=="user2":
 					driver=driver2
 				method = possibles.get(Keywords)
-				retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+				retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 				Keyword_execution_result_main=retun[0]
 				Proceed_Next_Step=retun[1]
 				resultSet.append(Keyword_execution_result_main)
@@ -214,7 +215,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
 					method = possibles.get("CloseWebApp")
-					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					break
 
 	logger.info("Calling PrintTestStepResult Function To Print PASS/FAIL Status in Test Steps Sheet")

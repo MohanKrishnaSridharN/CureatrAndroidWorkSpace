@@ -7,7 +7,8 @@ import db_recipes
 from cureatr.model.users import Users, UID, User
 
 from cureatr.lib.search import (
-    user_search, email_search, recent_search,
+    #user_search, 
+    email_search, recent_search,
     coverage_search, combined_search, group_search, role_search
 )
 from random import randint
@@ -49,7 +50,6 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				
 				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
 					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True,admin_iids=[INSTITUTIONID])
-				
 				if str(target)=="USER-B":
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORDB", OTP[1])
 					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORDB", OTP[1])

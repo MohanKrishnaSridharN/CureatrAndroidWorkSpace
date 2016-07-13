@@ -165,3 +165,4 @@ def designgraphs(wbpath):
 	BugsPriorityChart.add_data(BugsData,titles_from_data=True)
 	ws.add_chart(BugsPriorityChart,"F7")
 	wb.save(wbpath)
+
