@@ -16,6 +16,7 @@ import XlsxReader
 from XlsxReader import *
 import time
 import os,sys
+import os.path
 from DriverScript import logger,handler
 import logging
 import logging.handlers
@@ -29,52 +30,38 @@ import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from pyPdf import PdfFileReader
+from docx import Document
 
 def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if browser=="FF":
-			profile = webdriver.FirefoxProfile("/home/cureatr/CureatrPythonWorkSpace/Images/pey75pqn.Cureatr_Profile")
-			#profile.set_preference('browser.download.folderList', 2)
-			#profile.set_preference('browser.download.manager.showWhenStarting', False)
-			#profile.set_preference('browser.download.dir', os.getcwd())
-			#profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'text/plain;application/octet-stream;application/vnd.ms-excel;application/pdf;audio/mpeg3;application/x-pdf')
-			#profile.set_preference('browser.helperApps.neverAsk.openFile', 'application/pdf;application/x-pdf')	
+			profile = webdriver.FirefoxProfile(FirefoxProfileDir)
 			desired_capabilities=webdriver.DesiredCapabilities.FIREFOX
 			desired_capabilities['firefox_profile'] = profile.encoded
-			#driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap, browser_profile=profile.update_preferences())
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', desired_capabilities)
+			driver=webdriver.Remote(NodePath, desired_capabilities)
 			return driver, "PASS"
 		elif browser=="Chrome":
-			"""
-			cap = webdriver.ChromeOptions()
-			cap.add_argument={'prefs': {'download': {'default_directory': '/home/cureatr/CureatrPythonWorkSpace/Images/'}}}
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', cap)
-			driver = webdriver.Chrome(chrome_options=cap)
-			"""
 			chromeOptions = webdriver.ChromeOptions()
-			prefs = {"download.default_directory" : "/Users/macmini/Cureatr/CureatrPythonWorkSpace/Images/"}
+			prefs = {"download.default_directory" : ChromeDownloadsDir}
 			chromeOptions.add_experimental_option("prefs",prefs)
-			#chromeOptions.add_experimental_option("download.default_directory", "/Users/macmini/Cureatr/CureatrPythonWorkSpace/Images/")
 			desired_capabilities=webdriver.DesiredCapabilities.CHROME
 			desired_capabilities=chromeOptions.to_capabilities()
-			driver=webdriver.Remote('http://192.168.73.1:5557/wd/hub', desired_capabilities)
-
+			driver=webdriver.Remote(NodePath, desired_capabilities)
 			#driver = webdriver.Chrome()
 			#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 			return driver, "PASS"
 		elif browser=="IE":
 			if user=="user1":
 				cap=webdriver.DesiredCapabilities.INTERNETEXPLORER
-				driver=webdriver.Remote('http://192.168.73.137:5558/wd/hub', cap)
+				driver=webdriver.Remote(IENodePath, cap)
 				return driver, "PASS"
 			else:
 				cap=webdriver.DesiredCapabilities.CHROME
-				driver=webdriver.Remote('http://192.168.73.137:5558/wd/hub', cap)
+				driver=webdriver.Remote(IENodePath, cap)
 				#driver = webdriver.Chrome()
 				#driver = webdriver.Chrome(executable_path="D:/CureatrPythonWorkSpace/chromedriver_win32/chromedriver.exe")
 				return driver, "PASS"
 	except Exception as err:
-		print err
 		logger.info("Exception @ LaunchWebBrowser"+str(err))
 		return driver, "FAIL"
 
@@ -111,9 +98,9 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 def AttachFile(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if browser=="FF" or browser=="Chrome":
-			data="/Users/macmini/Cureatr/FileUpload/"+str(data)
+			data=FileAttachmentsDir+str(data)
 		else:
-			data="/Users/macmini/Cureatr/FileUpload/"+str(data)
+			data=FileAttachmentsDir+str(data)
 		if browser=="FF":
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			driver.execute_script("document.querySelector('[id^=fileuploadview]').parentNode.parentNode.className=''")
@@ -325,18 +312,21 @@ def Click(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
-def NotClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+def NotClickable(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
 		element=driver.find_element_by_xpath(getattr(Config, target))
-		if(element.click()):
-			return "FAIL", ""
-		else:
+		element.click()
+		if element.is_enabled():
 			return "PASS", ""
+		else:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
 	except Exception as err:
 		logger.info("Exception @ Click"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
+
 
 def DoubleClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -381,18 +371,31 @@ def ClickStale(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 				return "FAIL"
 
-def HoverClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+def HoverClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data,currentTestDataSheet, dataset,user):
 	try:
-		add = driver.find_element_by_css_selector('div.fancybox-image')
-		SearchButton = driver.find_element_by_css_selector('div.download-button.undisplayed')
-		Hover = ActionChains(driver).move_to_element(add).move_to_element(SearchButton)
-		Hover.click().build().perform()
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		builder = ActionChains(driver)
+		builder.move_to_element(element).perform()
 		return "PASS", ""
 	except Exception as err:
-		logger.info("Exception @ Click"+str(err))
+		logger.info("Exception @ HoverClick"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
-	
+
+def CloseViewOld(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):#not using this function
+	try:
+		time.sleep(10)
+		driver.execute_script("document.evaluate('html/body/div[8]/div/div/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue")
+		element = driver.find_element_by_xpath("html/body/div[8]/div/div/a")
+		""
+		driver.execute_script("arguments[0].click();", element)
+		#driver.execute_script("document.evaluate('html/body/div[8]/div/div/div[2]/span/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.className='download-button undisplayed'")
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ HoverClick"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
 def ClickCss(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		a=driver.find_element_by_css_selector(getattr(Config, str(target)))
@@ -608,7 +611,7 @@ def verifyReadStatus(browser, driver, target, data, subdirectory, TCID, TSID, DS
 	try:
 		List=driver.find_elements_by_xpath(getattr(Config, target)[0])
 		n=len(List)
- 		for i in range(21):
+ 		for i in range(31):
 			element = driver.find_element_by_xpath(getattr(Config, target)[1]+str(n)+getattr(Config, target)[2]).text
 			#StartTime=datetime.datetime.now()
 			#presenttime=StartTime.strftime('%l:%M %p')
@@ -616,11 +619,7 @@ def verifyReadStatus(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				return "PASS", ""
 			elif data=="Unread" and element==data:
 				return "PASS", ""
-			elif i<20 and element[:4]!=data:
-				element = driver.find_element_by_xpath(Config.Logo).click()
-				element = driver.find_element_by_xpath(Config.ContactsLink).click()
-				element = driver.find_element_by_xpath(Config.InboxLink).click()
-				element = driver.find_element_by_xpath(Config.ChatThread).click()
+			elif i<30 and element[:4]!=data:
 				time.sleep(1)
 				continue
 			else:
@@ -902,17 +901,15 @@ def DriverWait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 
 def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		element = driver.find_element_by_xpath(getattr(Config, target))
-		BasePath=element.get_attribute("src")
-		print "BasePath=",BasePath
-		driver.get(BasePath)
+		#element = driver.find_element_by_xpath(getattr(Config, target))
+		#BasePath=element.get_attribute("src")
+		#print "BasePath=",BasePath
+		#driver.get(BasePath)
 		driver.get_screenshot_as_file(ActFile)
-		
 		i1 = Image.open(ActFile)
-		i2 = Image.open(getattr(Constants, data))
+		i2 = Image.open(AttachmentsDir+data, 'r')
 		#assert i1.mode == i2.mode, "Different kinds of images."
 		#assert i1.size == i2.size, "Different sizes."
-
 		pairs = izip(i1.getdata(), i2.getdata())
 		if len(i1.getbands()) == 1:
 			# for gray-scale jpegs
@@ -927,7 +924,39 @@ def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
-		print err
+		logger.info("Exception @ ImageComparision"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def ImageFilesComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		for count in range (1, 100):
+			if os.path.isfile(OthersDir+browser+"Downloads/"+data):
+				break
+			else:
+				time.sleep(1)
+		#file1 = open(OthersDir+browser+"Downloads/"+data, 'r')
+		#file2 = open(AttachmentsDir+data, 'r')
+		#f1_line = file1.readline()
+		#f2_line = file2.readline()
+		i1 = Image.open(OthersDir+browser+"Downloads/"+data, 'r')
+		i2 = Image.open(AttachmentsDir+data, 'r')
+		#assert i1.mode == i2.mode, "Different kinds of images."
+		#assert i1.size == i2.size, "Different sizes."
+		pairs = izip(i1.getdata(), i2.getdata())
+		if len(i1.getbands()) == 1:
+			# for gray-scale jpegs
+			dif = sum(abs(p1-p2) for p1,p2 in pairs)
+		else:
+			dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+
+		ncomponents = i1.size[0] * i1.size[1] * 3
+		if (dif / 255.0 * 100)/ncomponents==0.0:
+			return "PASS", ""
+		else:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
+	except Exception as err:
 		logger.info("Exception @ ImageComparision"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
@@ -942,10 +971,8 @@ def PdfComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		for line in get_pdf_content_lines(ActPdfFile):
 			newfile.append(str(line.encode('ascii', 'ignore').decode('ascii')))
 			
-		print len(set(oldfile) - set(newfile))
 		return "PASS", ""
 	except Exception as err:
-		print err
 		logger.info("Exception @ PdfComparision"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
@@ -959,8 +986,13 @@ def get_pdf_content_lines(pdf_file_path):
 				yield line
 
 def ExcelComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	wb = openpyxl.load_workbook('/home/cureatr/CureatrPythonWorkSpace/Images/Suite_Web.xlsx')
-	wb1 = openpyxl.load_workbook('/home/cureatr/CureatrPythonWorkSpace/Images/Suite_Web.xlsx')
+	for count in range (1, 100):
+			if os.path.isfile(OthersDir+browser+"Downloads/"+data):
+				break
+			else:
+				time.sleep(1)
+	wb = openpyxl.load_workbook(OthersDir+browser+"Downloads/"+data, 'r')
+	wb1 = openpyxl.load_workbook(AttachmentsDir+data, 'r')
 	sheet1 = wb.get_sheet_by_name('Suite')
 	sheet2 = wb1.get_sheet_by_name('Suite')
 	if sheet1.max_row ==sheet2.max_row:
@@ -968,10 +1000,13 @@ def ExcelComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 			for i in range(1, sheet1.max_column):
 				for j in range(1,sheet1.max_row):
 					if sheet1.cell(row = j, column = i).value != sheet2.cell(row = j, column = i).value:
-						print sheet1.cell(row = j, column = i).value, sheet2.cell(row = j, column = i).value
+						return "FAIL", ""
 					else:
-						print "file are same"
-	return "PASS", ""
+						Status="PASS"
+	if Status=="PASS":
+		return "PASS", ""
+	else:
+		return "FAIL", ""
 
 def VoiceComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -979,10 +1014,23 @@ def VoiceComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 		audiodiff.audio_equal('airplane.flac', 'airplane.m4a')
 		audiodiff.tags_equal('airplane.flac', 'airplane.m4a')
 	except Exception as err:
-		print err
 		logger.info("Exception @ ImageComparision"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
+
+def DocxComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	for count in range (1, 100):
+		if os.path.isfile(OthersDir+browser+"Downloads/"+data):
+			break
+		else:
+			time.sleep(1)
+	document=Document(OthersDir+browser+"Downloads/"+data)
+	document2=Document(AttachmentsDir+data)
+	for p,p1 in zip(document.paragraphs,document2.paragraphs):
+		if p.text != p1.text:
+			return "FAIL", ""
+		else:
+			return "PASS", ""
+
 def VerifyProfileImage(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, target))
@@ -1007,15 +1055,33 @@ def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID
 		OpenActFile = open(ActFilePath, 'w')
 		OpenActFile.write(str(TSelement))
 		OpenActFile.close()
-		file1 = open(TOSFileDir+'ActFile.txt', 'r')
-		file2 = open(TOSFileDir+'ExpFile.txt', 'r')
+		Status=verifyTextFiles(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		if Status=="PASS":
+			return "PASS", ""
+		else:
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ verifyTermsofService"+str(err))
+		return "FAIL", ""
+
+def verifyTextFiles(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		#file1 = open(TOSFileDir+'ActFile.txt', 'r')
+		#file2 = open(TOSFileDir+'ExpFile.txt', 'r')
+		for count in range (1, 100):
+			if os.path.isfile(OthersDir+browser+"Downloads/"+'CureatrTextFile.txt'):
+				break
+			else:
+				time.sleep(1)
+		file1 = open(OthersDir+browser+"Downloads/"+'CureatrTextFile.txt', 'r')
+		file2 = open(AttachmentsDir+'CureatrTextFile.txt', 'r')
 		f1_line = file1.readline()
 		f2_line = file2.readline()
 		while f1_line != '' or f2_line != '':
 			f1_line = f1_line.rstrip()
 			f2_line = f2_line.rstrip()
 			if f1_line==f2_line:
-				Status="pass"
+				Status="PASS"
 			else:
 				Status="FAIL"
 				break
@@ -1029,7 +1095,18 @@ def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID
 		file1.close()
 		file2.close()
 	except Exception as err:
-		logger.info("Exception @ verifyTermsofService"+str(err))
+		logger.info("Exception @ verifyTextFiles"+str(err))
+		return "FAIL", ""
+
+def DeleteFiles(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		folder=OthersDir+browser+"Downloads"
+		filelist = [ f for f in os.listdir(folder) if f.endswith(data) ]
+		for f in filelist:
+			os.remove(folder+"/"+f)
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ verifyTextFiles"+str(err))
 		return "FAIL", ""
 
 def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
@@ -1399,6 +1476,7 @@ def verifyLatestMessage(browser, driver, target, data, subdirectory, TCID, TSID,
  			List=driver.find_elements_by_xpath(getattr(Config, target)[0])
  			n=len(List)
  			element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(n)+getattr(Config, target)[2]).text
+ 			element = element.encode('ascii', 'ignore').decode('ascii')
  			if str(element)==str(data):
  				return "PASS", ""
  			else:
@@ -1442,10 +1520,7 @@ def verifyLatestImage(browser, driver, target, data, subdirectory, TCID, TSID, D
 def SelectLatestImage(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
  	try:
  		List=driver.find_elements_by_xpath(getattr(Config, target)[0])
- 		print "List=",List
- 		print getattr(Config, target)[1]+str(len(List))+getattr(Config, target)[3]
  		element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(len(List))+getattr(Config, target)[3]).is_displayed()
- 		print element
  		if element==True:
  			driver.find_element_by_xpath(getattr(Config, target)[1]+str(len(List))+getattr(Config, target)[3]).click()
  			return "PASS", ""
@@ -1456,3 +1531,21 @@ def SelectLatestImage(browser, driver, target, data, subdirectory, TCID, TSID, D
  		logger.info("Exception @ selectInstitution"+str(err))
  		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
  		return "FAIL", ""
+
+def Archieve(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		List=driver.find_elements_by_xpath("//*[@id='thread-collection']/li")
+		Status=""
+		for ListCount in range(1, len(List)+1):
+			element=driver.find_element_by_xpath("//*[@id='thread-collection']/li["+str(ListCount)+"]")
+			Style=element.get_attribute("style")
+			if Style!="display: none;":
+				driver.find_element_by_xpath("//*[@id='thread-collection']/li["+str(ListCount)+"]/div[2]/div[2]/div[1]/div[1]").click()
+				return "PASS", ""
+		if Status=="":
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ selectInstitution"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""

@@ -26,6 +26,16 @@ Suite_Web="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Suite_Web.xlsx"
 Results="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/Results.xlsx"
 InPutFileDir="/home/cureatr/CureatrPythonWorkSpace/InputFiles/Web/"
 TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
+
+FirefoxProfileDir="/home/cureatr/CureatrPythonWorkSpace/Others/pey75pqn.Cureatr_Profile"
+NodePath='http://192.168.73.1:5557/wd/hub'
+IENodePath='http://192.168.73.137:5558/wd/hub'
+ChromeDownloadsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/ChromeDownloads"
+AttachmentsDir="/home/cureatr/CureatrPythonWorkSpace/Others/Attachments/"
+FileAttachmentsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/Attachments/"
+OthersDir="/home/cureatr/CureatrPythonWorkSpace/Others/"
+
+
 ActFile="/home/cureatr/CureatrPythonWorkSpace/Images/ActFile.png"
 ExplogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Explogo.png"
 ExpJpgFile="/home/cureatr/CureatrPythonWorkSpace/Images/ExpJpgFile.png"

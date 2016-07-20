@@ -49,7 +49,7 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 					addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
 				
 				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True,admin_iids=[INSTITUTIONID])
+					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=False,admin_iids=[INSTITUTIONID])
 				if str(target)=="USER-B":
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORDB", OTP[1])
 					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORDB", OTP[1])
