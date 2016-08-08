@@ -11,6 +11,7 @@ from cureatr.lib.search import (
     email_search, recent_search,
     coverage_search, combined_search, group_search, role_search
 )
+from cureatr.lib.patient import search
 from random import randint
 SEARCH_TYPE_RECENT = "recent"
 SEARCH_TYPE_CUREATR_ONLY = "cureatr"
@@ -38,8 +39,9 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
 				LASTNAME=str(rn)
-				#EMAILID=browser.lower()+"-test002@mtuity.com"
+				#EMAILID=browser.lower()+"-test1003@mtuity.com"
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
+
 				print EMAILID
 				if str(target)=="USER-B":
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "USERB", EMAILID)
@@ -49,7 +51,8 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 					addCellValueToBuff(currentTestDataSheet, dataset, "EMAILID", EMAILID)
 				
 				OTP=db_recipes.qa_create_user(first_name=FIRSTNAME, institution_id=INSTITUTIONID, specialty=SPECIALTY, 
-					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=False,admin_iids=[INSTITUTIONID])
+					title=TITILE, password=None, last_name=LASTNAME, email=EMAILID,make_active=True,admin_iids=[INSTITUTIONID])
+				
 				if str(target)=="USER-B":
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORDB", OTP[1])
 					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORDB", OTP[1])
@@ -59,6 +62,8 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
 				addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
+				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "USERNAME", str(FIRSTNAME)+" "+str(rn))
+				addCellValueToBuff(currentTestDataSheet, dataset, "USERNAME", str(FIRSTNAME)+" "+str(rn))
 				return "PASS", ""
 				
 	except Exception as err:
@@ -112,8 +117,8 @@ def qa_search3(data, currentTestDataSheet, dataset):
 	elif search_type == SEARCH_TYPE_COVERAGE:
 		results_cureatr, limited_results = coverage_search(user, query, include_inactive=include_inactive)
 	else:
-		results_directory, profiles_directory, results_cureatr, limited_results = combined_search(user, query, include_inactive=include_inactive)
-
+		results_directory, profiles_directory, results_cureatr, role_results, limited_results = combined_search(user, query, include_inactive=include_inactive)
+		
 	# FIXFIX: roll group search into combined search / user search?
 	groups = []
 	if include_groups and search_type not in (SEARCH_TYPE_EMAIL, SEARCH_TYPE_RECENT):
@@ -131,5 +136,14 @@ def qa_search3(data, currentTestDataSheet, dataset):
 	'recipient_groups': groups,
 	'roles': roles,
 	}
-	Total_Results=[raw_results['results_cureatr'], raw_results['recipient_groups']]
+	Total_Results=[raw_results['results_cureatr'], raw_results['recipient_groups'], raw_results['roles']]
 	return Total_Results
+
+def patient_search(data, currentTestDataSheet, dataset):
+	try:
+		EMAILID=getCellValueBySheet(currentTestDataSheet, dataset, "EMAILID")
+		user=Users.find_by_email(EMAILID)[0]
+		PatientSearchResults=search(user, data, 25)
+		return PatientSearchResults[1]
+	except Exception as err:
+		print err

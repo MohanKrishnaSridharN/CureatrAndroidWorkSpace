@@ -34,9 +34,11 @@ ChromeDownloadsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/ChromeD
 AttachmentsDir="/home/cureatr/CureatrPythonWorkSpace/Others/Attachments/"
 FileAttachmentsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/Attachments/"
 OthersDir="/home/cureatr/CureatrPythonWorkSpace/Others/"
+ImagesDir="/home/cureatr/CureatrPythonWorkSpace/Images/"
 
 
 ActFile="/home/cureatr/CureatrPythonWorkSpace/Images/ActFile.png"
+
 ExplogoFile="/home/cureatr/CureatrPythonWorkSpace/Images/Explogo.png"
 ExpJpgFile="/home/cureatr/CureatrPythonWorkSpace/Images/ExpJpgFile.png"
 ExpPNGFile="/home/cureatr/CureatrPythonWorkSpace/Images/ExpPNGFile.png"
