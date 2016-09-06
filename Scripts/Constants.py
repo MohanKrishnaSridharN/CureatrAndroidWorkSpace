@@ -30,9 +30,10 @@ TOSFileDir="/home/cureatr/CureatrPythonWorkSpace/Others/TOS/"
 FirefoxProfileDir="/home/cureatr/CureatrPythonWorkSpace/Others/pey75pqn.Cureatr_Profile"
 NodePath='http://192.168.73.1:5557/wd/hub'
 IENodePath='http://192.168.73.137:5558/wd/hub'
-ChromeDownloadsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/ChromeDownloads"
+ChromeDownloadsDir="/Users/macmini/CureatrPythonWorkSpace/Others/ChromeDownloads"
 AttachmentsDir="/home/cureatr/CureatrPythonWorkSpace/Others/Attachments/"
-FileAttachmentsDir="/Users/macmini/Cureatr/CureatrPythonWorkSpace/Others/Attachments/"
+FileAttachmentsDir="/Users/macmini/CureatrPythonWorkSpace/Others/Attachments/"
+IEFileAttachmentsDir="C:\SeleniumSoftWares\Others\Attachments"
 OthersDir="/home/cureatr/CureatrPythonWorkSpace/Others/"
 ImagesDir="/home/cureatr/CureatrPythonWorkSpace/Images/"
 

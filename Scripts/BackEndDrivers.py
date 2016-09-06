@@ -39,8 +39,10 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
 				LASTNAME=str(rn)
-				#EMAILID=browser.lower()+"-test1003@mtuity.com"
 				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
+				#LASTNAME="314"
+				#EMAILID=browser.lower()+"test314@mtuity.com"
+				
 
 				print EMAILID
 				if str(target)=="USER-B":
@@ -82,7 +84,7 @@ def CreateInstitution(browser, target, data, currentTestDataSheet,  dataset,curr
 				INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
 				INSTITUTIONSHORTNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][1])
 				INSTITUTIONNAME=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
-				db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME,allowed_domains=['mtuity.com'])
+				db_recipes.qa_create_institution(INSTITUTIONID, short_name=INSTITUTIONSHORTNAME, name=INSTITUTIONNAME)
 				return "PASS", ""
 	except Exception as err:
 		if "id ["+str(INSTITUTIONID)+"] exists" in str(err):

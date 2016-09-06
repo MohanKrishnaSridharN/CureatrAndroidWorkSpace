@@ -43,6 +43,9 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 			driver=webdriver.Remote(NodePath, desired_capabilities)
 			return driver, "PASS"
 		elif browser=="Chrome":
+			#cap=webdriver.DesiredCapabilities.CHROME
+			#driver=webdriver.Remote('http://172.16.88.1:5557/wd/hub', cap)
+			#driver = webdriver.Chrome()
 			chromeOptions = webdriver.ChromeOptions()
 			prefs = {"download.default_directory" : ChromeDownloadsDir}
 			chromeOptions.add_experimental_option("prefs",prefs)
@@ -71,7 +74,7 @@ def OpenWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 	try:
 		if driver.current_url != CureatrPlayURL:
 			driver.get(getattr(Config, str(target)))
-			driver.implicitly_wait(10)
+			driver.implicitly_wait(5)
 			Status=PageRefresh(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			if Status=="PASS":
 				return "PASS", ""
@@ -102,14 +105,22 @@ def AttachFile(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		if browser=="FF" or browser=="Chrome":
 			data=FileAttachmentsDir+str(data)
 		else:
-			data=FileAttachmentsDir+str(data)
+			data=IEFileAttachmentsDir+"\\"+str(data)
 		if browser=="FF":
-			element=driver.find_element_by_xpath(getattr(Config, str(target)))
-			driver.execute_script("document.querySelector('[id^=fileuploadview]').parentNode.parentNode.	")
-			driver.find_element_by_xpath(getattr(Config, str(target))).send_keys(data)
-			driver.execute_script("document.querySelector('[id^=fileuploadview]').parentNode.parentNode.className='upload-manager'")
+			if str(target)=="ChangePhoto":
+				element=driver.find_element_by_xpath(getattr(Config, str(target)))
+				driver.execute_script("document.querySelector('[id^=change-photo-input]').parentNode.parentNode.className=''")
+				driver.find_element_by_xpath(getattr(Config, str(target))).send_keys(data)
+				driver.execute_script("document.querySelector('[id^=change-photo-input]').parentNode.parentNode.className='profile-button-photo'")
+			else:
+				element=driver.find_element_by_xpath(getattr(Config, str(target)))
+				driver.execute_script("document.querySelector('[id^=fileuploadview]').parentNode.parentNode.className=''")
+				driver.find_element_by_xpath(getattr(Config, str(target))).send_keys(data)
+				driver.execute_script("document.querySelector('[id^=fileuploadview]').parentNode.parentNode.className='upload-manager'")
 		else:
 			driver.find_element_by_xpath(getattr(Config, str(target))).send_keys(data)
+		if browser=="IE":
+			time.sleep(10)
 		return "PASS", ""
 	except Exception as err:
 		logger.info("Exception @ AttachFile"+str(err))
@@ -225,6 +236,7 @@ def verifysearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 		if BESearchLength==ListLength and Status=="PASS" and FeSearchStatus=="PASS" and CompareAPPBERestults==0:
 			return "PASS", ""
 		else:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
 		logger.info("Exception @ Verify Search"+str(err))
@@ -268,6 +280,7 @@ def verifyToFieldsearch(browser, driver, target, data, subdirectory, TCID, TSID,
 		logger.info("Exception @ Verify Search"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
+
 def verifyRecentContacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		time.sleep(3)
@@ -302,6 +315,41 @@ def TypeEMAILID(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
+def TypePASSWORD(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		if browser=="FF":
+			data=getCellValueBySheet(currentTestDataSheet, dataset, "FFPASSWORD")
+		elif browser=="Chrome":
+			data=getCellValueBySheet(currentTestDataSheet, dataset, "CHROMEPASSWORD")
+		elif browser=="IE":
+			data=getCellValueBySheet(currentTestDataSheet, dataset, "IE")
+
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		Text=element.get_attribute("value")
+		if Text!="":	
+			element.clear()
+		element.send_keys(str(data))
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ TypeEMAILID"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def TypeRecepient(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		if data =="":
+			browser=""
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		Text=element.get_attribute("value")
+		if Text!="":	
+			element.clear()
+		element.send_keys(str(browser)+str(data))
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ TypeEMAILID"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
 def Maximize(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		driver.maximize_window()
@@ -312,19 +360,26 @@ def Maximize(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Corr
 		return "FAIL", ""
 		
 def Click(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
-		element=driver.find_element_by_xpath(getattr(Config, target))
-		element.click()
-		return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ Click"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+	for i in range(4):
+		try:
+			#wait = WebDriverWait(driver, 1, poll_frequency=1, ignored_exceptions=["Element is not clickable at point"])
+			#element = wait.until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target))))
+			#ui.WebDriverWait(driver, 1).until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target))))
+			element=driver.find_element_by_xpath(getattr(Config, target))
+			element.click()
+			return "PASS", ""
+		except Exception as err:
+			if i>=3:
+				logger.info("Exception @ Click"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+			else:
+				time.sleep(2)
+				continue
 
 def NotClickable(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
+		ui.WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target))))
 		element=driver.find_element_by_xpath(getattr(Config, target))
 		element.click()
 		if element.is_enabled():
@@ -339,47 +394,38 @@ def NotClickable(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 
 
 def DoubleClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
-		element=driver.find_element_by_xpath(getattr(Config, target))
-		element.click()
-		time.sleep(0.300)
-		element.click()
-		return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ Click"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+	for i in range(10):
+		try:
+			ui.WebDriverWait(driver, 1).until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target))))
+			element=driver.find_element_by_xpath(getattr(Config, target))
+			element.click()
+			time.sleep(0.300)
+			element.click()
+			return "PASS", ""
+		except Exception as err:
+			time.sleep(1)
+			if i>=9:
+				logger.info("Exception @ Click"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+			else:
+				continue
 
 def ClickHidden(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
-		element=driver.find_element_by_xpath(getattr(Config, target))
-		driver.execute_script("arguments[0].click();", element)
-		return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ Click"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
-
-def ClickStale(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		element=driver.find_element_by_css_selector(getattr(Config, str(target)))
-		driver.execute_script("arguments[0].click();", element)
-		return "PASS", ""
-	except Exception as err:
+	for i in range(4):
 		try:
-			element=driver.find_element_by_css_selector(getattr(Config, str(target)))
+			#ui.WebDriverWait(driver, 1).until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target))))
+			element=driver.find_element_by_xpath(getattr(Config, target))
 			driver.execute_script("arguments[0].click();", element)
 			return "PASS", ""
 		except Exception as err:
-			try:
-				element=driver.find_element_by_css_selector(getattr(Config, str(target)))
-				driver.execute_script("arguments[0].click();", element)
-				return "PASS", ""
-			except Exception as err:
+			time.sleep(2)
+			if i>=3:
+				logger.info("Exception @ Click"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL"
+				return "FAIL", ""
+			else:
+				continue
 
 def HoverClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data,currentTestDataSheet, dataset,user):
 	try:
@@ -489,7 +535,7 @@ def ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 
 def isElementVisible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		ui.WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
+		ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 		return "PASS", ""
 	except Exception as err:
 		logger.info("Exception @ isElementVisible"+str(err))
@@ -549,20 +595,24 @@ def LinkState(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 		return "FAIL", ""
 		
 def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		element=""
-		ui.WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
-		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-		element = element.encode('ascii', 'ignore').decode('ascii')
-		if str(element)==str(data):
-			return "PASS", ""
-		else:
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-			return "FAIL", ""
-	except Exception as err:
-		logger.info("Exception @ verifyText"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+	for i in range(10):
+		try:
+			ui.WebDriverWait(driver, 1).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
+			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
+			element = element.encode('ascii', 'ignore').decode('ascii')
+			if str(element).lower()==str(data).lower():
+				return "PASS", ""
+			else:
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+		except Exception as err:
+			time.sleep(1)
+			if i>=9:
+				logger.info("Exception @ Click"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+			else:
+				continue
 
 def verifyUserStatus(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -592,7 +642,7 @@ def verifyTextcss(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if data!="":
-			ui.WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
+			ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
 			if data in str(element):
 				return "PASS", ""
@@ -607,18 +657,23 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		return "FAIL", ""
 		
 def verifyTextContains(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-		element = element.encode('ascii', 'ignore').decode('ascii')
-		if str(data).lower() in str(element).lower():
-			return "PASS", ""
-		else:
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-			return "FAIL", ""
-	except Exception as err:
-		logger.info("Exception @ verifyTextContains"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+	for i in range(6):
+		try:
+			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
+			element = element.encode('ascii', 'ignore').decode('ascii')
+			if str(data).lower() in str(element).lower():
+				return "PASS", ""
+			else:
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+		except Exception as err:
+			if i>=5:
+				logger.info("Exception @ verifyTextContains"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+			else:
+				time.sleep(1)
+				continue
 
 def verifyOrgText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -764,11 +819,11 @@ def isEncrypted(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		FieldType=element.get_attribute("type")
-		if FieldType=="password" and data=="TRUE":
+		if FieldType=="password" and str(data).lower()=="true":
 			return "PASS", ""
-		elif FieldType=="text" and data=="FALSE":
+		elif FieldType=="text" and str(data).lower()=="false":
 			return "PASS", ""
-		elif FieldType=="textarea" and data=="FALSE":
+		elif FieldType=="textarea" and str(data).lower()=="false":
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
@@ -903,8 +958,8 @@ def verifyFirstTimeSignIn(browser, driver, target, data, subdirectory, TCID, TSI
 def verifyChangePassword(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if data=="Y":
-			element1 = driver.find_element_by_xpath(getattr(Config, "TSSignOut")).is_displayed()
-			element2 = driver.find_element_by_xpath(getattr(Config, "TSAccept")).is_displayed()
+			element1 = driver.find_element_by_xpath(getattr(Config, target)[0]).is_displayed()
+			element2 = driver.find_element_by_xpath(getattr(Config, target)[1]).is_displayed()
 			if element1==True and element2==True:
 				return "PASS", "YES"
 			else:
@@ -912,8 +967,8 @@ def verifyChangePassword(browser, driver, target, data, subdirectory, TCID, TSID
 				return "FAIL", "NO"
 		else:
 			time.sleep(5)
-			element1 = driver.find_element_by_xpath(getattr(Config, "NewPasswordLabel")).is_displayed()
-			element2 = driver.find_element_by_xpath(getattr(Config, "ReTypePasswordLabel")).is_displayed()
+			element1 = driver.find_element_by_xpath(getattr(Config, target)[2]).is_displayed()
+			element2 = driver.find_element_by_xpath(getattr(Config, target)[3]).is_displayed()
 			if element1==True and element2==True:
 				return "PASS", "NO"
 			else:
@@ -946,7 +1001,6 @@ def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, target))
 		BasePath=element.get_attribute("background")
-		print "BasePath=",BasePath
 		driver.get(BasePath)
 		driver.get_screenshot_as_file(ActFile)
 		i1 = Image.open(ActFile)
@@ -1169,8 +1223,6 @@ def verifyPatientSearch(browser, driver, target, data, subdirectory, TCID, TSID,
 			else:
 				Status="FAIL"
 				break
-		print "BEPatientsList=",BEPatientsList
-
 		time.sleep(5)
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
 		Status=""
@@ -1190,7 +1242,6 @@ def verifyPatientSearch(browser, driver, target, data, subdirectory, TCID, TSID,
 			else:
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 				return "FAIL", ""
-		print "FEPatientsList",FEPatientsList
 		if Status=="PASS":
 			return "PASS", ""
 		return "PASS", ""
@@ -1269,8 +1320,9 @@ def Searchcontacts(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 
 def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		time.sleep(5)
-		ui.WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target)[0])))
+		time.sleep(3)
+		#ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target)[0])))
+		#ui.WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.XPATH, getattr(Config, target)[0])))
 		List = driver.find_elements_by_xpath(getattr(Config, target)[0])
 		for ListCount in range(1, len(List)+getattr(Config, target)[5]):
 			Status=""
@@ -1291,17 +1343,22 @@ def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 		return "FAIL", ""
 
 def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		if element.is_displayed():
-			return "PASS", ""
-		else:
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-			return "FAIL", "" 
-	except Exception as err:
-		logger.info("Exception @ isVissible"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""  
+	for i in range(6):
+		try:
+			element=driver.find_element_by_xpath(getattr(Config, str(target)))
+			if element.is_displayed():
+				return "PASS", ""
+			else:
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", "" 
+		except Exception as err:
+			if i>=5:
+				logger.info("Exception @ isVissible"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
+			else:
+				time.sleep(1)
+				continue 
 
 def isUploadSucessVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -1548,10 +1605,10 @@ def AddCharByCharCoverageSearch(browser, driver, target, data, subdirectory, TCI
 
 def MaximizeComposeScreen(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		ui.WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
+		ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
 		time.sleep(1)
 		element = driver.find_element_by_xpath(getattr(Config, str(target))).size
-		if (str(element)=="{'width': 482, 'height': 283}" or str(element)=="{'width': 482, 'height': 563}") and str(data)=="Maximize":
+		if (str(element)=="{'width': 482, 'height': 283}" or str(element)=="{'width': 482, 'height': 563}" or str(element)=="{'width': 482, 'height': 331}") and str(data)=="Maximize":
 			return "PASS", ""
 		elif str(element)=="{'width': 270, 'height': 41}" and str(data)=="Minimize":
 			return "PASS", ""
@@ -1639,6 +1696,7 @@ def verifyLatestImage(browser, driver, target, data, subdirectory, TCID, TSID, D
  		while timesec < 60:
  			List=driver.find_elements_by_xpath(getattr(Config, target)[0])
  			element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(len(List))+getattr(Config, target)[2]).text
+ 			element = element.encode('ascii', 'ignore').decode('ascii')
  			if element==data:
  				Status="PASS"
  				break
@@ -1732,10 +1790,10 @@ def SelectCheckbox(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		if ("checked" in str(Text) and str(data)=="uncheck"):
 			driver.execute_script("arguments[0].click();", element)
 			return "PASS", ""
-		elif ("checked" in str(Text) and str(data)=="check") or ("checked" not in str(Text) and str(data)=="uncheck"):
-			return "PASS", ""
-		elif str(data)=="check" or str(data)=="uncheck":
+		elif str(data)=="checked" or str(data)=="uncheck":
 			driver.execute_script("arguments[0].click();", element)
+			return "PASS", ""
+		elif ("checked" in str(Text) and str(data)=="check") or ("checked" not in str(Text) and str(data)=="uncheck"):
 			return "PASS", ""
 		else:
 			return "FAIL", ""
@@ -1754,7 +1812,7 @@ def MultipleUsersReadStaus(browser, driver, target, data, subdirectory, TCID, TS
 			UserStatusIcon=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).get_attribute("src")
 			FirstLastName=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
 			ReadIcon=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[5]).get_attribute("src")
-			if ExpUserStatusIcon in UserStatusIcon and ExpFirstLastName==FirstLastName.lower() and ExpReadIcon in ReadIcon.lower():
+			if ExpUserStatusIcon in UserStatusIcon and ExpFirstLastName in FirstLastName.lower() and ExpReadIcon in ReadIcon.lower():
 				Status="PASS"
 				return "PASS", ""
 		
@@ -1765,6 +1823,7 @@ def MultipleUsersReadStaus(browser, driver, target, data, subdirectory, TCID, TS
 		logger.info("Exception @ selectInstitution"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
+
 def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset,user):
  	try:
   		element=driver.find_element_by_xpath(getattr(Config, str(target)))
@@ -1787,5 +1846,73 @@ def Urgenttoast(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 			return "FAIL", "" 
 	except Exception as err:
 		logger.info("Exception @ AttachFile"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def Typecharbychar(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		for Count, Char in enumerate(data):
+			element=driver.find_element_by_xpath(getattr(Config, str(target)))
+			element.send_keys(str(Char))
+			time.sleep(0.1)
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ Typecharbychar"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+#########
+def ControlEnd(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		if browser=='Chrome':
+			element=driver.find_element_by_xpath(getattr(Config, str(target)))
+			element.send_keys(Keys.END)
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ wait"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def switchtoframe(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.switch_to_frame(driver.find_element_by_xpath(getattr(Config, str(target))))
+		return "PASS", ""	
+	except Exception as err:
+		logger.info("Exception @ isVissible"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""		
+		
+def switchtowindow(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.switch_to_default_content()
+		return "PASS", ""	
+	except Exception as err:
+		logger.info("Exception @ isVissible"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""	
+		
+def SwitchTo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.find_element_by_xpath("//a[@class='js-add-new-account link-primary']").click()
+		driver.current_window_handle
+		driver.switch_to_window(driver.window_handles[1])
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ isVissible"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def GroupSort(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		GroupNames=[]
+		List=driver.find_elements_by_xpath("//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div")
+		n=len(List)
+		for ListCount in range(1, len(List)+1):
+			element=driver.find_element_by_xpath("//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div["+str(ListCount)+"]/div[2]/div[1]").text
+			GroupNames.append(str(element))
+		CompareAPPBERestults=cmp(GroupNames,GroupNames.sort())
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ GroupSort"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
