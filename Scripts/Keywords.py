@@ -219,7 +219,7 @@ def verifysearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 						return "FAIL", ""
 				if len(List)==0 and BESearchLength==0:
 					element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-					if element1=="No contacts found" or element1=="No patients found" or element1=="No results found" or element1=="No results are available. Please check your search.":
+					if element1=="No results are available. Please check your search." or element1=="No patients found" or element1=="No results found" or element1=="No results are available. Please check your search.":
 						FeSearchStatus="PASS"
 					else:
 						ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
@@ -227,7 +227,7 @@ def verifysearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 			except Exception as err:
 				ListLength=len(List)-1
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-				if element1=="No contacts found" or element1=="No patients found" or element1=="No results found" or element1=="No results are available. Please check your search.":
+				if element1=="No results are available. Please check your search." or element1=="No patients found" or element1=="No results found" or element1=="No results are available. Please check your search.":
 					FeSearchStatus="PASS"
 				else:
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
@@ -600,6 +600,8 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 			ui.WebDriverWait(driver, 1).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
 			element = element.encode('ascii', 'ignore').decode('ascii')
+			print element
+			print data
 			if str(element).lower()==str(data).lower():
 				return "PASS", ""
 			else:
@@ -1426,7 +1428,7 @@ def delLastchars(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 				GetFieldValue=element.get_attribute("value")
 			except Exception as err:
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-				if element1=="No contacts found" or element1=="No patients found" or element1=="No results found":
+				if element1=="No results are available. Please check your search." or element1=="No patients found" or element1=="No results found":
 					element.send_keys(Keys.BACKSPACE)
 					GetFieldValue=element.get_attribute("value")
 					Status="PASS"
@@ -1458,7 +1460,7 @@ def AddCharByChar(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 						return "FAIL", ""
 			except Exception as err:
 				element1=driver.find_element_by_xpath(getattr(Config, target)[6]).text
-				if element1=="No contacts found" or element1=="No patients found" or element1=="No results found":
+				if element1=="No results are available. Please check your search." or element1=="No patients found" or element1=="No results found":
 					continue
 				else:
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
