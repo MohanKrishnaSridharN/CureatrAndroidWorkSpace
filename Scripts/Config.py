@@ -34,8 +34,7 @@ NavigationColumn2="//div[@class='navigation-column']/div[2]/div/div[3]/p"
 ExistingAccount="//*[@id='existingAccount']"
 
 #Dashboard
-#UserName="//div[@id='header-user']/div/div/div/span"
-UserName="//div[@id='header-user']/div[1]/div[1]/div[1]/span"
+UserName="//div[@class='current-user']/div[1]/div[1]/span"
 InboxLink="//*[@id='inbox-link']"
 ContactsLink="//*[@id='contacts-link']"
 PatientsLink="//*[@id='patients-link']"
