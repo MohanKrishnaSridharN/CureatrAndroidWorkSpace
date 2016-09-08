@@ -20,11 +20,6 @@ Email="//*[@id='emailInput']"
 Password="//*[@id='passwordInput']"
 SignIn="//div[2]/div/div/div/div[2]/div"
 
-#Institution Screen >> Login Screen >> Home Screen >> Inbox >> Latest Message List
-
-
-
-
 #ErrorMsg="//*[@id='frame']/div/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div[2]"
 ErrorMsg="//div[@class='confirmation-message-contents']"
 ResetPasswordLink="//*[@id='resetPassword']"
@@ -102,6 +97,7 @@ SelectPatient="//div[@class='patient-information truncate-text']"
 ClearPatient="//li[@class='patient-item-view']/a"
 
 #Settings
+Header="//div[@id='header']"
 settingsDropdown="//ul/div/div/div[2]"
 ShowArchived="//*[@id='settingsDropdown']/div/div[1]/div[1]/label"
 ArcivedBtn="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[2]/div[1]/div"
