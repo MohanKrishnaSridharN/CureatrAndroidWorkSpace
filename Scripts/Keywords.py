@@ -1145,7 +1145,7 @@ def VerifyProfileImage(browser, driver, target, data, subdirectory, TCID, TSID, 
 
 def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		driver.switch_to.frame("tos_update_text")
+		#driver.switch_to.frame("tos_update_text")
 		TSelement = driver.find_element_by_xpath(getattr(Config, str(target))).text
 		TSelement = TSelement.encode('ascii', 'ignore').decode('ascii')
 		ActFilePath=TOSFileDir+'ActFile.txt'
@@ -1677,6 +1677,8 @@ def verifyLatestMessage(browser, driver, target, data, subdirectory, TCID, TSID,
  			n=len(List)
  			element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(n)+getattr(Config, target)[2]).text
  			element = element.encode('ascii', 'ignore').decode('ascii')
+ 			print "element=",element
+ 			print "data=",data
  			if str(element)==str(data):
  				return "PASS", ""
  			else:
