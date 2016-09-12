@@ -618,6 +618,7 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 
 def verifyUserStatus(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
+		print "verifyUserStatus"
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		Text=element.get_attribute("class")
 		if str(Text)==str(data):
@@ -646,6 +647,8 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		if data!="":
 			ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
+			print "element=",element
+			print "data=",data
 			if data in str(element):
 				return "PASS", ""
 			else:
@@ -762,11 +765,11 @@ def selectQuickMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 				Status="PASS"
 				return "PASS", ""
 		if Status=="":
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
 		logger.info("Exception @ selectInstitution"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
 def DeleteAllQuickMsgs(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
@@ -786,7 +789,7 @@ def DeleteAllQuickMsgs(browser, driver, target, data, subdirectory, TCID, TSID, 
 		if Status[0]=="PASS":
 			return "PASS", ""
 		else:
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
 		logger.info("Exception @ DeleteAllQuickMsgs"+str(err))
@@ -807,6 +810,8 @@ def verifyTextBoxValue(browser, driver, target, data, subdirectory, TCID, TSID, 
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		TextBoxValue=element.get_attribute("value")
+		print "TextBoxValue=",TextBoxValue
+		print "data=",data
 		if str(data) in str(TextBoxValue):
 			return "PASS", ""
 		else:
@@ -1137,10 +1142,10 @@ def VerifyProfileImage(browser, driver, target, data, subdirectory, TCID, TSID, 
 		if "user" in FieldType or "profile" in FieldType:
 			return "PASS", ""
 		else:
-			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset)
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
 def verifyTermsofService(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
@@ -1753,20 +1758,47 @@ def Archieve(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Corr
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
-def Profiles(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+def GetProfilesImage(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	for i in range(60):
+		try:
+			element=driver.find_element_by_xpath(getattr(Config, str(target)))
+			FieldType=element.get_attribute("src")
+			print "FieldType=",FieldType
+			if "profileimages" in str(FieldType):
+				addCellValueToBuff(currentTestDataSheet, dataset, "SRC", str(FieldType))
+				return "PASS", ""
+			else:
+				time.sleep(1)
+				continue
+		except Exception as err:
+			logger.info("Exception @ Profiles"+str(err))
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
+
+def VerifyProfilesImage(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		profileno="user"
-		profileyes="profile"
 		FieldType=element.get_attribute("src")
-		if profileno in FieldType:
+		print "FieldType=",FieldType
+		print "data=", data
+		if str(data)=="UserAvatar" and ("prompt.png" in str(FieldType) or "user.png" in str(FieldType)):
 			return "PASS", ""
-		elif profileyes in FieldType:
+		elif str(data)=="ServiceAvatar" and ("avatar_role.png" in str(FieldType)):
+			return "PASS", ""
+		elif str(data)=='Available' and ("status_available.png" in str(FieldType)):
+			return "PASS", ""
+		elif str(data)=='Busy' and ("status_busy.png" in str(FieldType)):
+			return "PASS", ""
+		elif str(data)=='Off Duty' and ("status_off_duty.png" in str(FieldType)):
+			return "PASS", ""
+		elif str(data) == str(FieldType):
+			addCellValueToBuff(currentTestDataSheet, dataset, "SRC", str(FieldType))
 			return "PASS", ""
 		else:
 			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 			return "FAIL", ""
 	except Exception as err:
+		logger.info("Exception @ Profiles"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
@@ -1816,7 +1848,7 @@ def MultipleUsersReadStaus(browser, driver, target, data, subdirectory, TCID, TS
 			UserStatusIcon=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).get_attribute("src")
 			FirstLastName=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[3]).text
 			ReadIcon=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[5]).get_attribute("src")
-			if ExpUserStatusIcon in UserStatusIcon and ExpFirstLastName in FirstLastName.lower() and ExpReadIcon in ReadIcon.lower():
+			if ExpUserStatusIcon.lower() in UserStatusIcon.lower() and ExpFirstLastName.lower() in FirstLastName.lower() and ExpReadIcon.lower() in ReadIcon.lower():
 				Status="PASS"
 				return "PASS", ""
 		
@@ -1865,7 +1897,6 @@ def Typecharbychar(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
-#########
 def ControlEnd(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if browser=='Chrome':
@@ -1909,10 +1940,10 @@ def SwitchTo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Corr
 def GroupSort(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		GroupNames=[]
-		List=driver.find_elements_by_xpath("//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div")
+		List=driver.find_elements_by_xpath(getattr(Config, target)[0])
 		n=len(List)
 		for ListCount in range(1, len(List)+1):
-			element=driver.find_element_by_xpath("//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div["+str(ListCount)+"]/div[2]/div[1]").text
+			element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(ListCount)+getattr(Config, target)[2]).text
 			GroupNames.append(str(element))
 		CompareAPPBERestults=cmp(GroupNames,GroupNames.sort())
 		return "PASS", ""
@@ -1920,3 +1951,49 @@ def GroupSort(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 		logger.info("Exception @ GroupSort"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
+
+def Checkboxpresent(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		Text=element.get_attribute("class")
+		if ("check" in str(Text)):
+			return "PASS", ""
+		else:
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ Checkboxpresent"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def VerifyElementColor(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		FieldType=element.value_of_css_property('background-color')
+		print "FieldType=",FieldType
+		print "data=",data
+		if str(data) == str(FieldType):
+			return "PASS", ""
+		else:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ VerifyElementColor"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def verifyTextBoxValue2(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		TextBoxValue=element.get_attribute("value")
+		print "TextBoxValue=",TextBoxValue
+		print "data=",data
+		if str(data) == str(TextBoxValue):
+			return "PASS", ""
+		else:
+			ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+			return "FAIL", ""
+	except Exception as err:
+		logger.info("Exception @ verifyTextBoxValue"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+

@@ -58,12 +58,14 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				if str(target)=="USER-B":
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORDB", OTP[1])
 					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORDB", OTP[1])
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAMEB", str(rn))
+					addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAMEB", str(rn))
 				else:
 					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "PASSWORD", OTP[1])
 					addCellValueToBuff(currentTestDataSheet, dataset, "PASSWORD", OTP[1])
+					addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
+					addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
 
-				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "LASTNAME", str(rn))
-				addCellValueToBuff(currentTestDataSheet, dataset, "LASTNAME", str(rn))
 				addCellValue(currentTestSuiteXLSPATH,currentTestCase, dataset, "USERNAME", str(FIRSTNAME)+" "+str(rn))
 				addCellValueToBuff(currentTestDataSheet, dataset, "USERNAME", str(FIRSTNAME)+" "+str(rn))
 				return "PASS", ""
