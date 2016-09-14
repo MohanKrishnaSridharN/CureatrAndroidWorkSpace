@@ -100,6 +100,16 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
+def TypeText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		element.send_keys(str(data))
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ Type"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
 def AttachFile(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		if browser=="FF" or browser=="Chrome":
@@ -233,6 +243,8 @@ def verifysearch(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					return "FAIL", ""
 		CompareAPPBERestults=cmp(BEUserList.sort(),AppUserList.sort())
+		#PRINT "BEUserList",BEUserList
+		#PRINT "AppUserList",AppUserList
 		if BESearchLength==ListLength and Status=="PASS" and FeSearchStatus=="PASS" and CompareAPPBERestults==0:
 			return "PASS", ""
 		else:
@@ -600,8 +612,8 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 			ui.WebDriverWait(driver, 1).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, target))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
 			element = element.encode('ascii', 'ignore').decode('ascii')
-			print element
-			print data
+			#PRINT element
+			#PRINT data
 			if str(element).lower()==str(data).lower():
 				return "PASS", ""
 			else:
@@ -618,7 +630,7 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 
 def verifyUserStatus(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		print "verifyUserStatus"
+		#PRINT "verifyUserStatus"
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		Text=element.get_attribute("class")
 		if str(Text)==str(data):
@@ -647,8 +659,8 @@ def verifyErrorMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		if data!="":
 			ui.WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.XPATH, getattr(Config, str(target)))))
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
-			print "element=",element
-			print "data=",data
+			#PRINT "element=",element
+			#PRINT "data=",data
 			if data in str(element):
 				return "PASS", ""
 			else:
@@ -666,6 +678,8 @@ def verifyTextContains(browser, driver, target, data, subdirectory, TCID, TSID, 
 		try:
 			element = driver.find_element_by_xpath(getattr(Config, str(target))).text
 			element = element.encode('ascii', 'ignore').decode('ascii')
+			#PRINT element
+			#PRINT data
 			if str(data).lower() in str(element).lower():
 				return "PASS", ""
 			else:
@@ -810,8 +824,8 @@ def verifyTextBoxValue(browser, driver, target, data, subdirectory, TCID, TSID, 
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		TextBoxValue=element.get_attribute("value")
-		print "TextBoxValue=",TextBoxValue
-		print "data=",data
+		#PRINT "TextBoxValue=",TextBoxValue
+		#PRINT "data=",data
 		if str(data) in str(TextBoxValue):
 			return "PASS", ""
 		else:
@@ -1007,14 +1021,22 @@ def DriverWait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		element = driver.find_element_by_xpath(getattr(Config, target))
-		BasePath=element.get_attribute("background")
-		driver.get(BasePath)
+		BasePath=element.get_attribute("src")
+		print BasePath
+		#driver.get(BasePath)
+		driver.execute_script("$(window.open('"+BasePath+"'))")
+		SwithchTo2=SwitchTo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		driver.get_screenshot_as_file(ActFile)
+		if browser=="Chrome":
+			driver.execute_script("window.top.close();")
+		time.sleep(1)
+		Status=switchtowindow(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		i1 = Image.open(ActFile)
 		i2 = Image.open(ImagesDir+str(browser)+data, 'r')
 		#assert i1.mode == i2.mode, "Different kinds of images."
 		#assert i1.size == i2.size, "Different sizes."
 		pairs = izip(i1.getdata(), i2.getdata())
+		
 		if len(i1.getbands()) == 1:
 			# for gray-scale jpegs
 			dif = sum(abs(p1-p2) for p1,p2 in pairs)
@@ -1022,6 +1044,7 @@ def ImageComparision(browser, driver, target, data, subdirectory, TCID, TSID, DS
 			dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
 
 		ncomponents = i1.size[0] * i1.size[1] * 3
+		print (dif / 255.0 * 100)/ncomponents==0.0 or (dif / 255.0 * 100)/ncomponents
 		if (dif / 255.0 * 100)/ncomponents==0.0 or (dif / 255.0 * 100)/ncomponents<=0.0299:
 			return "PASS", ""
 		else:
@@ -1682,8 +1705,8 @@ def verifyLatestMessage(browser, driver, target, data, subdirectory, TCID, TSID,
  			n=len(List)
  			element=driver.find_element_by_xpath(getattr(Config, target)[1]+str(n)+getattr(Config, target)[2]).text
  			element = element.encode('ascii', 'ignore').decode('ascii')
- 			print "element=",element
- 			print "data=",data
+ 			#PRINT "element=",element
+ 			#PRINT "data=",data
  			if str(element)==str(data):
  				return "PASS", ""
  			else:
@@ -1763,7 +1786,7 @@ def GetProfilesImage(browser, driver, target, data, subdirectory, TCID, TSID, DS
 		try:
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			FieldType=element.get_attribute("src")
-			print "FieldType=",FieldType
+			#PRINT "FieldType=",FieldType
 			if "profileimages" in str(FieldType):
 				addCellValueToBuff(currentTestDataSheet, dataset, "SRC", str(FieldType))
 				return "PASS", ""
@@ -1779,8 +1802,8 @@ def VerifyProfilesImage(browser, driver, target, data, subdirectory, TCID, TSID,
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		FieldType=element.get_attribute("src")
-		print "FieldType=",FieldType
-		print "data=", data
+		#PRINT "FieldType=",FieldType
+		#PRINT "data=", data
 		if str(data)=="UserAvatar" and ("prompt.png" in str(FieldType) or "user.png" in str(FieldType)):
 			return "PASS", ""
 		elif str(data)=="ServiceAvatar" and ("avatar_role.png" in str(FieldType)):
@@ -1908,6 +1931,17 @@ def ControlEnd(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
+def PressEnterKey(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		element.send_keys(Keys.ENTER)
+		time.sleep(0.5)
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ wait"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
 def switchtoframe(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		driver.switch_to_frame(driver.find_element_by_xpath(getattr(Config, str(target))))
@@ -1919,7 +1953,8 @@ def switchtoframe(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 		
 def switchtowindow(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		driver.switch_to_default_content()
+		driver.current_window_handle
+		driver.switch_to_window(driver.window_handles[0])
 		return "PASS", ""	
 	except Exception as err:
 		logger.info("Exception @ isVissible"+str(err))
@@ -1928,7 +1963,7 @@ def switchtowindow(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 		
 def SwitchTo(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
-		driver.find_element_by_xpath("//a[@class='js-add-new-account link-primary']").click()
+		#driver.find_element_by_xpath("//a[@class='js-add-new-account link-primary']").click()
 		driver.current_window_handle
 		driver.switch_to_window(driver.window_handles[1])
 		return "PASS", ""
@@ -1969,8 +2004,8 @@ def VerifyElementColor(browser, driver, target, data, subdirectory, TCID, TSID, 
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		FieldType=element.value_of_css_property('background-color')
-		print "FieldType=",FieldType
-		print "data=",data
+		#PRINT "FieldType=",FieldType
+		#PRINT "data=",data
 		if str(data) == str(FieldType):
 			return "PASS", ""
 		else:
@@ -1985,8 +2020,8 @@ def verifyTextBoxValue2(browser, driver, target, data, subdirectory, TCID, TSID,
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		TextBoxValue=element.get_attribute("value")
-		print "TextBoxValue=",TextBoxValue
-		print "data=",data
+		#PRINT "TextBoxValue=",TextBoxValue
+		#PRINT "data=",data
 		if str(data) == str(TextBoxValue):
 			return "PASS", ""
 		else:
