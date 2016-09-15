@@ -933,3 +933,4 @@ SpecialityList=[SpecialityList0, SpecialityList1, SpecialityList2]
 
 UserAvatar1="//ul[@class='thread-messages-wrapper collection-list']/li[2]/div[1]/div[1]/img"
 UserAvatar2="//ul[@class='thread-messages-wrapper collection-list']/li[3]/div[1]/div[1]/img"
+

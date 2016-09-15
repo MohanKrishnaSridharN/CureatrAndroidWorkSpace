@@ -91,6 +91,7 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 	try:
 		element=driver.find_element_by_xpath(getattr(Config, str(target)))
 		Text=element.get_attribute("value")
+		print "data=",data
 		if Text!="":
 			element.clear()
 		element.send_keys(str(data))
