@@ -45,6 +45,7 @@ def executefunctions(browser, driver):
 def DriverScript(browser, driver):
 	#GET CURRENT DATE AND TIME
 	currentdate=StartTime.strftime('%d-%m-%Y')
+
 	currenttime=str(StartTime.time()).replace(":","")
 
 	logger.info("CREATING FOLDER IN:" +OutPutFileDir+ " WITH TODAYS DATE")
@@ -77,6 +78,7 @@ def DriverScript(browser, driver):
 	driver1="Test"
 	driver2="Test"
 	logger.info("Looping Suite Sheet to Get Test Script ID's Which Has Run Mode Yes")
+	print SuiteXLS.max_row+1
 	for num in range(2, SuiteXLS.max_row+1):
 			currentTestSuite=getCellValue(SuiteXLSPath, "Suite", num, "TSID")
 			if getCellValue(SuiteXLSPath, "Suite", num, "Runmode")=="Y":
@@ -302,11 +304,11 @@ def send_mail(AttachmentsDirPath,subject):
 
 if __name__ == '__main__':
 	try:
-		t1=Thread(target=executefunctions,args=('Chrome', ''))
-		t2=Thread(target=executefunctions,args=('FF', ''))
+		t1=Thread(target=executefunctions,args=('Android-6.0&5.1', ''))
+		#t2=Thread(target=executefunctions,args=('FF', ''))
 		#t3=Thread(target=executefunctions,args=('IE', ''))
 		t1.start()
-		t2.start()
+		#t2.start()
 		#t3.start()
 	except:
 		print "Error: unable to start thread"

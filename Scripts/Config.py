@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Desired APP URL
 CureatrPlayURL="https://cureatr-vm.dev:5101/"
 #CureatrPlayURL="https://messenger.play.cureatr.com/"
@@ -5,951 +6,427 @@ CureatrPlayURL="https://cureatr-vm.dev:5101/"
 #APP TITLE
 verifyTitle="Cureatr Messenger"
 
-#Institution Screen
-WelcomeMsg="//h1"
-GetSupportMsg="//a"
-InfoMsg="//*[@id='frame']/div/div[1]/div/div[2]"
-OrgWaterMark="//*[@id='institution-input']"
-InstTextBox="//*[@id='institution-input']"
-InstSelection="//*[@id='frame']/div/div[2]/div[2]/div/div/div/div[1]/div[2]/ul/li"
-CureatrIncMsg="//div[@id='frame']/div/div/div/div[4]"
-
-#Institution Screen >> Login Screen
-SignInBtn="//*[@id='bigButtonText']"
-Email="//*[@id='emailInput']"
-Password="//*[@id='passwordInput']"
-SignIn="//div[2]/div/div/div/div[2]/div"
-
-#ErrorMsg="//*[@id='frame']/div/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div[2]"
-ErrorMsg="//div[@class='confirmation-message-contents']"
-ResetPasswordLink="//*[@id='resetPassword']"
-SignUpLink="//*[@id='signUp']"         
-ChangeOrg="//*[@id='changeOrg']"  
-CureatrIncText="//*[@id='frame']/div/div[1]/div/div[4]"      
-CureatrTextMsg="//*[@id='frame']/div/div[1]/div/div[2]"
-GetSupportLink="//*[@id='frame']/div/div[1]/div/div[3]/a"
-SelectedOrgName="//*[@id='frame']/div/div[2]/div[2]/div/div/div/div[1]/h1"
-SignInBtnLink="//*[@id='frame']/div/div[2]/div[2]/div/div/div/div[2]"
-EmailPlaceHolder="//input[@placeholder='Email address']"
-PasswordPlaceHolder="//input[@placeholder='Password']"
-LoginImage="//*[@id='loginImage']"
-NavigationColumn1="//div[@class='navigation-column']/div[2]/div/div[3]/h2"
-NavigationColumn2="//div[@class='navigation-column']/div[2]/div/div[3]/p"
-ExistingAccount="//*[@id='existingAccount']"
-
-#Dashboard
-UserName="//div[@class='current-user']/div[1]/div[1]/span"
-InboxLink="//*[@id='inbox-link']"
-ContactsLink="//*[@id='contacts-link']"
-PatientsLink="//*[@id='patients-link']"
-#Settings="//*[@id='settings-link']"
-Settings="//img[@alt='Settings menu']"
-SettingsID="settings-link"
-Compose="//div[@id='navigation-column']/div/div/div/div/span"
-ArchiveMultiple="//*[@id='navigation-column']/div[1]/div/div/div[2]/span"
-ArchiveMultipleCheckBox="//*[@id='bottomCheckboxActions']/div/div[1]/label"
-EventsLink="//*[@id='events-link']"
-StatusIcon="//*[@id='status-icon']"
-Logo="//*[@id='logo']"
-MainContent1="//*[@id='main-content']/div/h2"
-MainContent2="//*[@id='main-content']/div/div[3]"
-MainContentImg="//*[@id='main-content']/div/div[1]/img"
-SignOutLink="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
-ManageGroups="//div[@class='check-label link js-manage-groups']"
-
-#ManageGroups="div.check-label.link.js-manage-groups"
-SelectMGContact="//div[2]/span/div/span/div[1]/div/div[2]/div[1]"
-CreateGroupLink="//*[@id='createGroupLink']"
-SelectExistingGroup="//div/div/div/div[1]/div[2]/div/div[2]/div/div[2]/div[1]"
-GroupNameInput="//*[@id='groupNameInput']"
-CreateGroup="//*[@id='createGroup']"
-AddRecipientInGroup="//div[9]/div/div/div/div"
-AddRecipientInGroupCss="div.add-recipient"
-RemoveGroup="//div[@class='management-list-container']/div[1]/div[2]/div[5]/a"
-#="//*[@id='addRecipientInput']"
-
-#ContactsLink
-ContactsSearch="//*[@id='directory_lookup']"
-Contact="//*[@id='directory-lookup-results']/div[1]/div[2]/div[1]"
-ProfileImage2="//img[@class='user-profile-image']"
-ProfileImageIcon="//div[@class='view-profile-user-status user-status available']/img"
-UserStatus="//span[@class='status-text']"
-UserStatusMsg="//div[1]/div[2]/div[3]/div[1]"
-UserSpecialty="//div[1]/div[2]/div[3]/div[2]"
-UserTitle="//div[1]/div[2]/div[3]/div[3]"
-SendMsgLink="//div/div[2]/div/div[2]/div/a"
-MessageWith="//div[@class='messages-with']"
-ThreadRecipient="//div[@class='thread-recipients']"
-#ReplyIcon="//div[@class='thread-last-message reply-icon']"
-ThreadImage="//img[@class='thread-item-recipient-icon recipient-icon']"
-ThreadTime="//div[@class='thread-last-updated']"
-#ShowMoreLinks="//div[1]/div[5]/div/div/a"
-#NoContactMsg1="//*[@id='directory-lookup-results']/div[1]/h2"
-NoContactMsg1="//div[@class='directory-message-inner']"
-NoContactMsg2="//*[@id='directory-lookup-results']/div[1]/div"
-showmoremessages="//a[@class='show-more js-show-more']"
-
-#UserService=""
-
-#Patients Link
-ComposeLinkAtPatients="//*[@id='directory-lookup-results']/div[1]/div/div[1]"
-SelectPatient="//div[@class='patient-information truncate-text']"
-#SelectPatient="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[1]/ul/li/div"
-ClearPatient="//li[@class='patient-item-view']/a"
-
-#Settings
-#Header="//div[@id='header']"
-Header="//div[@id='header_wrap']"
-settingsDropdown="//ul/div/div/div[2]"
-ShowArchived="//*[@id='settingsDropdown']/div/div[1]/div[1]/label"
-ArcivedBtn="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[2]/div[1]/div"
-ArchiveText="//li[1]/div[2]/div[2]/div[2]/div[1]/div"
-#Quick Message Screen
-#QuickMsgIcon="//div[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div/div[2]/div[2]/div[2]/div"
-EditList="//a[contains(text(),'Edit list')]"
-QuickMsgAddBtn="//li/div[2]/div[2]/span"
-QuickMsgTextBox="//form/textarea"
-QuickMsgSaveBtn="//a[contains(text(),'Save')]"
-QuickMsgSaveBtn2="(//a[contains(text(),'Save')])[2]"
-QuickMsgHeader="//div[@class='modal-header clearfix']/div[1]"
-QuickMsgDialogClose="//div[@class='modal-close cancel']"
-QuickMsgListNum="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]/ul/li[10]/div[1]/div"
-ReplyQMListNum="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[3]/div/div/div[2]/ul/li[8]/div[1]/div"
-QMDelete="//div/div[1]/div/div[2]/ul[2]/li[1]/div[2]/a"
-QMUpdate="//ul[2]/li/div[3]/form/textarea"
-
-#New Message
-NewMsgTitle="//*[@id='content']/div[3]/div/div/div[2]/div/div/div[1]"
-NewMsgClose="//div[@class='modal-close js-modal-close']"
-NewMsgMinimize="//*[@id='content']/div[3]/div/div/div[2]/div/div/div[2]/div[1]"
-ToLabel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/label"
-PatientLabel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/label"
-WorkflowLabel="//*[@id='workflow-select-view']/div[1]/label"
-SubjectLabel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[5]/label"
-PressEnterToSend="//span[@class='unselectable']"
-
-To="//*[@id='new-thread-to']"
-SelectRecipient="//span/div[1]/div/div[2]/div"
-SelectedRecipient="//fieldset/div[1]/div/div[1]/div/div/ul/li[1]/div[1]"
-Patient="//*[@id='new-thread-patient']"
-Workflow="//*[@id='new-thread-workflow']"
-SelectWorkFlow="//*[@id='workflow-select-view']/div[1]/div/div[1]/span/div/span/div/div"
-WorkFlowStatus="//*[@id='workflowBtn']"
-#Workflowd1="//*[@id='workflow-select-view']/div[1]/div/div[1]/span/div/span/div/div"
-Workflowd1="//span/div/span/div[1]/div"
-Workflowd2="//span/div/span/div[2]/div"
-Workflowd3="//span/div/span/div[3]/div"
-selectedworkflow="//div[@class='selected-workflow']"
-
-
-ClickRecipientInTo="//fieldset/div/div/div/div/div/ul/li/div"
-RemoveRecipientInTo="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li[1]/a"
-Subject="//*[@id='new-thread-subject']"
-MsgBody="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[1]/textarea"
-MsgBody="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[1]/textarea"
-
-SendBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[1]/div"
-SenBtnLatest="//div[@class='thread-new-message-container clearfix']/div[2]/div[1]/div[1]"
-SendBtn1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]"
-SendBtnCss="div.send-button-text"
-#MsgBodyPart="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[2]/div[2]/div[2]"
-MsgBodyPart="//li[2]/div[1]/div[2]/div[2]/div[2]"
-SubjectPart="//*[@id='main-content']/div/div[1]/div/div[2]/div"
-SubjectWithPatient="//*[@id='main-content']/div/div[1]/div/div[2]/div[2]"
-#FileInputButton="//div[@id='fileinput-button']/input"
-FileInputButton="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/input"
-FileInputButtonTwo="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/div/input"
-UrgentMessage="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[1]/div[2]/div/label"
-UrgentMessage2="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[1]/div[2]/div/label"
-FileUploadInput="//*[@id='fileinput-button']/input"
-FileUpload="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/label[1]"
-QuikckMsgBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[2]"
-QuickMsgHelpText="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[2]"
-QuickMsgCancelBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[3]/a"
-EditListBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[1]/a"
-ComposeScreenSize="//*[@id='content']/div[3]/div/div/div[2]/div"
-#AttachmentLink="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/label[2]"
-AttachmentLink="//label[@class='add-attachment-link unselectable']"
-AttachmentLink2="//html/body/div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/input"
-EditQM="//div/div[1]/div/div[2]/ul[2]/li[1]/div[2]/div[2]/span"
-QMPopUpCloseBtn="a.link-secondary.cancel"
-ImageText="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[2]/div[2]/div[2]/ul[2]"
-UploadedImg="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[2]/div[2]/div[2]/ul[1]/div/div[1]/div/img"
-UploadedImg1="//div/div[1]/div/img"
-UrgentToastOne="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[1]/div[1]"
-UrgentToast="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[1]/div[1]"
-ImagePreview="//div/div/div[1]/div/img"
-ClosePreviewScreen="html/body/div[7]/div/div/a"
-FileSizeErrorMsg2="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div/div/div/div[3]"
-FileSizeErrorMsg1=".//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div/div/div/div[3]"
-AttachmentPreiew="//img[@class='fancybox-image']"
-
-#FileInputButton2="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/label[2]"
-
-#To Field Contact Details
-ContactName="//div/span/div/span/div/div/div[2]/div[1]"
-ContactSpecialty="//div/span/div/span/div/div/div[2]/div[2]"
-ContactTitle="//div/span/div/span/div/div/div[2]/div[4]"
-ContactStatus="//div/span/div/span/div/div/div[2]/div[1]/div/img"
-ThreadProfileImg="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[1]/img"
-
-#ALERTS/POPUP/DIALOG XPATHS
-
-#Alert throws when user selects not activated user in to list
-AlertHeader="//div[@class='modal modal-simple show']/div[1]/div[1]"
-AlertText="//p[@class='modal_message']"
-AlertClose="//a[@class='link-primary']"
-#Download Alert/POPUP
-DLHeader="//div[@class='modal-title truncate-text']"
-DLClose="//div[@class='modal-close']"
-DLCancel="//a[@class='link-secondary cancel']"
-DLDownloadFile="//a[@class='submit link-primary']"
-DLTextMsg="//div[@class='modal modal-simple show']/div[2]/p"
-#Cancel New Conversation/Message Pop UP
-ConverMsg="//div[@class='bbm-modal bbm-modal--open']/div/div[1]/div[1]"
-DiscardMsg="//p[@class='modal_message']"
-CloseAlert="//a[@href='javascript:void(0)' and @class='link-primary']"
-ConverCancelBtn="//a[@class='link-secondary cancel']"
-#ConverCancelBtn="//div[@class='modal-secondary-action']/a"
-ConverDiscardBtn="//a[@class='submit link-primary']"
-
-#CloseImageView="//a[@title='Close']"
-CloseImageView="//a[@class='fancybox-item fancybox-close']"
-
-CancelIcon="//div[@data-dismiss='modal']"
-
-
-PatientName="//*[@id='main-content']/div/div[1]/div/div[2]/div"
-ConversationWith="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[1]/div/div/div"
-ReadRecipt="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[2]/div/span"
-SentMsg="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[2]/div/div"
-ReplyReadRecipt="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[3]/div[2]/div/span"
-SentTime="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[2]/div/div"
-SentShowTime="//*[@id='main-content']/div/div[2]/div/div[1]/div//ul/li[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]"
-SentShowTime2="//*[@id='main-content']/div/div[2]/div/div[1]/div//ul/li[3]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]"
-SentShowTime3="//*[@id='main-content']/div/div[2]/div/div[1]/div//ul/li[4]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]"
-MsgBodyPartTextArea="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/textarea"
-QuickMsgIcon2="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div[2]"
-
-NotificationIcon="//*[@id='eventsDropdown']/div/div[1]"
-
-#CHAT THREAD
-ChatThread="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[1]/div[1]"
-ReplyMsgBody="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/textarea"
-LatestMsgBodyPart="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[3]/div[1]/div[2]/div[2]/div[2]"
-LatestMsgBodyPart1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[4]/div[1]/div[2]/div[2]/div[2]"
-#OffDutyMsgBodyPart="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[4]/div[1]/div[2]/div[2]/div[2]"
-ReplySendBtn="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div[1]/div"
-ReplySendBtn2="//div[2]/div/div/div[2]/div[3]/div[2]"
-ThreadCount="//*[@id='thread-collection']/li/div[2]/div[1]/div[1]/div"
-UrgentMsgFlag="//div[@class='thread-urgent label label-important']"
-UrgentMsgIconSent="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[2]/div[2]/div[1]"
-UrgentMsgIconReply="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[3]/div[1]/div[2]/div[2]/div[1]"
-
-#CONVERSATION SETTINGS
-ConversationSettings="//*[@id='main-content']/div/div[1]/div/div[1]/div"
-AddRecipient="//div[@class='add-recipient js-add-recipient']"
-AddTextBox="//*[@id='addRecipientInput']"
-SaveChanges="//*[@id='threadSettingsModal']/div[3]/div/a"
-LeaveConversation="//div[@class='leave-thread-link js-leave-thread']"
-ConfirmLeaveConversation="//a[contains(text(),'Leave conversation')]"
-ArchivCheckBox="//*[@id='bottomCheckboxActions']/div/div[1]/label"
-CloseConversationSettings="//*[@id='threadSettingsModal']/div[1]/div[2]/div"
-Mute="//*[@id='bottomCheckboxActions']/div/div[2]/label"
-CSClearSearch="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[3]"
-MGClearSearchCss="div.thread-action-cancel"
-
-#Profile
-ProfileImg="//img[@id='current-user-profile-image']"
-CloseProfileDialog="//*[@id='header-user']/div/div[2]/div[3]"
-SignOut="//a[contains(text(),'Sign out')]"
-PopUpSignOut="(//a[contains(text(),'Sign out')])[2]"
-PopUpCancel="//a[contains(text(),'Cancel')]"
-PopUpClose="//div[@class='modal-close' and @data-dismiss='modal']"
-PopUpCloseXpath="//div[6]/div/div/div/div[2]/div"
-PopUpHeader="//div[@class='modal-title truncate-text']"
-PopUpHeaderText="//div[6]/div/div/div/div"
-PopUPText="//div[2]/p"
-ArrowDropdown="//*[@id='header-user']/div/div[1]/div[4]"
-Available="//label[1]/div"
-Busy="//label[2]/div"
-OffDuty="//label[3]/div"
-ProfileDailog="//button[@type='button']"
-CurrentCoverage="//*[starts-with(@id, 'coverage-lookup-')]"
-
-
-EditProfileCurrentCoverage="//div/div[1]/div/div[3]/form/div[2]/div[3]/div/div/div[2]/div/ul/li/input"
-ViewYourProfile="//*[@id='header-user']/div/div[2]/div[2]/div[2]/span/a"
-EditYourProfile="//a[@class='profile-button-edit']"
-EditProfileStatus="//div[3]/form/div[1]/div/div[2]/div[2]"
-EditProfileStatusBusy="//*[starts-with(@id, 'toggle-status-menu-')]/div[3]/label[2]"
-
-
-CurrentService="//*[@id='current-service-view']/div/div[2]/div[2]"
-ServiceSearchBar="//*[@id='service-search-bar']"
-CurrentServiceView="//div/div[1]/div/div[3]/form/div[2]/div[5]/div[2]/div/div/div[2]/div[2]"
-
-
-#CHANGE PASSWORD
-ChangePassworHeader="//div[@class='modal-title truncate-text']"
-CPWMainText="//div[@class='change-password-message']"
-Close="//div[@class='modal-close' and @data-dismiss='modal']"
-NewPasswordLabel="//div[starts-with(@class, 'change-password-content-wrap is-reset-password')]/div[2]/div[1]"
-ReTypePasswordLabel="//div[starts-with(@class, 'change-password-content-wrap is-reset-password')]/div[3]/div[1]"
-NewPasswordTextBox="//*[@id='js-new-pass-input']"
-ReTypePasswordTextBox="//*[@id='new-pass-input-two']"
-CurrentPassword="//*[@id='old-pass-input']"
-ChangePasswordHelpText="//div[@class='password-instructions']"
-SaveChangesLink="//div[@id='change-password-link']"
-StrengthMeterText="//div[@class='password-strength-meter-text']"
-PWStreanghtBar1="//div[@class='password-strength-meter']/div[1]"
-PWStreanghtBar2="//div[@class='password-strength-meter']/div[2]"
-ErrorMsgText="//div[@class='password-message-contents']"
-
-TSSignOut="//*[@id='tos_update']/div/div[1]/div[3]/div[1]/a"
-TSAccept="//*[@id='tos_update']/div/div[1]/div[3]/div[2]/a"
-TSHeader="div.modal-title.truncate-text"
-TSXMark="//*[@id='tos_update']/div/div[1]/div[1]/div[2]/div"
-TSInstructions="//*[@id='tos_instructions']"
-TSContent="//*[@id='content']"
-
-#contacts search xpath parts
-#cpath0="//*[@id='main-search']/div[2]"
-cpath0="//*[@id='directory-lookup-results']/div"
-cpath1="//*[@id='directory-lookup-results']/div["
-cpath2="]/div[2]/div[1]"
-cpath3="]/div[2]/div[4]"
-DefaultLength1=0
-Contacts=[cpath0, cpath1, cpath2, cpath3, ContactsSearch, DefaultLength1, NoContactMsg1]
-
-#To Field contacts search xpath parts
-Topath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div"
-Topath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div["
-Topath2="]/div/div[2]/div[1]"
-Topath3="]/div/div[2]/div[4]"
-Topath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[2]/div/h2"
-DefaultLength2=1
-ToContacts=[Topath0, Topath1, Topath2, Topath3, To, DefaultLength2, Topath4]
-
-
-#Patient Field contacts search xpath parts
-CPFpath0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div"
-CPFpath1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div["
-CPFpath2="]/div/div/div[1]"
-CPFpath3="]/div/div/div[3]"
-CPFpath4="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[2]"
-CDefaultLength2=1
-CPFpath7="]/div/div/div[2]"
-ComposePFContacts=[CPFpath0, CPFpath1, CPFpath2, CPFpath3, Patient, DefaultLength2, CPFpath4, CPFpath7]
-
-#Patient Field contacts search xpath parts
-PFpath0="//*[@id='directory-lookup-results']/div"
-PFpath1="//*[@id='directory-lookup-results']/div["
-PFpath2="]/div/div[2]"
-PFpath3="]/div/div[4]"
-PFpath4="//*[@id='directory-lookup-results']/div[1]/h2"
-DefaultLength2=0
-PFpath7="]/div/div[3]"
-PFContacts=[PFpath0, PFpath1, PFpath2, PFpath3, ContactsSearch, DefaultLength2, NoContactMsg1, PFpath7]
-
-#CONVERSATION SETTINGS SEARCH XPATH PARTS
-cspath0="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div"
-cspath1="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div["
-cspath2="]/div/div[2]/div[1]"
-cspath3="]/div/div[2]/div[4]"
-cspath4="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/div"
-DefaultLength3=1
-CSContacts=[cspath0, cspath1, cspath2, cspath3, AddTextBox, DefaultLength3, cspath4]
-
-#Manage Group SEARCH XPATH PARTS
-MGpath0="//span[@class='tt-suggestions']/div"
-MGpath1="//span[@class='tt-suggestions']/div["
-MGpath2="]/div/div[2]/div[1]"
-MGpath3="]/div/div[2]/div[4]"
-MGpath4="//span[@class='tt-dropdown-menu']/div/div"
-DefaultLength3=1
-MGsearch=[MGpath0, MGpath1, MGpath2, MGpath3, AddTextBox, DefaultLength3, MGpath4]
-
-#CoverageSearch Search Parts
-Coveragepath0="//*[starts-with(@id, 'coverage-results-')]/div"
-Coveragepath1="//*[starts-with(@id, 'coverage-results-')]/div["
-Coveragepath2="]/div[2]/div[1]"
-Coveragepath3="]/div[2]/div[4]"
-Coveragepath4=Coveragepath0
-DefaultLength4=1
-CoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, CurrentCoverage, DefaultLength4, Coveragepath4]
-
-#Edit Profile CoverageSearch Search Parts
-EditProfileCoverageSearch=[Coveragepath0, Coveragepath1, Coveragepath2, Coveragepath3, EditProfileCurrentCoverage, DefaultLength4, Coveragepath4]
-
-#CoverageSearch Search Parts
-Servicepath0="//div/div[1]/div[2]/div/div[2]/ul/li"
-Servicepath1="//div/div[1]/div[2]/div/div[2]/ul/li["
-Servicepath2="]/div/div[2]/div"
-Servicepath3="]/div/div[2]/div"
-Servicepath4="//div/div[1]/div[2]/div/div[2]/ul/div/div[1]"
-DefaultLength4=1
-ServiceSearch=[Servicepath0, Servicepath1, Servicepath2, Servicepath3, ServiceSearchBar, DefaultLength4, Servicepath4]
-
-
-QuickMessage0="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]/ul/li/div"
-QuickMessage1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]/ul/li["
-QuickMessage2="]/div[2]/div"
-MsgListNum=[QuickMessage0, QuickMessage1, QuickMessage2]
-
-DelQuickMessage0="//div/div[1]/div/div[2]/ul[2]/li"
-DelQuickMessage1="//div/div[1]/div/div[2]/ul[2]/li["
-DelQuickMessage2="]/div[2]/a"
-DelQuickMessage3=ConverDiscardBtn
-DeleteQuikMsgList=[DelQuickMessage0, DelQuickMessage1, DelQuickMessage2, DelQuickMessage3]
-
-UploadCancelButton0="//div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div"
-UploadCancelButton1="//div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div["
-UploadCancelButton2="]/div/div/div[3]/button"
-UploadCancelButton=[UploadCancelButton0,UploadCancelButton1,UploadCancelButton2]
-ULCancelButton="//*[@id='btn-cancel']"
-ULClearButton="//div[@id='btn-clear']"
-
-UploadSuccessIcon0="//div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div"
-UploadSuccessIcon1="//div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div["
-UploadSuccessIcon2="]/div/div/div[1]/div"
-UploadSuccessIcon=[UploadSuccessIcon0,UploadSuccessIcon1,UploadSuccessIcon2]
-
-UploadCancelIcon0="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div"
-UploadCancelIcon1="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[4]/div/div/div["
-UploadCancelIcon2="]/div/div/div[2]/div"
-UploadCancelIcon=[UploadCancelIcon0,UploadCancelIcon1,UploadCancelIcon2]
-
-UploadCancelButtonTwo0="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div"
-UploadCancelButtonTwo1="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div["
-UploadCancelButtonTwo2="]/div/div/div[3]/button"
-UploadCancelButtonTwo=[UploadCancelButtonTwo0,UploadCancelButtonTwo1,UploadCancelButtonTwo2]
-
-UploadSuccessIconTwo0="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div"
-UploadSuccessIconTwo1="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div["
-UploadSuccessIconTwo2="]/div/div/div[1]/div"
-UploadSuccessIconTwo=[UploadSuccessIconTwo0,UploadSuccessIconTwo1,UploadSuccessIconTwo2]
-
-UploadCancelIconTwo0="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div"
-UploadCancelIconTwo1="//div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/div/div["
-UploadCancelIconTwo2="]/div/div/div[2]/div"
-UploadCancelIconTwo=[UploadCancelIconTwo0,UploadCancelIconTwo1,UploadCancelIconTwo2]
-
-LatestMsg0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li"
-LatestMsg1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-LatestMsg2="]/div[1]/div[2]/div[2]/div[2]"
-LatestMsg=[LatestMsg0,LatestMsg1,LatestMsg2]
-
-
-LeftConvMsg2="]/div/div/div"
-LeftConvMsg=[LatestMsg0,LatestMsg1,LeftConvMsg2]
-
-LatestImage0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li"
-LatestImage1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-LatestImage2="]/div[1]/div[2]/div[2]/div[2]"
-LatestImage3="]/div[1]/div[2]/div[2]/div[2]/ul[1]/div/div[1]/div/img"
-LatestImage=[LatestImage0,LatestImage1,LatestImage2,LatestImage3]
-
-LatestFile0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li"
-LatestFile1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-LatestFile2="]/div[1]/div[2]/div[2]/div[2]"
-LatestFile3="]/div[1]/div[2]/div[2]/div[2]/ul[2]/li/div/figure/img"
-LatestFile=[LatestFile0,LatestFile1,LatestFile2,LatestFile3]
-
-LatestMp3File0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li"
-LatestMp3File1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-LatestMp3File2="]/div[1]/div[2]/div[2]/div[2]"
-LatestMp3File3="]/div[1]/div[2]/div[2]/div[2]/ul[2]/li/div/div/a/span"
-LatestMp3File=[LatestMp3File0,LatestMp3File1,LatestMp3File2,LatestMp3File3]
-
-ReadRecipt0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li"
-ReadRecipt1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-ReadRecipt2="]/div[2]/div/span"
-ReadRecipt3="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li["
-ReadRecipt4="]/div[1]/div[2]/div[2]/div[2]"
-ReadReciptTwo=[ReadRecipt0,ReadRecipt1,ReadRecipt2, ReadRecipt3, ReadRecipt4]
-
-MultipleReadStaus0="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[2]/div"
-MultipleReadStaus1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[2]/div["
-MultipleReadStaus2="]/div[1]/img"
-MultipleReadStaus3="]/div[2]"
-MultipleReadStaus4="]/span"
-MultipleReadStaus5="]/img"
-MultipleReadStaus=[MultipleReadStaus0, MultipleReadStaus1, MultipleReadStaus2, MultipleReadStaus3, MultipleReadStaus4, MultipleReadStaus5]
-
-#CONVERSATION SETTINGS
-ConversationSettings="//*[@id='main-content']/div/div[1]/div/div[1]/div"
-unarchivelabel="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[1]/div[1]"
-AddTextBox="//*[@id='addRecipientInput']"
-SaveChanges="//*[@id='threadSettingsModal']/div[3]/div/a"
-LeaveConversation="//*[@id='threadSettingsModal']/div[2]/div[3]"
-ConfirmLeaveConversation="//a[contains(text(),'Leave conversation')]"
-ArchivCheckBox="//*[@id='bottomCheckboxActions']/div/div[1]/label"
-CloseConversationSettings="//*[@id='threadSettingsModal']/div[1]/div[2]/div"
-Mute="//*[@id='bottomCheckboxActions']/div/div[2]/label"
-CSClearSearch="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[3]"
-MGClearSearchCss="div.thread-action-cancel"
-ReplyThread="//*[@id='thread-collection']/li[1]/div[2]"
-SaveText="//div[@class='save-group-link js-show-save-group']"
-ListOfUsers="//*[@id='threadSettingsModal']/div[2]/div[2]"
-CSHeader="//*[@id='threadSettingsModal']/div[1]/div[1]"
-FirstRecipient="//*[@id='threadSettingsModal']/div[2]/div[2]/div[1]"
-CloseBtnCss="div.close"
-CreateButton="//*[@id='threadSettingsModal']/div[2]/div[1]/div[2]/div/button"
-RemoveLink="//a[@class='remove-link js-remove-recipient']"
-#ClickOnUser="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div[1]/div"
-ClickOnUser1="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div[1]/div/div[2]/div[1]"
-#ClickOnUser="//span/div/span/div/div/div[1]/img"
-GMClose="//div/div/div/div[1]/div[2]/div/div[4]/div/div/div[1]/div[3]"
-AddCloseIcon="//div[@class='search-actions']/div[1]/div[3]"
-AddedThread="//div/div/div/div[1]/div[1]/div[1]"
-Sendmsgconversations1="//div[4]/div/a"
-Closebtnconversations1="//*[starts-with(@id, '5')]/div[1]/button"
-LatestThread="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[3]/div/div/div"
-LeaveText="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[2]"
-ImgProfile="//*[starts-with(@id, '5')]/div[3]/div[1]/img"
-AddRecipientList="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[2]"
-RemovedVerifyText="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[5]/div/div/div"
-ArchieveText="//*[@id='bottomCheckboxActions']/div/div[1]/label/div"
-MuteText="//*[@id='bottomCheckboxActions']/div/div[2]/label/div"
-MuteIcon="//*[@id='thread-collection']/li[2]/div[2]/div[2]/div[3]"
-MuteIcon1="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[3]"
-SelectToPerson="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div[3]/div"
-SelectUser="//*[@id='threadSettingsModal']/div[2]/div[4]/div/div/div[1]/div[2]/span/div/span/div/div/div[2]/div[1]"
-ReplyLeaveText="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[6]/div/div/div"
-#To="//*[@id='new-thread-to']"
-#SelectedRecipient="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li/div/span/div/span/div[3]/div"
-#MsgBody="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[1]/textarea"
-#SendBtn="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[1]/div"
-Services="//div[3]/div[4]/div/ul/li"
-CloseServices="//*[@id='role-users-modal']/div[1]/div[2]/div"
-#MessagesList="//div[3]/div[5]/div/div/ul/li[1]/div[2]/div[2]/div[1]/div[1]"
-MessagesList="//div[3]/div[5]/div/div/ul/li[1]/div[2]/div[1]/div[2]/img"
-Status="//div[3]/div[1]/div/div[3]/span"
-Name="//*[starts-with(@id, '5')]/div[3]/div[1]/div/div[2]"
-Speciality="//div[3]/div[2]/div[3]/div[2]"
-Title="//div[3]/div[2]/div[3]/div[1]"
-SHeader="//*[@id='role-users-modal']/div[1]/div[1]"
-SendLinkText="//*[@id='role-users-modal']/div[3]/a"
-EditIcon="//*[@id='role-users-modal']/div[2]/div/div/div[1]/div[2]/div[5]"
-ListUser="//*[@id='role-users-modal']/div[2]/div/div/div[1]"
-SendUser="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li[1]/div[1]"
-RecipientName="//div[@class='recipient-name']"
-CloseTo="//*[@id='content']/div[3]/div/div/div[2]/div/div/div[2]/div[2]"
-MessageDisplayed="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[2]/div[1]/div[2]/div[2]/div[2]"
-MessagesLable="//*[starts-with(@id, '5')]/div[3]/div[5]/div/div/div"
-#ConverMsg="//div[@class='bbm-modal bbm-modal--open']/div[1]/div[1]/div[1]"
-DiscardMsg="//div/div[1]/div[2]/p"
-ConverCancelBtn="html/body/div[7]/div/div[1]/div[3]/div[1]/a"
-#ConverDiscardBtn="//div/div[1]/div[3]/div[2]/a"
-CloseIcon="//div/div[1]/div[1]/div[2]/div"
-Closepatientwindow1="//*[@id='content']/div[3]/div/div/div[2]/div/div/div[2]/div[2]"
-popupcloseicon="html/body/div[7]/div/div[1]/div[1]/div[2]/div"
-Recipient="//*[@id='threadSettingsModal']/div[2]/div[2]/div"
-
-hoverimg="//img[@class='fancybox-image']"
-downloadicon="//div[@class='download-button undisplayed']"
-close="//a[@class='fancybox-item fancybox-close']"
-
-#patient
- 
-Composeicon="//*[@id='navigation-column']/div[1]/div/div/div[1]/span"
-To="//*[@id='new-thread-to']"
-SelectRecipient="//span/div[1]/div/div[2]/div"
-#SelectPatient="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div/div"
-#SelectPatient1="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div/div/div/div[1]"
-PatientConvMsg="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/div/div/div[2]/div[1]"
-PatientViewText="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/div/div/div[2]/div[2]/div"
-PatientLinkImg1="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/div/div/div[1]/img"
-PatientLinkImg2="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/div/div/div[2]/div[2]/img"
-SelectPatient1="//div[@class='patient-name']"
-patientlistcancel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[1]/ul/li/a"
-Workflow="//*[@id='new-thread-workflow']"
-Textbox="//div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[1]/textarea"
-SendBtn2="//*[@id='content']/div[3]/div/div/div[3]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[1]"
-Institue="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[1]/div[1]"
-PatientInfo2="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[1]/div[2]/div"
-#PatientInfo
-PatienntInfoMRN="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[2]/div[2]"
-PatientInfoName="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[3]/div[2]"
-PatientInfoDOB="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[4]/div[2]"
-PatientInfoSex="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[5]/div[2]"
-#messagepopup="html/body/div[7]/div/div[1]/div[2]/p"
-patientlistcancel="//a[@href='#']"
-#checkboxlist="html/body/div[8]/div/div[1]/div[2]/div/div"
-viewallconversation="//div[@class='threads-wrap']/div[2]"
-Recentconversation="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[2]/div[2]/span"
-patientprofileaavailable="//*[@id='56778fc7c5cc4105fac91d2a']/div[3]/div[1]/div/div[3]/span"
-profilepresent="//*[@id='thread-collection']/li[1]/div[2]/div[1]/div[2]/img"
-historysendmsg="//a[@class='send-message']"
-historycancelbtn="//div[@class='modal-container bbm-wrapper']/div/div/div/div[2]/div"
-historycancelbtn2="//button[@type='button']"
-worktolist="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[2]"
-Recentpatient="//*[@id='main-content']/div/div[1]/div/div[2]/div[1]"
-cancelbtn="//*[@id='content']/div[3]/div/div/div[3]/div/div/div[2]/div[2]"
-Tofieldvissible="//*[@id='content']/div[3]/div/div/div[3]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li[1]/div[1]"
-mrn="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[2]/div[1]/div"
-name="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[3]/div[1]/div"
-Dateofbirth="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[4]/div[1]/div"
-sex="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[1]/div/div/div[5]/div[1]/div"
-location="//div[@text()=Location]"
-Recentdigonsis="//div[@text()=Recent Diagnoses]"
-Attendingphysian="//div[@text()= Attending Physician]"
-patientinfo="//*[@id='patient_profile_modal']/div[2]/div/div[1]/ul/li[1]/a"
-careteam="//*[@id='patient_profile_modal']/div[2]/div/div[1]/ul/li[2]/a"
-history="//*[@id='patient_profile_modal']/div[2]/div/div[1]/ul/li[3]/a"
-patientpopupheader="//*[@id='patient_profile_modal']/div[1]/div[1]"
-PatientName="//*[@id='main-content']/div/div[1]/div/div[2]/div"
-Clickpatient="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[1]/ul/li/div"
-Patientclose="//*[@id='patient_profile_modal']/div[1]/div[2]/div"
-patientlistselect2="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/span/div/div"
-Recentpatient="//*[@id='main-content']/div/div[1]/div/div[2]/div[1]"
-carelabel="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[2]/div/div[1]/div"
-profileclickable="//*[@id='profileLink']"
-sendMessageTo="//div[4]/div/a"
-Deselectall="//*[@id='cancel']"
-profileAddmessage="//*[@id='addRecipients']"
-discardbtn="html/body/div[7]/div/div[1]/div[3]/div[2]/a"
-Closepatientwindow="//*[@id='content']/div[3]/div/div/div[3]/div/div/div[2]/div[2]"
-Closepatientwindow1="//*[@id='content']/div[3]/div/div/div[2]/div/div/div[2]/div[2]"
-Textboxareap="//*[@id='content']/div[3]/div/div/div[3]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[1]/textarea"
-patientName="//*[@id='main-content']/div/div[1]/div/div[2]/div"
-#historylabel="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[3]/div/div/div[2]/div[1]"
-historylabel="//div[@class='threads-wrap']/div[1]"
-messagepopup="html/body/div[7]/div/div[1]/div[2]/p"
-patientlistcancel=".//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[1]/ul/li/a"
-checkboxlist="html/body/div[8]/div/div[1]/div[2]/div/div"
-patientlink="//*[@id='patients-link']"
-sendconversation="//*[@id='main-content']/div/div[2]/div/div[1]/div/ul/li[1]/div/div/div"
-recentpatient="//*[@id='directory-lookup-results']/div[1]/div/div[2]"
-care="//a[@class='careTeamTab']"
-patientcheckbox="//*[@id='patient_profile_modal']/div[2]/div/div[2]/div[2]/div/ul/li[1]/input"
-
-UrgentMessageicon="//label[@class='urgent-message is-disabled']"
-quickmsgicon="//div[@class='select-macro-button thread-message-button']"
-tofieldname="//div[@class='recipient-name']"
-workflowlistdisplay="//*[@id='workflow-select-view']/div[2]"
-quicktoast="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[3]"
-urgenttoast="//input[@disabled='' and @value='urgent']"
-composepopupheader="//div[@class='modal-title truncate-text']"
-subjecttextbox="//input[@ id='new-thread-subject']"
-selectedworkflow="//div[@class='selected-workflow']"
-urgenticonenable="//label[@class='urgent-message']"
-claertofeild="//li[@class='thread-recipient-frame clearfix']/a"
-claertofeild1="//a[@class='select2-search-choice-close']"
-sendbtndisabled="//div[@ class='thread-message-send-area clearfix send-button thread-message-button js-send-button disabled']"
-quickmsg="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]/ul/li[2]/div[2]/div"
-quicktwo="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[2]/div"
-sendquickmsg="//div[@ class='system-message']"
-PreviewLink="//*[@id='workflow-select-view']/div[1]/div/div[2]/a"
-
-#MANAGE GROUPS
-GroupEmptyTitle1="//div[@class='empty-view-title']"
-GroupEmptyTitle2="//div[@class='empty-view-message']"
-settingsDropdown="//ul/div/div/div[2]"
-ShowArchived="//*[@id='settingsDropdown']/div/div[1]/div[1]/label"
-Managetext="//div[@class='settings-view-wrap-actions']/div[6]/div"
-CreateGroupLink="//*[@id='createGroupLink']"
-MessageGroupLink="//*[@id='messageGroup']"
-RenameLink="//*[@id='renameGroup']"
-GroupList="//div[@class='management-list-container group-manage-modal']"
-SelectList="//div/div/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/div[1]"
-SelectList2="//div/div/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/div[1]"
-GroupRecipientsCount="//div[@class='number-recipients']"
-GMHeader="//div[@class='modal-title truncate-text']"
-GMClose="//div[@class='modal-close']"
-GMTextbox="//*[@id='groupNameInput']"
-CreateGroupButton="//*[@id='createGroup']"
-CancelGroup="//*[@id='cancelCreateGroup']"
-SeeAllGroupsLink="//*[@id='seeAllGroups']"
-AddRecipientLink="//div[@class='add-recipient']"
-Text1="//div[@class='empty-view-title']"
-Text2="//div[@class='empty-view-message']"
-AddTextfield="//*[@id='addRecipientInput']"
-AddGroup="//div/div/div/div[1]/div[2]/div/div[4]/div/div/div[1]/div[2]/input"
-RemoveLinktext="//a[@class='remove-link js-remove-recipient']"
-DeleteText="//*[@id='delete-group']"
-CancelText="//a[@class='link-secondary cancel']"
-DeleteButtonText="//a[@class='submit link-primary']"
-DeleteContent="//p[@class='modal_message']"
-PopUpDelete="//div[@class='modal modal-simple show']/div[1]/div[2]/div[1]"
-DeleteHeader="//div[@class='bbm-wrapper']/div/div[1]/div[1]/div[1]"
-VisibleThread="//div[@class='message-contents user-message sent-by-me singleton-bubble']"
-VisibleConv="//div[@class='system-message']"
-SaveButtonText="//*[@id='saveGroupName']"
-EditItems="//*[@id='editItems']/div/div/div"
-RenameInputText="//*[@id='groupRenameInput']"
-GroupImg="//div[1]/div[1]/img"
-ErrorClose="//a[@class='link-primary']"
-GroupClose="//div[@class='modal-close']"
-InboxLink="//*[@id='inbox-link']"
-#Institution >> Login Screen >> Home Screen >> Setting >> Manage Groupgs
-archivedcnvscheckbox="//div[@class='settings-view-wrap-actions']/div[1]/label/div"
-ureadmsgcheckbox="//div[@class='settings-view-wrap-actions']/div[2]/label/div"
-audioalrtcheckbox="//div[@class='settings-view-wrap-actions']/div[3]/label/div"
-etertosndcheckbox="//div[@class='settings-view-wrap-actions']/div[4]/label/div"
-timestampcheckbox="//div[@class='settings-view-wrap-actions']/div[5]/label/div"
-
-MultipleAccountsText="//div[@class='check-label link js-manage-multiple-accounts']"
-CancelIcon="//div[@class='modal modal-simple show']/div[1]/div[2]/div[1]"
-ProfileName="//div[@class='profile-h1']"
-StatusOfUser="//span[@class='status-text']"
-InstitutionName="//div[@class='profile-section user-profile-body']/div[3]/div[1]"
-SpecialityName="//div[@class='profile-section user-profile-body']/div[3]/div[2]"
-ProfileImage="//div[@class='profile-section user-profile-image-and-name']/img"
-EPStatusIcon="//div[@class='profile-section user-profile-image-and-name']/div[1]/div[2]/div[1]"
-EPStatusArrow="//div[@class='profile-section user-profile-image-and-name']/div[1]/div[2]/div[2]"
-EPStatusText="//div[@class='profile-section user-profile-image-and-name']/div[1]/div[2]/span"
-ServicesLink="//div[@class='profile-section user-profile-body']/div[3]/div[3]"
-SendLink="//a[@class='send-message']"
-SendLink2="//div/div[1]/div/div[4]/div/a"
-TitleHeader="//div[@class='modal-header clearfix']"
-ButtonClose="//button[@class='close']"
-WorkflowLabel="//*[@id='workflow-select-view']/div[1]/label"
-SubjectLabel="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[5]/label"
-Urgenticon="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[1]/div[2]/div/label"
-QuickMessageIcon="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[2]/div[2]/div[2]"
-#AttachmentLink="//*[@id='fileinput-button']/label[2]"
-Addattchmenticon="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[1]/div[3]/div[1]/div/div/label[1]"
-ListOfUsers="//div[@class='search-results js-to-search-results undisplayed']"
-ToClose="//div[@class='modal-close js-modal-close']"
-DiscardText="//p[@class='modal_message']"
-CancelBtnText="//a[@class='link-secondary cancel']"
-DiscardBtnText="//a[@class='submit link-primary']"
-DiscardHeader="//div[7]/div/div[1]/div[1]/div[1]"
-Subject="//*[@id='new-thread-subject']"
-PatientVisible="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[2]/div/div[1]/div/div[2]/span/div/div/div[1]"
-To="//*[@id='new-thread-to']"
-ClickOnUser="//div[@class='recipient-name']"
-QuickMsgPopUp="//div[@class='modal-title truncate-text']"
-EditListText="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[1]/a"
-HelpText="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[2]"
-QuickCancelLink="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[3]/div[3]/a"
-ListOfQuickMsgs="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]"
-QuickCancelIcon="//div[@class='modal-close cancel']"
-Deletetext="//ul[2]/li[1]/div[2]/a"
-Quickicontext="ul[1]/li/div[3]/form/textarea"
-QuickMsgBtn="//li[1]/div[2]/div[2]/span"
-FirstEditMsg="//*[@id='content']/div[3]/div/div/div[2]/div/form/fieldset/div[7]/div/div[2]/div/div/div[2]/ul/li[1]/div[2]/div"
-ContactsLink="//*[@id='contacts-link']"
-ContactsSearch="//*[@id='directory_lookup']"
-Contact="//*[@id='directory-lookup-results']/div[1]/div[2]/div[1]"
-GroupCheck="//*[@id='groupVisibleWrap']/div"
-DefaultImg="//div[8]/div/div/div/div[1]/div[2]/div/div[2]/div/div[1]/img"
-ClearTo="//div[1]/div[3]/div/div/div[2]/div/form/fieldset/div[1]/div/div[1]/div/div/ul/li[1]/a"
-SelectRecipient="//span/div[1]/div/div[2]/div"
-GroupSearchContact="//*[@id='directory-lookup-results']/div[1]/div[2]/div[1]/span[1]"
-
-
-#SETTINGS
-Create="//div[@class='existing-group-link add-group-link']"
-UnreadMsgText="//div[@class='sticky-thread-spacer unread-spacer']"
-Allothermessages="//div[@class='sticky-thread-spacer remaining-spacer']"
-UnreadMsgIcon="//ul[@id='unread-item-region']/li[1]/div[2]/div[1]/div[1]/div"
-Composelink="//span[@class='inbox-thread-actions-button-new-thread-text']"
-MultipleHeader="//*[@id='legal-modal']/div[1]/div[1]"
-ParagraphText="//p[@class='modal-body-paragraph']"
-AddLinkText="//a[@class='js-add-new-account link-primary']"
-AccountHolderImg="//*[@id='legal-modal']/div[2]/div[2]/div[1]/div[1]/img"
-ThisText="//div[@id='legal-modal']/div[2]/div[2]/div[1]/div[3]/div"
-RemoveAcuntText="//div[@id='legal-modal']/div[2]/div[2]/div[2]/div[3]/div/a"
-AddedAcuntHlder="//*[@id='legal-modal']/div[2]/div[2]/div[1]/div[2]/div[1]"
-AddedAcuntHlderEmail="//*[@id='legal-modal']/div[2]/div[2]/div[1]/div[2]/div[2]"
-
-
-UserNameImage="//*[@id='current-user-profile-image']"
-UserImg="//span[@class='current-name']"
-ViewProfileText="//*[@id='header-user']/div/div[2]/div[2]/div[2]/span/a"
-SignOutText="//*[@id='header-user']/div/div[2]/div[2]/div[2]/a"
-AvailableIcon="//div[@class='icon active']"
-BusyIcon="//div[@class='icon busy']"
-OffDutyIcon="//div[@class='icon off']"
-AvailableText="//*[@id='toggle-status-menu-view146']/div[3]/label[1]/div[2]"
-BusyText="//*[@id='toggle-status-menu-view146']/div[3]/label[2]/div[2]"
-OffDutyText="//*[@id='toggle-status-menu-view146']/div[3]/label[3]/div[2]"
-CurrentStatus="//*[@id='header-user']/div/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]"
-StatusValue="//*[@id='custom-status-message-view146']"
-ServiceText="//*[@id='current-service-view']/div/div[1]"
-SelectService="//div[@class='update-current-service']"
-CureatrText="//*[@id='header-user']/div/div[2]/div[2]/div[4]/div"
-GetSupportText="//*[@id='header-user']/div/div[2]/div[2]/div[4]/a[1]/span"
-AboutText="//*[@id='header-user']/div/div[2]/div[2]/div[4]/a[2]/span"
-LegalText="//*[@id='header-user']/div/div[2]/div[2]/div[4]/a[3]"
-TextField="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/textarea"
-QuickSend="//*[@id='main-content']/div/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div[2]"
-ReplyMsgText="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[3]/div"
-iframepopup="//iframe[@id='ticketSubmissionForm']"
-ContactHeader="//form/div/header/div"
-ContactUsText="//form[@class='Form u-cf']/div/header"
-ContactClose="//div[@class='Button Button--nav u-posAbsolute u-posStart--vertFlush u-posEnd u-paddingR']"
-ContactNamelabel="//form/div/div/div/label[1]/div[1]/span[1]"
-ContactMaillabel="//form/div/div/div/label[2]/div[1]/span[1]"
-ContactHelplabel="//form/div/div/div/label[3]/div[1]/span[1]"
-ContactCancel="//form/div/footer/div/div"
-ContactSend="//form/div/footer/div/input"
-ContactLink="//div[1]/div/div[3]/a/span[1]/svg"
-NameField="//form/div/div/div/label[1]/div[2]"
-EmailField="//form/div/div/div/label[2]/div[2]"
-HelpField="//form/div/div/div/label[3]/div[2]"
-AboutCureatr="//*[@id='about_cureatr']/p"
-CureatrHeader="//*[@id='about_modal']/div[1]/div[1]"
-AboutClose="//div[@class='modal-close' and @data-dismiss='modal']"
-LegalTerms="//*[@id='tou-tab']"
-LegalPrivacy="//*[@id='privacy-policy-tab']"
-LegalLicense="//*[@id='license-tab']"
-LegalHeader="//*[@id='legal-modal']/div[1]/div[1]"
-LegalClose="//*[@id='legal-modal']/div[1]/div[2]/div"
-LegalContent="//div[@class='tab-content legal-content modal-body']"
-OtherAccounts2="//div[@class='account-switcher-header-text']"
-OtherAccounts="//div[@class='account-switcher-wrapper']"
-firstaccount="//div[@class='management-list-item-details-first-line truncate-text']"
-firstaccountEmail="//div[@class='management-list-item-details-second-line truncate-text']"
-EditText="//a[@class='account-switcher-header-link js-open-account-management-modal']"
-DefaultProfile="//img[@class='user-message-icon mod-small']"
-IncludeMe="//div[@class='thread-checkbox-actions']/div[2]/label"
-
-GroupUserName="//div[@class='management-list-container']/div[1]/div[2]/div[1]"
-IncludeMember="//*[@id='main-content']/div/div[2]/div/div[2]/div[1]/div[2]/div[1]"
-ClickonGroup="//*[@id='directory-lookup-results']/div[1]/div/div[2]"
-AddGroupMember="//div/div/div/div[1]/div[2]/div/div[4]/div/div/div[1]/div[2]/span/div/span/div[1]/div/div[2]/div[1]"
-
-#USER PROFILE
-BusyText="//label[2]/div[2]"
-OffDutyText="//label[3]/div[2]"
-AvailableText="//label[1]/div[2]"
-speciality="//div[@class='profile-section user-profile-body']/div[3]/div[2]"
-status="//div[@class='profile-section user-profile-body']/div[3]/div[3]"
-headertitle="//div[@class='modal-header clearfix']"  
-usercancelicon="//button[@class='close']"
-dialogboxtext="//div[@class='modal-alert']/label"
-expctedusername="//div[@class='profile-h1']"
-statustext="//span[@class='status-text']"
-image="//label[@class='photo-message-container']"
-uploadphoto="//a[@class='js-add-or-remove-photo']"
-movetophoto="//span[@class='photo-message']"
-ChangePhoto="//input[@id='change-photo-input']"
-changepwd="//a[@class='profile-button-change-password']"
-editcloseicon="//button[@class='close']"
-changepwdheader="//div[@class='modal-title truncate-text']"
-currentpwd="//div[@class='password-input-wrap current-password-input']/div"
-newpwd="//div[@class='password-input-wrap']/div[1]"
-repeatnewpwd="//div[@class='password-input-wrap repeat']/div"
-pwdinstructiontext="//div[@class='password-instructions']"
-savechangelink="//*[@class='password-save-link disabled']"
-strengthtext="//div[@class='password-strength-meter-text']"
-changepwdcloseicon="//div[@class='modal-close']"
-editscreenusername="//div[@class='profile-h1']"
-editstatus="//span[@class='status-text']"
-editstatusIcon="//div[@class='profile-wrapper']/div[3]/img"
-editstatuslabel="//form[@class='form-horizontal']/div[2]/div[2]/div/div[2]/label"
-editstatuslabeltextbox="//form[@class='form-horizontal']/div[2]/div[2]/div/div[2]/div[2]/input"
-editlabelcoverage="//form[@class='form-horizontal']/div[2]/div[3]"
-editspecalitylabel="//form[@class='form-horizontal']/div[2]/div[4]/label"
-editlistserviceslabel="//form[@class='form-horizontal']/div[2]/div[5]/div[1]"
-editlisttitlelabel="//form[@class='form-horizontal']/div[2]/div[6]/label"
-editlistemaillabel="//form[@class='form-horizontal']/div[2]/div[7]/div[1]"
-editlistinstuation="//form[@class='form-horizontal']/div[2]/div[8]/div[1]"
-editlistinstuationname="//form[@class='form-horizontal']/div[2]/div[8]/div[2]/div"
-coveragetextbox="//form[@class='form-horizontal']/div[2]/div[3]/div/div/div[2]/div/ul/li/input"
-specialitydisplay="//div[@id='s2id_profile-edit-specialty']/a/span"
-ViewSpeciality="//div[@class='profile-info-group']/div[2]"
-EditSpecialty="//div[@id='s2id_profile-edit-specialty']/a/div/b"
-EditSpecialtyTextBox="//div[@id='select2-drop']/div/input"
-
-
-currentservice1="//div[@class='controls service-select-container']/div"
-currentservice="//div[@class='update-current-service']"
-currentservice2="//div[@class='controls service-select-container']/div[1]/div[1]/div[2]/div[2]"
-titlename="//div[@id='s2id_profile-edit-title']/a/span"
-TitleDropDown="//div[@id='s2id_profile-edit-title']/a/div/b"
-TitleTextBox="//div[@id='select2-drop']/div/input"
-ViewTitle="//div[@class='profile-info-group']/div[3]"
-emailname="//form[@class='form-horizontal']/div[2]/div[7]/div[2]/div"
-instutionname="//form[@class='form-horizontal']/div[2]/div[8]/div[2]/div"
-editprofiletext="//form[@class='form-horizontal']/div[2]/div[9]"
-finishlink="//a[@class='profile-button-save save']"
-statusclear="//form[@class='form-horizontal']/div[2]/div[2]/div/div[2]/div[2]/div"
-servicessearch="//div[@class='service-search-bar-wrap']/input"
-servicerecentusers="//div[@class='sticky-header recent-services-header']"
-serviceotherusers="//div[@class='sticky-header other-services-header']"
-servicetestuser1="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[1]/div/div[1]/div/div"
-servicetestuser2="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[2]/div/div[1]/div/div"
-servicetestuser3="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[3]/div/div[1]/div/div"
-servicetestuser4="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[4]/div/div[1]/div/div"
-servicetestuser5="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[5]/div/div[1]/div/div"
-servicetestuser6="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/li[6]/div/div[1]/div/div"
-servicecloseicon="//div[@class='modal-close']"
-servicenoresultmsg1="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/div/div[1]"
-servicenoresultmsg2="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/div/div[2]"
-statusserarchclear="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[1]/div[2]/div"
-statusmsg="//div[@class='modal-body']/div[2]/div[1]/div"
-Statusmsg2="//div[@class='profile-h3 status-message']"
-InstitutionName="//div[@class='profile-section user-profile-body']/div[3]/div[1]"
-SpecialityName="//div[@class='profile-section user-profile-body']/div[3]/div[2]"
-#txtmsg="//div[@class='profile-section user-profile-body']/div[3]/div[3]"
-clearallselectedlink="//div[@class='bbm-wrapper']/div/div[1]/div[2]/div/div[2]/ul/div[1]/div"
-testuserselected="//div[@class='controls service-select-container']/div/div/div/div[1]"
-updatetext="//div[@class='controls service-select-container']/div/div/div/div[2]"
-updatetextfirst="//div[@class='current-service-view']/div/div[2]/div[2]"
-updatetext2="//div[@class='controls service-select-container']/div[1]/div[1]/div[2]/div[2]"
-testusersfirst="//div[@class='current-service-view']/div/div[2]/div[1]"
-statusboxfirst="//div[@class='controls']/input"
-EditStatusTextBox="//div[@class='control-group edit-status-container']/div[1]/div[2]/div[2]/input"
-ClearStatus="//div[@class='clear-input ']"
-EditClearStatus="//div[@class='control-group edit-status-container']/div[1]/div[2]/div[2]/div[1]"
-canceliconstatusfirst="//div[@id='header-user']/div/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div"
-getsupportnametxtbox="//form[@class='Form u-cf']/div/div/div/label[1]/div[2]/input"
-getsupportemailadress="//form[@class='Form u-cf']/div/div/div/label[2]/div[2]/input"
-getsupporthelptextbox="//div[@class='Form-field u-isSelectable u-posRelative']/textarea"
-tickicon="//span[@class='Icon Icon--tick u-inlineBlock u-userTextColor u-posRelative u-marginTL u-userFillColor']"
-closemsgcancelicon="//div[@class='Button Button--nav u-posAbsolute u-posStart--vertFlush u-posEnd u-paddingR']"
-getsupportsndbtn="//div[@class='ButtonGroup u-textRight']/input"
-
-#FirstTime verifyChangePassword xpath parts
-FTCP0=TSSignOut
-FTCP1=TSAccept
-FTCP2=NewPasswordLabel
-FTCP3=ReTypePasswordLabel
-FTCP=[FTCP0, FTCP1, FTCP2, FTCP3]
-
-
-#FirstTime verifyChangePassword xpath parts
-CP0=EditYourProfile
-CP1=changepwd
-CP2=newpwd
-CP3=repeatnewpwd
-CP=[CP0, CP1, CP2, CP3]
-
-GroupSort0="//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div"
-GroupSort1="//div[@class='thread-settings-container bbm-wrapper']/div/div/div/div[1]/div[2]/div/div[2]/div["
-GroupSort2="]/div[2]/div[1]"
-GroupSortParts=[GroupSort0, GroupSort1, GroupSort2]
-
-SpecialityList0="//div[@id='select2-drop']/ul/li"
-SpecialityList1="//div[@id='select2-drop']/ul/li["
-SpecialityList2="]/div[1]"
-SpecialityList=[SpecialityList0, SpecialityList1, SpecialityList2]
-
-AllChatThreads="//*[@id='thread-collection']/li"
-ReadChatThreadListCount="//*[@id='read-item-region']/li"
-UnReadChatThreadListCount="//ul[@id='unread-item-region']/li"
-ReadChatThread="//*[@id='read-item-region']/li[1]/div[2]/div[2]/div[1]/div[1]"
-UnReadChatThread="//ul[@id='unread-item-region']/li[1]/div[2]/div[2]/div[1]/div[1]"
-UnReadLstMsg="//*[@id='unread-item-region']/li[1]/div[2]/div[2]/div[2]/div[2]"
-ReadLstMsg="//*[@id='read-item-region']/li[1]/div[2]/div[2]/div[1]/div[1]"
-AllReadLstMsg="//*[@id='thread-collection']/li[1]/div[2]/div[2]/div[2]/div[2]"
-ChatThread2="//*[@id='thread-collection']/li[2]/div[2]/div[2]/div[1]/div[1]"
-ChatThread3="//*[@id='thread-collection']/li[3]/div[2]/div[2]/div[1]/div[1]"
-ChatThread4="//*[@id='thread-collection']/li[4]/div[2]/div[2]/div[1]/div[1]"
-ChatThread5="//*[@id='thread-collection']/li[5]/div[2]/div[2]/div[1]/div[1]"
-ChatThread6="//*[@id='thread-collection']/li[6]/div[2]/div[2]/div[1]/div[1]"
-
-UserAvatar1="//ul[@class='thread-messages-wrapper collection-list']/li[2]/div[1]/div[1]/img"
-UserAvatar2="//ul[@class='thread-messages-wrapper collection-list']/li[3]/div[1]/div[1]/img"
-UserAvatar3="//ul[@class='thread-messages-wrapper collection-list']/li[4]/div[1]/div[1]/img"
-UserAvatar4="//ul[@class='thread-messages-wrapper collection-list']/li[5]/div[1]/div[1]/img"
-AddNewAcctLink="//a[@class='js-add-new-account link-primary']"
-
-Datefield="//input[@id='new-date-field']"
-ArchiveMultipleItem="//*[@id='navigation-column']/div[1]/div/div/div/span"
-ArchiveUnread="//*[@id='unread-item-region']/li[1]/div[2]/div[2]/div[2]/div[1]/div"
+#***Institution screen***
+cureatrlogo="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/startup_logo']"
+searchinstitution="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/institutions_search_field']"
+selectedinstitution="//android.widget.CheckedTextView[@resource-id='android:id/text1']"
+institutiontoast="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/missing_institution_button']"
+
+#***Institution screen>>signin screen***
+Signinbackbutton="//android.widget.ImageButton[@resource-id='com.cureatr.messenger.dev:id/startup_back_button']"
+institutioninsigninscreen="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/institution_name_view']"
+emailid="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/sign_in_email_field']"
+password="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/sign_in_password_field']"
+signinbutton="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/sign_in_button']"
+Forgotpasswordlink="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/forgot_password_button']"
+ortext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/divider_view']"
+createnewaccountlink="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/account_toggle_button']"
+#app_tour screen
+tourscreen1="//android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]"
+tourscreenimage1="//android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+pageindicator1="//android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]"
+skipbutton="//android.widget.Button[@text='Skip this']"
+highlighted_pageindicator_page1="//android.widget.LinearLayout[1]/android.view.View[1]"
+highlighted_pageindicator_page2="//android.widget.LinearLayout[1]/android.view.View[2]"
+highlighted_pageindicator_page3="//android.widget.LinearLayout[1]/android.view.View[3]"
+donebutton="//android.widget.Button[@text='Done']"
+
+#***Institution screen>>signin screen>>dashboard screen***
+notificationsicon="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/menu_event_image']"
+contactsicon="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/menu_search']"
+settingsicon="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/menu_settings']"
+listofmessages="//android.view.ViewGroup[@resource-id='com.cureatr.messenger.dev:id/swipe_layout']"
+replymsgtext_1="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+#replymsgtext_n="//android.widget.FrameLayout[n]/android.widget.RelativeLayout[1]"
+contactname="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.relativeLayout[1]/android.widget.TextView[1]"
+threadsubject="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+latestmsg="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
+latestcontactimage="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.ImageView[1]"
+latestunreadmsgscount="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+#latestunreadmsg
+
+#***Institution screen>>signin screen>>dashboard screen***
+listofmsgs="//android.widget.FrameLayout[@resource-id='com.cureatr.messenger.dev:id/fragment_container']"
+latestmsg="//android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+latestcontactname="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+latestcontactimage="//android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+latestsubjectmsg="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
+latestmsgdate="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+workflowiconindashboard="//android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[3]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageView[1]"
+userstatusbutton="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/user_status_button']"
+urgent_tag="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow***
+patient_info_icon="//android.support.v7.widget.LinearLayoutCompat[1]/android.widget.TextView[1]"
+messages_tab_text="//android.support.v7.app.ActionBar.Tab[1]/android.widget.TextView[1]"
+workflow_tab_text="//android.support.v7.app.ActionBar.Tab[2]/android.widget.TextView[1]"
+Conversation_text="//android.widget.FrameLayout[1]/android.widget.TextView[1]"
+msg_content="//android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+conv_start_time="//android.widget.FrameLayout[2]/android.widget.TextView[1]"
+patient_name="//android.widget.RelativeLayout[2]/android.widget.TextView[1]"
+workflow_progress_text_1="//android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+#workflow_progress_text_n="//android.widget.RelativeLayout[n+1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+sent_time="//android.widget.RelativeLayout[4]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+readby_count_text="//android.widget.RelativeLayout[4]/android.widget.LinearLayout[1]/android.widget.TextView[2]"
+conv_about_patient_text="//android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+view_patient_btn="//android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]"
+enter_msg="//android.widget.EditText[1]"
+urgent_icon="//android.widget.CheckBox[1]"
+camera_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+gallery_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+audio_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[3]"
+files_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[4]"
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon***
+patient_info_view_patient_btn="//*[@resource-id='com.cureatr.messenger.dev:id/menuPatientView']"
+patient_info_settings_btn="//*[@resource-id='com.cureatr.messenger.dev:id/menuSettingsView']"
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen***
+coversations_header_text="//android.view.ViewGroup[1]/android.widget.TextView[1]"
+recipient_count="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuRecipientCount']"
+profile_icon="//android.widget.LinearLayout[1]/android.widget.ImageView[1]"
+add_delete_icon="//android.widget.LinearLayout[2]/android.widget.ImageView[1]"
+profile_name_text="//android.view.ViewGroup[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+add_delete_text="//android.view.ViewGroup[1]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
+sound_notifications_text="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuMuteLabel']"
+sound_notifications_checkbox="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuSoundCheckBox']"
+archive_conv_btn="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuArchiveButton']"
+leave_conv_btn="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuLeaveButton']"
+#same xpath***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen>>edit recipents screen***
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>>compose screen***(coversations_header_text)
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen>>add_delete screen***
+#same xpath ***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen***(coversations_header_text)
+prof_img="//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+prof_name="//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+send_msg_link="//*[@resource-id='com.cureatr.messenger.dev:id/profile_message_container']"
+#same xpath for#***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>viewprofile screen***
+#profileinstitution="//*[@resource-id='com.cureatr.messenger.dev:id/profile_institution']"
+#profilespeciality="//*[@resource-id='com.cureatr.messenger.dev:id/profile_specialty']"
+#profiletitle="//*[@resource-id='com.cureatr.messenger.dev:id/profile_title']"
+current_services_header="//*[@resource-id='com.cureatr.messenger.dev:id/profile_roles_header']"
+prof_service_1="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]"
+#prof_service_n="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[n]"
+doctor_conv_label="//*[@resource-id='com.cureatr.messenger.dev:id/profile_threads_header']"
+#same xpath for #***Institution screen>>signin screen>>dashboard screen***(replymsgtext)
+prof_view_all_conv="//*[@resource-id='com.cureatr.messenger.dev:id/profile_threads_footer']"
+prof_patients_header="//*[@resource-id='com.cureatr.messenger.dev:id/profile_patients_header']"
+prof_patient_1="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+#prof_patient_n="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.LinearLayout[n]/android.widget.TextView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen>>add_delete screen>>click on send_msg_link
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>>compose screen***
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>contacts screen***(contact_1,contactimage,contactname,specialityname,servicename)
+#same xpath for ***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen(careteam_sendmsg_button)
+
+
+
+#***Institution screen>>signin screen>>dashboard screen>>userstatus screen***
+updatestatusheader="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/user_status_title']"
+statusclosebutton="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_close']"
+userprofilename="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_profile_name']"
+profileimage="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_profile_image']"
+viewprofiletext="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_view_profile']"
+editprofiletext="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_edit_profile']"
+availableicon="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_available_radio']"
+busyicon="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_busy_radio']"
+offdutyicon="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_off_radio']"
+statusmessage="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_editor']"
+servicemessage="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_select_service']"
+coveragelayout="//*[@resource-id='com.cureatr.messenger.dev:id/user_status_covering_layout']"
+
+#***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>viewprofile screen***
+editbutton="//*[@resource-id='com.cureatr.messenger.dev:id/menu_edit_profile']"
+userimage="//android.widget.ImageView[1]"
+profilename="//*[@resource-id='com.cureatr.messenger.dev:id/profile_name']"
+helptext="//android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+profileinstitution="//*[@resource-id='com.cureatr.messenger.dev:id/profile_institution']"
+profilespeciality="//*[@resource-id='com.cureatr.messenger.dev:id/profile_specialty']"
+profiletitle="//*[@resource-id='com.cureatr.messenger.dev:id/profile_title']"
+
+#***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>editprofile screen***
+#same xpath #***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>viewprofile screen***(userimage)
+listineditprofile="//android.widget.ScrollView[1]/android.widget.LinearLayout[1]"
+editprofilename="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_name']"
+updateprofilephototext="//android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
+editspeciality="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_specialty_container']"
+edittitle="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_title_container']"
+emailtext="//android.widget.LinearLayout[4]/android.widget.TextView[1]"
+editemail="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_email']"
+institutiontext="//android.widget.LinearLayout[4]/android.widget.TextView[3]"
+editinstitution="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_institution']"
+editcontactsupport="//*[@resource-id='com.cureatr.messenger.dev:id/profile_edit_contact_support']"
+donetext="//*[@resource-id='com.cureatr.messenger.dev:id/menu_edit_profile']"
+
+#***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>service screen***
+search_all_services_text="//*[@resource-id='com.cureatr.messenger.dev:id/searchText']"
+search_close_button="//*[@resource-id='com.cureatr.messenger.dev:id/xButton']"
+clear_all_text="//*[@resource-id='com.cureatr.messenger.dev:id/clearAll']"
+service_1="//android.support.v7.widget.RecyclerView[1]/android.widget.RelativeLayout[1]"
+service_2="//android.support.v7.widget.RecyclerView[1]/android.widget.RelativeLayout[2]"
+service_3="//android.support.v7.widget.RecyclerView[1]/android.widget.RelativeLayout[3]"
+service_4="//android.support.v7.widget.RecyclerView[1]/android.widget.RelativeLayout[4]"
+#xpath for nth service(service_n="//android.support.v7.widget.RecyclerView[1]/android.widget.RelativeLayout[n]") 
+service_1_tickmark="//android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+#xpath for nth service_tickmark (service_n_tickmark="//android.widget.RelativeLayout[n]/android.widget.ImageView[1]")
+
+#***Institution screen>>signin screen>>dashboard screen>>userstatus screen>>editprofile screen>>updateprofilephoto screen***
+picksavedphototext="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+tekenewphototext="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>events screen***
+eventsheader="//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.TextView[1]"
+noeventstext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/emptyTitle']"
+anyeventstext="//android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen***
+searchtext="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/searchMenuText']"
+contactsbutton="//android.support.v7.app.ActionBar.Tab[1]/android.widget.TextView[1]"
+patientsbutton="//android.support.v7.app.ActionBar.Tab[2]/android.widget.TextView[1]"
+recentcontactsheader="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/directory_search_label']"
+contact_1="//android.widget.ListView[1]/android.widget.RelativeLayout[1]"
+#contact_n="//android.widget.ListView[1]/android.widget.RelativeLayout[n]"(for nth contact)
+contactimage="//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+contactname="//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+specialityname="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+servicename="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+composeicon="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[2]"
+#contact_info_icon="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[2]"
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>composeicon(new message screen)***
+alert_content="//android.widget.TextView[@resource-id='android:id/message']"
+#same xpaths for CANCEL and OK buttons--NObutton and YESbutton(#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***)
+#same xpaths-(#***Institution screen>>signin screen>>dashboard screen>>>compose screen***)
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen***
+recentpatientsheader="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/patient_search_label']"
+recentpatientname="//android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+genderandage="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen
+care_team_tab="//android.support.v7.app.ActionBar.Tab[1]/android.widget.TextView[1]"
+history_tab="//android.support.v7.app.ActionBar.Tab[2]/android.widget.TextView[1]"
+patient_info_tab="//android.support.v7.app.ActionBar.Tab[3]/android.widget.TextView[1]"
+conv_help_text="//*[@resource-id='com.cureatr.messenger.dev:id/headerTitle']"
+#selectioncircle="//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+#same xpaths for Institution screen>>signin screen>>dashboard screen>>contacts screen(contactname,specialityname,servicename,composeicon,contactimage and selectioncircle)
+patient_info_icon="//android.widget.RelativeLayout[1]/android.widget.ImageView[3]"
+careteam_cancelbutton="//*[@resource-id='com.cureatr.messenger.dev:id/cancelButton']"
+careteam_sendmsg_button="//*[@resource-id='com.cureatr.messenger.dev:id/sendMessageButton']"
+#same xpaths for (#***Institution screen>>signin screen>>dashboard screen>>>compose screen***)
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen>>history_tab screen
+#same xpaths for #***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen(conv_help_text)
+history_conv_1="//android.widget.ListView[1]/android.widget.FrameLayout[2]"
+#history_conv_n="//android.widget.ListView[1]/android.widget.FrameLayout[n+1]"
+view_all_conv_btn="//android.widget.ListView[1]/android.widget.RelativeLayout[1]"
+all_conv_1_msg="//android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+#all_conv_nth_msg="//android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[n]/android.widget.RelativeLayout[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen>>patient_info_tab***
+patient_info_screen_header="//android.widget.ListView[1]/android.widget.RelativeLayout[1]"
+atient_info_screen_header_text="//android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+patient_info_screen_header_value="//android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]"
+id_label="//android.widget.TextView[@text='ID Number']"
+name_label="//android.widget.TextView[@text='Name']"
+patient_dob_label="//android.widget.TextView[@text='DOB']"
+sex_label="//android.widget.TextView[@text='Sex']"
+location_label="//android.widget.TextView[@text='Location']"
+#poc_rm_bed_label="//android.widget.TextView[@text='PoC · Rm · Bed']"
+recent_diagnoses_label="//android.widget.TextView[@text='Recent Diagnoses']"
+attending_physicians_label="//android.widget.TextView[@text='Attending Physician(s)']"
+id_value="//android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+name_value="//android.widget.RelativeLayout[3]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+dob_value="//android.widget.RelativeLayout[4]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+sex_value="//android.widget.RelativeLayout[5]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+location_value="//android.widget.RelativeLayout[6]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+poc_rm_bed_value="//android.widget.RelativeLayout[7]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+recent_diagnoses_date="//android.widget.RelativeLayout[8]/android.widget.RelativeLayout[1]"
+recent_diagnoses_text="//android.widget.RelativeLayout[9]/android.widget.RelativeLayout[1]"
+attending_physician_date="//android.widget.RelativeLayout[10]/android.widget.RelativeLayout[1]"
+attending_physician_text="//android.widget.RelativeLayout[11]/android.widget.RelativeLayout[1]"
+
+
+
+
+#***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>composeicon(new message screen)***
+listinnewmessage="//android.widget.ListView[@resource-id='com.cureatr.messenger.dev:id/dropdownListView']"
+statusicon="//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen***
+listcontent="//android.widget.FrameLayout[@resource-id='android:id/content']"
+userdefaultimage="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/prefIcon']"
+userdetails="//android.widget.FrameLayout[1]/android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]"
+username="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/prefName']"
+preferredinstitution="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/prefInstitution']"
+preferredspeciality="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/prefSpecialty']"
+preferredtitle="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/prefTitle']"
+signoutbutton="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+nameindisablemode="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+manageaccountslink="//android.widget.LinearLayout[3]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+recipientgroupslink="//android.widget.LinearLayout[4]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+alertsoundlink="//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[5]"
+urgentsoundlink="//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[6]"
+mutepagertext="//android.widget.LinearLayout[3]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+mutepagercheckbox="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.CheckBox[1]"
+sortinboxtext="//android.widget.LinearLayout[4]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+sortinboxcheckbox="//android.widget.LinearLayout[4]/android.widget.LinearLayout[1]/android.widget.CheckBox[1]"
+showarchieveditemstext="//android.widget.LinearLayout[5]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+showarchievedcheckbox="//android.widget.LinearLayout[5]/android.widget.LinearLayout[1]/android.widget.CheckBox[1]"
+securitysettingslink="//android.widget.LinearLayout[6]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+emailsupportlink="//android.widget.LinearLayout[7]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+resetpopuplink="//android.widget.LinearLayout[8]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+ratecureatrtext="//android.widget.LinearLayout[9]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+ratingicon="//android.widget.ImageView[@resource-id='android:id/icon']"
+aboutcureatrlink="//android.widget.LinearLayout[10]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***
+popupheader="//android.widget.TextView[@resource-id='android:id/alertTitle']"
+#yes(shareddevice)button="//android.widget.Button[@resource-id='android:id/button3']"
+NObutton="//android.widget.Button[@resource-id='android:id/button2']"
+YESbutton="//android.widget.Button[@resource-id='android:id/button1']"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>manageaccounts link***
+addaccountlink="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/add_account']"
+manageaccountstext="//android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+profileimage="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/profile_image']"
+profilename="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/name']"
+profileemailid="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/email']"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>recipientgroups 
+addbutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/menu_add']"
+nogroupstext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/emptyTitle']"
+creategroupstext="//android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>alertsound screen***
+alertsoundtext="//android.widget.TextView[@resource-id='android:id/alertTitle']"
+listinalert="//android.widget.FrameLayout[@resource-id='android:id/contentPanel']"
+list1="//android.widget.ListView[1]/android.widget.CheckedTextView[1]"
+listn="//android.widget.ListView[1]/android.widget.CheckedTextView[n]"
+#same xpaths for urgentsound screen
+#same xpaths for CANCEL and OK buttons--NObutton and YESbutton(#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***)
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>securitysettings screen***
+securitylist="//android.support.v7.widget.RecyclerView[@resource-id='com.cureatr.messenger.dev:id/list']"
+changepasswordtext="//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]"
+changeapppasscodetext="//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[2]"
+automaticlock="//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[3]"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>securitysettings screen>>changepassword screen***
+password_hint="//*[@resource-id='com.cureatr.messenger.dev:id/password_requirements_label']"
+current_password="//*[@resource-id='com.cureatr.messenger.dev:id/current_password']"
+new_password="//*[@resource-id='com.cureatr.messenger.dev:id/new_password']"
+change_password_button="//*[@resource-id='com.cureatr.messenger.dev:id/password_change_button']"
+set_new_password_button="//*[@resource-id='com.cureatr.messenger.dev:id/password_set_button']"
+change_pwd_hint_header="//*[@resource-id='com.cureatr.messenger.dev:id/password_change_title']"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>securitysettings screen>>changeapppasscode screen***
+Forgot_passcode_btn="//*[@resource-id='com.cureatr.messenger.dev:id/app_pin_text_button']"
+current_passcode_text="//*[@resource-id='com.cureatr.messenger.dev:id/app_pin_title_label']"
+passcode_digit_1="//android.widget.LinearLayout[1]/android.widget.EditText[1]"
+passcode_digit_2="//android.widget.LinearLayout[1]/android.widget.EditText[2]"
+passcode_digit_3="//android.widget.LinearLayout[1]/android.widget.EditText[3]"
+passcode_digit_4="//android.widget.LinearLayout[1]/android.widget.EditText[4]"
+#same xpaths for new_passcode and confirm new_passcode flow
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>securitysettings screen>>changeapppasscode screen>>Forgot_passcode_btn screen
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>settings screen>>alertsound screen***(alertsoundtext)
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>contacts screen>>composeicon(new message screen)(alert_content)
+#same xpaths for CANCEL and OK buttons--NObutton and YESbutton(#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***)
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>automaticlock popup***
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>contacts screen>>composeicon(new message screen)(alert_content)
+lock_immediate="//android.widget.CheckedTextView[1]"
+lock_1min="//android.widget.CheckedTextView[2]"
+lock_2min="//android.widget.CheckedTextView[3]"
+lock_5min="//android.widget.CheckedTextView[4]"
+lock_10min="//android.widget.CheckedTextView[5]"
+lock_15min="//android.widget.CheckedTextView[6]"
+#same xpaths for CANCEL and OK buttons--NObutton and YESbutton(#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***)
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>emailsupport screen***
+#same xpath for security list,CANCEL and NEW MESSAGE buttons--NObutton and YESbutton(#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***)
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>aboutcureatr screen***
+appversiontext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/app_version_text']"
+aboutcureatrtext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/app_info_text']"
+copyrighttext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/app_copyright_text']"
+legalnoticebutton="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/legal_notices_button']"
+
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>aboutcureatr screen>>legalnotice screen***
+legalnoticetext="//android.view.ViewGroup[1]/android.widget.FrameLayout[2]"
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen***
+backbuttonincompose="//android.widget.ImageButton[1]"
+cureatr_screen_header="//android.view.View[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.widget.TextView[1]"
+Tolabel="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadRecipientsLabel']"
+Tofield="//android.widget.MultiAutoCompleteTextView[@resource-id='com.cureatr.messenger.dev:id/newThreadRecipientsInput']"
+Tofieldcloseicon="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/newThreadDirectoryButton']"
+patientlabel="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadPatientLabel']"
+patientfield="//android.widget.MultiAutoCompleteTextView[@resource-id='com.cureatr.messenger.dev:id/newThreadPatientCompletionView']"
+workflowlabel="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadWorkflowLabel']"
+workflowfield="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadWorkflowButton']"
+subjectlabel="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadSubjectLabel']"
+subjectfield="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/newThreadSubjectInput']"
+msgtextbox="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/composerMessageEditText']"
+urgenticon="//android.widget.CheckBox[@resource-id='com.cureatr.messenger.dev:id/composerUrgentCheckBox']"
+camerabutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerCameraButton']"
+gallerybutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerGalleryButton']"
+audiobutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerAudioButton']"
+fileattachmentbutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerFilesButton']"
+#quickmsgbutton="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/quickMessageButton']"
+#camera_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+#gallery_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+#audio_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[3]"
+#files_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[4]"
+#quick_msg_icon="//android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton***
+quick_msg_list1="//android.widget.LinearLayout[1]/android.widget.LinearLayout[1]"
+quick_msg_list2="//android.widget.LinearLayout[2]/android.widget.LinearLayout[1]"
+#quick_msg_listn="//android.widget.LinearLayout[n]/android.widget.LinearLayout[1]"
+quickmsglist_cancel_button="//*[@resource-id='com.cureatr.messenger.dev:id/macros_cancel']"
+edit_list_button="//*[@resource-id='com.cureatr.messenger.dev:id/macros_edit_macro_button']"
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton>>edit_list_button screen***
+edit_quick_msg_done_btn="//android.widget.TextView[@text='Done']"
+edit_quick_msg_save_btn="//android.widget.TextView[@text='Save']"
+edit_add_btn="//*[@resource-id='com.cureatr.messenger.dev:id/macros_new_image_button']"
+create_new_quick_msg="//*[@resource-id='com.cureatr.messenger.dev:id/macros_new_text_button']"
+save_btn_created_msg="//*[@resource-id='com.cureatr.messenger.dev:id/save_button_edit']"
+delete_quick_msg_1="//android.widget.LinearLayout[2]/android.widget.ImageView[1]"
+#delete_quick_msg_n="//android.widget.LinearLayout[n+1]/android.widget.ImageView[1]"(for nth quick msg deletion)
+quick_msg_1_content="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+#quick_msg_n_content="//android.widget.LinearLayout[n+1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"(for nth quick msg content)
+quick_msg_1_drag_btn="//android.widget.LinearLayout[2]/android.widget.ImageView[2]"
+#quick_msg_n_drag_btn="//android.widget.LinearLayout[n+1]/android.widget.ImageView[2]"(for nth quick msg dragging)
+edit_quick_msg_save_btn="//android.widget.TextView[@text='Save']"
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton>>edit_list_button screen>>delete_quick_msg_1***
+#***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen>>workflow screen***
+selected_workflow="//android.widget.FrameLayout[1]/android.widget.TextView[1]"
+other_workflows_header="//android.widget.FrameLayout[2]/android.widget.TextView[1]"
+workflow_list="//*[@resource-id='com.cureatr.messenger.dev:id/workflowsListView']"
+workflow_1="//android.widget.RelativeLayout[1]/android.widget.TextView[1]"
+#workflow_n="//android.widget.RelativeLayout[n]/android.widget.TextView[1]"
+preview_link_1="//android.widget.RelativeLayout[1]/android.widget.TextView[2]"
+#preview_link_n="//android.widget.RelativeLayout[n]/android.widget.TextView[2]"
+selected_workflow_tickmark="//*[@resource-id='com.cureatr.messenger.dev:id/checkedImg']"
+
+#***Institution screen>>signin screen>>dashboard screen>>>compose screen>>workflow screen>>preview screen***(same for all workflows)
+fields_list="//android.view.ViewGroup[1]/android.widget.FrameLayout[2]"
+patient_name_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[1]"
+DOB_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[2]"
+gender_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[3]"
+gender_m="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[4]"
+gender_f="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[5]"
+confirmation_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[6]"
+confirmation_checkbox="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[7]"
+postal_address_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[8]"
+use_this_workflow_btn="//android.widget.Button[@text='Use this workflow']"
+
