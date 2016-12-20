@@ -2,7 +2,7 @@ import sys, os
 import XlsxReader
 from XlsxReader import *
 import time
-sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..', '..', 'dev', 'cureatr','server','qa')))
+sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..', '..', 'cureatr','server','qa')))
 import db_recipes
 from cureatr.model.users import Users, UID, User
 
@@ -30,6 +30,9 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 		if data is not None:
 			if str(data).startswith("PY"):
 				INSTITUTIONID=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][0])
+				print "currentTestDataSheet",currentTestDataSheet
+				print "dataset",dataset
+				print "current",data.split("$")[1:][0]
 				TYPE=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][1])
 				TITILE=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][2])
 				SPECIALTY=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][3])
@@ -39,7 +42,7 @@ def CreateUserPY(browser, target, data, currentTestDataSheet,  dataset,currentTe
 				PASSWORD=getCellValueBySheet(currentTestDataSheet, dataset, data.split("$")[1:][7])
 				rn=random_digits(10)
 				LASTNAME=str(rn)
-				EMAILID="mohan.nimmala+"+str(rn)+browser+"@mtuity.com"#Testsn25
+				EMAILID="mohan.nimmala+"+str(rn)+"Android"+"@mtuity.com"#Testsn25
 				#LASTNAME="314"
 				#EMAILID=browser.lower()+"test314@mtuity.com"
 				

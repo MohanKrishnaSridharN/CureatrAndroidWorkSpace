@@ -32,16 +32,17 @@ highlighted_pageindicator_page3="//android.widget.LinearLayout[1]/android.view.V
 donebutton="//android.widget.Button[@text='Done']"
 
 #***Institution screen>>signin screen>>dashboard screen***
+compose_icon="//*[@resource-id='com.cureatr.messenger.dev:id/compose_thread_fab']"
 notificationsicon="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/menu_event_image']"
 contactsicon="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/menu_search']"
 settingsicon="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/menu_settings']"
 listofmessages="//android.view.ViewGroup[@resource-id='com.cureatr.messenger.dev:id/swipe_layout']"
-replymsgtext_1="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+replymsgtext_1="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
 #replymsgtext_n="//android.widget.FrameLayout[n]/android.widget.RelativeLayout[1]"
 contactname="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.relativeLayout[1]/android.widget.TextView[1]"
 threadsubject="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
-latestmsg="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
-latestcontactimage="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.ImageView[1]"
+#latestmsg="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView[1]"
+#latestcontactimage="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.ImageView[1]"
 latestunreadmsgscount="//android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
 #latestunreadmsg
 
@@ -82,7 +83,7 @@ patient_info_view_patient_btn="//*[@resource-id='com.cureatr.messenger.dev:id/me
 patient_info_settings_btn="//*[@resource-id='com.cureatr.messenger.dev:id/menuSettingsView']"
 
 #***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen***
-coversations_header_text="//android.view.ViewGroup[1]/android.widget.TextView[1]"
+#coversations_header_text="//android.view.ViewGroup[1]/android.widget.TextView[1]"
 recipient_count="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuRecipientCount']"
 profile_icon="//android.widget.LinearLayout[1]/android.widget.ImageView[1]"
 add_delete_icon="//android.widget.LinearLayout[2]/android.widget.ImageView[1]"
@@ -95,10 +96,10 @@ leave_conv_btn="//*[@resource-id='com.cureatr.messenger.dev:id/threadMenuLeaveBu
 #same xpath***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
 
 #***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen>>edit recipents screen***
-#same xpath for #***Institution screen>>signin screen>>dashboard screen>>>compose screen***(coversations_header_text)
+#same xpath for #***Institution screen>>signin screen>>dashboard screen>>>compose screen***(cureatr_screen_header)
 
 #***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen>>add_delete screen***
-#same xpath ***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen***(coversations_header_text)
+#same xpath ***Institution screen>>signin screen>>dashboard screen>>click_on_message_with_workflow>>patient_info_icon>>patient_info_settings_screen***(cureatr_screen_header)
 prof_img="//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
 prof_name="//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
 send_msg_link="//*[@resource-id='com.cureatr.messenger.dev:id/profile_message_container']"
@@ -121,8 +122,6 @@ prof_patient_1="//android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/
 #same xpath for #***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
 #same xpath for #***Institution screen>>signin screen>>dashboard screen>>contacts screen***(contact_1,contactimage,contactname,specialityname,servicename)
 #same xpath for ***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>recentpatientname screen(careteam_sendmsg_button)
-
-
 
 #***Institution screen>>signin screen>>dashboard screen>>userstatus screen***
 updatestatusheader="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/user_status_title']"
@@ -249,9 +248,6 @@ recent_diagnoses_text="//android.widget.RelativeLayout[9]/android.widget.Relativ
 attending_physician_date="//android.widget.RelativeLayout[10]/android.widget.RelativeLayout[1]"
 attending_physician_text="//android.widget.RelativeLayout[11]/android.widget.RelativeLayout[1]"
 
-
-
-
 #***Institution screen>>signin screen>>dashboard screen>>contacts screen>>patients screen>>composeicon(new message screen)***
 listinnewmessage="//android.widget.ListView[@resource-id='com.cureatr.messenger.dev:id/dropdownListView']"
 statusicon="//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
@@ -285,7 +281,7 @@ aboutcureatrlink="//android.widget.LinearLayout[10]/android.widget.RelativeLayou
 
 #***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***
 popupheader="//android.widget.TextView[@resource-id='android:id/alertTitle']"
-#yes(shareddevice)button="//android.widget.Button[@resource-id='android:id/button3']"
+yes_shareddevice_button="//android.widget.Button[@resource-id='android:id/button3']"
 NObutton="//android.widget.Button[@resource-id='android:id/button2']"
 YESbutton="//android.widget.Button[@resource-id='android:id/button1']"
 
@@ -361,7 +357,7 @@ legalnoticetext="//android.view.ViewGroup[1]/android.widget.FrameLayout[2]"
 
 #***Institution screen>>signin screen>>dashboard screen>>>compose screen***
 backbuttonincompose="//android.widget.ImageButton[1]"
-cureatr_screen_header="//android.view.View[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.widget.TextView[1]"
+cureatr_screen_header="//android.view.ViewGroup[1]/android.widget.TextView[1]"
 Tolabel="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/newThreadRecipientsLabel']"
 Tofield="//android.widget.MultiAutoCompleteTextView[@resource-id='com.cureatr.messenger.dev:id/newThreadRecipientsInput']"
 Tofieldcloseicon="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/newThreadDirectoryButton']"
@@ -377,7 +373,10 @@ camerabutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:
 gallerybutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerGalleryButton']"
 audiobutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerAudioButton']"
 fileattachmentbutton="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/composerFilesButton']"
-#quickmsgbutton="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/quickMessageButton']"
+quickmsgbutton="//android.widget.ImageView[@resource-id='com.cureatr.messenger.dev:id/quickMessageButton']"
+send_btn_text="//*[@resource-id='com.cureatr.messenger.dev:id/sendOrQMWrap']"
+send_text="//*[@resource-id='com.cureatr.messenger.dev:id/sendText']"
+send_icon="//*[@resource-id='com.cureatr.messenger.dev:id/sendIcon']"
 #camera_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
 #gallery_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]"
 #audio_option="//android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[3]"
@@ -385,25 +384,27 @@ fileattachmentbutton="//android.widget.TextView[@resource-id='com.cureatr.messen
 #quick_msg_icon="//android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[1]"
 
 #***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton***
-quick_msg_list1="//android.widget.LinearLayout[1]/android.widget.LinearLayout[1]"
-quick_msg_list2="//android.widget.LinearLayout[2]/android.widget.LinearLayout[1]"
+
 #quick_msg_listn="//android.widget.LinearLayout[n]/android.widget.LinearLayout[1]"
+tap_to_send_text="//android.widget.LinearLayout[10]/android.widget.LinearLayout[1]/android.widget.TextView[1]"
 quickmsglist_cancel_button="//*[@resource-id='com.cureatr.messenger.dev:id/macros_cancel']"
 edit_list_button="//*[@resource-id='com.cureatr.messenger.dev:id/macros_edit_macro_button']"
+quick_msg_list1="//android.widget.LinearLayout[1]/android.widget.LinearLayout[1]"
 
 #***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton>>edit_list_button screen***
+#createmsgtextbox="//*[@resource-id='com.cureatr.messenger.dev:id/macros_new_edit_text']"
 edit_quick_msg_done_btn="//android.widget.TextView[@text='Done']"
 edit_quick_msg_save_btn="//android.widget.TextView[@text='Save']"
 edit_add_btn="//*[@resource-id='com.cureatr.messenger.dev:id/macros_new_image_button']"
 create_new_quick_msg="//*[@resource-id='com.cureatr.messenger.dev:id/macros_new_text_button']"
 save_btn_created_msg="//*[@resource-id='com.cureatr.messenger.dev:id/save_button_edit']"
-delete_quick_msg_1="//android.widget.LinearLayout[2]/android.widget.ImageView[1]"
+
 #delete_quick_msg_n="//android.widget.LinearLayout[n+1]/android.widget.ImageView[1]"(for nth quick msg deletion)
 quick_msg_1_content="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"
 #quick_msg_n_content="//android.widget.LinearLayout[n+1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]"(for nth quick msg content)
 quick_msg_1_drag_btn="//android.widget.LinearLayout[2]/android.widget.ImageView[2]"
 #quick_msg_n_drag_btn="//android.widget.LinearLayout[n+1]/android.widget.ImageView[2]"(for nth quick msg dragging)
-edit_quick_msg_save_btn="//android.widget.TextView[@text='Save']"
+edit_text_box="//android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.EditText[1]"
 
 #***Institution screen>>signin screen>>dashboard screen>>>compose screen>>quickmsgbutton>>edit_list_button screen>>delete_quick_msg_1***
 #***Institution screen>>signin screen>>dashboard screen>>settings screen>>confirm popup***(popupheader,NObutton,YESbutton,alert_content)
@@ -429,4 +430,9 @@ confirmation_label="//android.webkit.WebView[1]/android.view.View[1]/android.vie
 confirmation_checkbox="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[7]"
 postal_address_label="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[8]"
 use_this_workflow_btn="//android.widget.Button[@text='Use this workflow']"
+
+quick_msg_list="//android.widget.LinearLayout[1]/android.widget.ListView[1]/*"
+delete_quick_msg_1="//android.widget.LinearLayout["
+delete_quick_msg_2="]/android.widget.ImageView[1]"
+quick_msgs_deletion=[quick_msg_list , delete_quick_msg_1 , delete_quick_msg_2]
 
