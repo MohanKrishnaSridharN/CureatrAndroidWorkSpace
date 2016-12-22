@@ -17,7 +17,7 @@ Signinbackbutton="//android.widget.ImageButton[@resource-id='com.cureatr.messeng
 institutioninsigninscreen="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/institution_name_view']"
 emailid="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/sign_in_email_field']"
 password="//android.widget.EditText[@resource-id='com.cureatr.messenger.dev:id/sign_in_password_field']"
-signinbutton="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/sign_in_button']"
+signinbutton="//android.widget.LinearLayout[1]/android.widget.Button[1]"
 Forgotpasswordlink="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/forgot_password_button']"
 ortext="//android.widget.TextView[@resource-id='com.cureatr.messenger.dev:id/divider_view']"
 createnewaccountlink="//android.widget.Button[@resource-id='com.cureatr.messenger.dev:id/account_toggle_button']"
@@ -435,4 +435,10 @@ quick_msg_list="//android.widget.LinearLayout[1]/android.widget.ListView[1]/*"
 delete_quick_msg_1="//android.widget.LinearLayout["
 delete_quick_msg_2="]/android.widget.ImageView[1]"
 quick_msgs_deletion=[quick_msg_list , delete_quick_msg_1 , delete_quick_msg_2]
+
+
+
+
+
+
 
