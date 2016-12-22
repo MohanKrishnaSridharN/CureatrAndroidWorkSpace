@@ -437,6 +437,9 @@ delete_quick_msg_2="]/android.widget.ImageView[1]"
 quick_msgs_deletion=[quick_msg_list , delete_quick_msg_1 , delete_quick_msg_2]
 
 
+TestXpath="]/android.widget.ImageView[1]"
+
+
 
 
 
