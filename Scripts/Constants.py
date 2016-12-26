@@ -21,7 +21,7 @@ TOSFileDir="D:/CureatrPythonWorkSpace/Others/TOS/"
 """
 
 HomePath="/home/cureatr/dev/CureatrAndroidWorkSpace/"
-MacPath="/Users/macmini/dev/CureatrAndroidWorkSpace/"
+MacPath=""
 #UBUNTU
 LOG_FILE=HomePath+"applicationlogs/app.log"
 OutPutFileDir=HomePath+"OutPutFiles/"

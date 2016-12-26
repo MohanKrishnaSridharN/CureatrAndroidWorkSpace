@@ -47,6 +47,7 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['platformName'] = 'Android'
 				desired_caps['platformVersion'] = '6.0'
 				desired_caps['deviceName'] = 'Moto'
+				print "hai1"
 				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
 				driver = webdriver.Remote('http://192.168.73.1:4725/wd/hub', desired_caps)
 				print"one"
@@ -59,6 +60,7 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['platformName'] = 'Android'
 				desired_caps['platformVersion'] = '5.1'
 				desired_caps['deviceName'] = 'Moto'
+				print "hai2"
 				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
 				driver = webdriver.Remote('http://192.168.73.1:4726/wd/hub', desired_caps)
 				#time.sleep(10)
@@ -133,6 +135,7 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 			#print "Type", getattr(Config, str(target))
 			#driver.rotate(Landscape)
 			#driver.orientation = 'LANDSCAPE'
+			print "hai1"
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			element.send_keys(str(data))
 			return "PASS", ""
@@ -320,6 +323,7 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 				continue 
 
 def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	for i in range(6):
 		try:
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			if element.is_displayed():
@@ -328,25 +332,41 @@ def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 			else:
 				return "PASS", ""
 		except Exception as err:
-			if "Unable to locate element:" in str(err):
-				return "PASS", ""
-			else:
-				logger.info("Exception @ isNotVissible"+str(err))
-				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""  
+			if i>=5:
+				if "Unable to locate element:" in str(err):
+					return "PASS", ""
+				else:
+					logger.info("Exception @ isNotVissible"+str(err))
+					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+					return "FAIL", ""  
 
 
 def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset,user):
- 	try:
-  		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-  		FieldType=element.get_attribute("value")
-  		while len(FieldType) !=0:
-   			element.send_keys(Keys.BACKSPACE)
-   			FieldType=element.get_attribute("value")
-  		return "PASS", "" 
- 	except Exception as err:
- 		logger.info("Exception @ clearcharacter"+str(err))
-  		return "FAIL", ""
+	for i in range(6):
+ 		try:
+  			element=driver.find_element_by_xpath(getattr(Config, target))
+  			FieldType=element.get_attribute("value")
+  			while len(FieldType) !=0:
+   				element.send_keys(Keys.BACKSPACE)
+   				FieldType=element.get_attribute("value")
+  			return "PASS", "" 
+ 		except Exception as err:
+ 			if i>=5:
+ 				logger.info("Exception @ clearcharacter"+str(err))
+  				return "FAIL", ""
+
+
+def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	for i in range(6):
+		try:
+			element=driver.find_element_by_xpath(getattr(Config, target))
+			element.clear()
+			return "PASS", ""
+		except Exception as err:
+			if i>=5:
+				logger.info("Exception @ ClearText"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", ""
 
 """
 def LANDSCAPE(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
