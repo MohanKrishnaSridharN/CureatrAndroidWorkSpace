@@ -323,22 +323,21 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 				continue 
 
 def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	for i in range(6):
 		try:
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			if element.is_displayed():
+				print "hai"
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 				return "FAIL", "" 
 			else:
 				return "PASS", ""
 		except Exception as err:
-			if i>=5:
-				if "Unable to locate element:" in str(err):
-					return "PASS", ""
-				else:
-					logger.info("Exception @ isNotVissible"+str(err))
-					ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-					return "FAIL", ""  
+			if "Unable to locate element:" in str(err):
+				return "PASS", ""
+			else:
+				logger.info("Exception @ isNotVissible"+str(err))
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", "" 
 
 
 def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset,user):
@@ -357,16 +356,14 @@ def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 
 
 def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	for i in range(6):
-		try:
-			element=driver.find_element_by_xpath(getattr(Config, target))
-			element.clear()
-			return "PASS", ""
-		except Exception as err:
-			if i>=5:
-				logger.info("Exception @ ClearText"+str(err))
-				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+	try:
+		element=driver.find_element_by_xpath(getattr(Config, str(target)))
+		element.clear()
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ ClearText"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
 
 """
 def LANDSCAPE(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
