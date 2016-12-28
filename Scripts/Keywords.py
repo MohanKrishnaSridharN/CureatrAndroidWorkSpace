@@ -47,6 +47,7 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['platformName'] = 'Android'
 				desired_caps['platformVersion'] = '6.0'
 				desired_caps['deviceName'] = 'Moto'
+				desired_caps['newCommandTimeout'] = '600'
 				print "hai1"
 				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
 				driver = webdriver.Remote('http://192.168.73.1:4725/wd/hub', desired_caps)
@@ -60,6 +61,7 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['platformName'] = 'Android'
 				desired_caps['platformVersion'] = '5.1'
 				desired_caps['deviceName'] = 'Moto'
+				desired_caps['newCommandTimeout'] = '600'
 				print "hai2"
 				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
 				driver = webdriver.Remote('http://192.168.73.1:4726/wd/hub', desired_caps)
@@ -127,7 +129,14 @@ def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		logger.info("Exception @ wait"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
-
+def Hidekeyboard(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.hide_keyboard()
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ CloseWebApp"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
 
 def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	for i in range(21):
