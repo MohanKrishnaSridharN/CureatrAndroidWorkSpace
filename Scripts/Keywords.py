@@ -335,9 +335,7 @@ def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 		try:
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			if element.is_displayed():
-				print "hai"
-				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", "" 
+				return "FAIL", ""
 			else:
 				return "PASS", ""
 		except Exception as err:
