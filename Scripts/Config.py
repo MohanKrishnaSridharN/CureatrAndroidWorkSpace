@@ -432,16 +432,16 @@ postal_address_label="//android.webkit.WebView[1]/android.view.View[1]/android.v
 use_this_workflow_btn="//android.widget.Button[@text='Use this workflow']"
 
 quick_msg_list="//android.widget.LinearLayout[1]/android.widget.ListView[1]/*"
-delete_quick_msg_1="//android.widget.LinearLayout["
+add_delete_icon_1="//android.widget.LinearLayout["
 delete_quick_msg_2="]/android.widget.ImageView[1]"
-quick_msgs_deletion=[quick_msg_list , delete_quick_msg_1 , delete_quick_msg_2]
+quick_msgs_deletion=[quick_msg_list , add_delete_icon_1 , delete_quick_msg_2]
 
 
-TestXpath="]/android.widget.ImageView[1]"
-
-
+#TestXpath="]/android.widget.ImageView[1]"
 
 
 
+#sravanitesting="//android.widget.LinearLayout[1]/android.widget.ListView[1]/*"
+#genderggghh="//android.webkit.WebView[1]/android.view.View[1]/android.view.View[5]"
 
 
