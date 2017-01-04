@@ -217,7 +217,7 @@ def executeKeywords(currentTestSuiteXLSPATH, currentTestCase, browser, driver, d
 				if (Proceed_ON_FAIL=="NO" and Keyword_execution_result_main=="FAIL") or Proceed_Next_Step=="NO":
 					logger.info("Stopping Current Test Cases Execution because Test Step is Failed and Proceed_ON_FAIL=NO")
 					TestStepsCount=currentTestSuiteSteps.max_row+2
-					method = possibles.get("CloseWebApp")
+					method = possibles.get("ResetApp")
 					retun=method(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 					break
 

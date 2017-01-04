@@ -49,8 +49,8 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['deviceName'] = 'Moto'
 				desired_caps['newCommandTimeout'] = '600'
 				print "hai1"
-				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
-				driver = webdriver.Remote('http://192.168.73.1:4725/wd/hub', desired_caps)
+				desired_caps['app'] = '/Users/paradigm/Downloads/selendroid-test-app-0.17.0.apk'
+				driver = webdriver.Remote('http://172.16.93.1:4725/wd/hub', desired_caps)
 				print"one"
 				#time.sleep(10)
 				#element=driver.find_element_by_xpath("//android.widget.CheckedTextView[@text='DaVita']")
@@ -63,8 +63,8 @@ def LaunchWebBrowser(browser, driver, target, data, subdirectory, TCID, TSID, DS
 				desired_caps['deviceName'] = 'Moto'
 				desired_caps['newCommandTimeout'] = '600'
 				print "hai2"
-				desired_caps['app'] = '/Users/macmini/dev/cureatr_android/messenger-android/Cureatr/build/outputs/apk/Cureatr-dev-debug.apk'
-				driver = webdriver.Remote('http://192.168.73.1:4726/wd/hub', desired_caps)
+				desired_caps['app'] = '/Users/paradigm/dev/cureatr_android/Cureatr/build/outputs/apk/Cureatr-play-debug.apk'
+				driver = webdriver.Remote('http://172.16.93.1:4726/wd/hub', desired_caps)
 				#time.sleep(10)
 				#element=driver.find_element_by_xpath("//android.widget.CheckedTextView[@text='CAIPA']")
 				#element.click()
@@ -128,7 +128,9 @@ def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 	except Exception as err:
 		logger.info("Exception @ wait"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
+
 def Hidekeyboard(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		driver.hide_keyboard()
@@ -136,7 +138,8 @@ def Hidekeyboard(browser, driver, target, data, subdirectory, TCID, TSID, DSID, 
 	except Exception as err:
 		logger.info("Exception @ CloseWebApp"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 
 def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	for i in range(21):
@@ -153,7 +156,8 @@ def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 			if i>=20:
 				logger.info("Exception @ Type"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				time.sleep(1)
 				continue
@@ -169,7 +173,8 @@ def ClickHidden(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 			if i>=3:
 				logger.info("Exception @ ClickHidden"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				continue	
 
@@ -193,7 +198,8 @@ def DragAndDrop(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 			if i>=20:
 				logger.info("Exception @ DragAndDrop"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				continue
 		
@@ -215,7 +221,8 @@ def verifyText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 				print err
 				logger.info("Exception @ verifyText"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				continue
 
@@ -229,7 +236,8 @@ def Click(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct
 			if i>=3:
 				logger.info("Exception @ Click"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				time.sleep(2)
 				continue
@@ -250,7 +258,8 @@ def ResetApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Corr
 	except Exception as err:
 		logger.info("Exception @ CloseWebApp"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 
 def ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -261,7 +270,8 @@ def ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 		return "PASS", ""
 	except Exception as err:
 		logger.info("Exception @ ScreenShot, "+str(err))
-		return "Fail", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 
 def DeleteAllQuickMsgs(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -278,7 +288,8 @@ def DeleteAllQuickMsgs(browser, driver, target, data, subdirectory, TCID, TSID, 
 		print err
 		logger.info("Exception @ DeleteAllQuickMsgs"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 
 
 def verifyWaterMarkVailability(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
@@ -296,7 +307,8 @@ def verifyWaterMarkVailability(browser, driver, target, data, subdirectory, TCID
 		print err
 		logger.info("Exception @ verifyWaterMarkVailability"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 		
 def verifyWaterMarkUnVailability(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -311,7 +323,8 @@ def verifyWaterMarkUnVailability(browser, driver, target, data, subdirectory, TC
 	except Exception as err:
 		logger.info("Exception @ verifyWaterMarkUnVailability"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
 
 def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	for i in range(6):
@@ -326,7 +339,8 @@ def isVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Co
 			if i>=5:
 				logger.info("Exception @ isVissible"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 			else:
 				time.sleep(1)
 				continue 
@@ -344,7 +358,8 @@ def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 			else:
 				logger.info("Exception @ isNotVissible"+str(err))
 				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", "" 
+				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 
 
 def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset,user):
@@ -358,8 +373,8 @@ def clearcharacter(browser, driver, target, data, subdirectory, TCID, TSID, DSID
   			return "PASS", "" 
  		except Exception as err:
  			if i>=5:
- 				logger.info("Exception @ clearcharacter"+str(err))
-  				return "FAIL", ""
+ 				Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return Activity[0], Activity[1]
 
 
 def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
@@ -370,7 +385,19 @@ def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 	except Exception as err:
 		logger.info("Exception @ ClearText"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+		Activity=CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return Activity[0], Activity[1]
+
+def CurrentActivity(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.current_activity
+		print "HandlingCrash=",str(driver.current_activity)
+		if str(driver.current_activity)=="com.google.android.launcher.GEL":
+			return "FAIL", "NO"
+		else:
+			return "FAIL", ""
+	except Exception as err:
+		return "FAIL", "NO"
 
 """
 def LANDSCAPE(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
