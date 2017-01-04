@@ -129,14 +129,7 @@ def wait(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_
 		logger.info("Exception @ wait"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
-def Hidekeyboard(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		driver.hide_keyboard()
-		return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ CloseWebApp"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
+
 
 def Type(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	for i in range(21):
@@ -335,7 +328,9 @@ def isNotVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 		try:
 			element=driver.find_element_by_xpath(getattr(Config, str(target)))
 			if element.is_displayed():
-				return "FAIL", ""
+				print "hai"
+				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+				return "FAIL", "" 
 			else:
 				return "PASS", ""
 		except Exception as err:
@@ -372,6 +367,24 @@ def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 
+def Hidekeyboard(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.hide_keyboard()
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ CloseWebApp"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
+def SwipeRight(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
+	try:
+		driver.swipe(start_x=200, start_y=380, end_x=1200, end_y=400, duration=0.5)
+		return "PASS", ""
+	except Exception as err:
+		logger.info("Exception @ swipe"+str(err))
+		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
+		return "FAIL", ""
+
 """
 def LANDSCAPE(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	for i in range(21):
@@ -391,6 +404,7 @@ def LANDSCAPE(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Cor
 			else:
 				time.sleep(1)
 				continue
+
 
 def OpenWebApp(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
@@ -723,23 +737,6 @@ def DoubleClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, C
 			else:
 				continue
 
-
-def HoverClick(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data,currentTestDataSheet, dataset,user):
-	for i in range(4):
-		try:
-			element=driver.find_element_by_xpath(getattr(Config, str(target)))
-			builder = ActionChains(driver)
-			builder.move_to_element(element).perform()
-			return "PASS", ""
-		except Exception as err:
-			time.sleep(2)
-			if i>=3:
-				logger.info("Exception @ HoverClick"+str(err))
-				ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-				return "FAIL", ""
-			else:
-				continue
-
 def CloseViewOld(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):#not using this function
 	try:
 		time.sleep(10)
@@ -1035,18 +1032,6 @@ def selectQuickMsg(browser, driver, target, data, subdirectory, TCID, TSID, DSID
 			return "FAIL", ""
 	except Exception as err:
 		logger.info("Exception @ selectQuickMsg"+str(err))
-		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
-		return "FAIL", ""
-
-
-
-def ClearText(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
-	try:
-		element=driver.find_element_by_xpath(getattr(Config, str(target)))
-		element.clear()
-		return "PASS", ""
-	except Exception as err:
-		logger.info("Exception @ ClearText"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 		return "FAIL", ""
 		
@@ -1582,10 +1567,10 @@ def selectContact(browser, driver, target, data, subdirectory, TCID, TSID, DSID,
 		logger.info("Exception @ selectInstitution"+str(err))
 		ScreenShot(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user)
 	return "FAIL", ""
-	"""	
+	
 
 
-"""
+
 def isUploadSucessVissible(browser, driver, target, data, subdirectory, TCID, TSID, DSID, Correct_Data, currentTestDataSheet, dataset, user):
 	try:
 		List=driver.find_elements_by_xpath(getattr(Config, target)[0])
@@ -2238,4 +2223,9 @@ def WaitForExpectedText(browser, driver, target, data, subdirectory, TCID, TSID,
 			else:
 				time.sleep(1)
 				continue
-"""
+  """
+
+
+
+
+
