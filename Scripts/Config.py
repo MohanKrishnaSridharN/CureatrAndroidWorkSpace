@@ -63,6 +63,7 @@ messages_tab_text="//android.support.v7.app.ActionBar.Tab[1]/android.widget.Text
 workflow_tab_text="//android.support.v7.app.ActionBar.Tab[2]/android.widget.TextView[1]"
 Conversation_text="//android.widget.FrameLayout[1]/android.widget.TextView[1]"
 msg_content="//android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
+sendmsg=“//android.widget.ListView[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]”
 conv_start_time="//android.widget.FrameLayout[2]/android.widget.TextView[1]"
 patient_name="//android.widget.RelativeLayout[2]/android.widget.TextView[1]"
 workflow_progress_text_1="//android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]"
